@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- UTF-8 giúp trình duyệt hiển thị đúng tiếng Việt. -->
+    <meta charset="UTF-8">
+    <!-- viewport giúp trang co lại đúng kích thước màn hình điện thoại. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Ngọc Yến</title>
+
+    <!-- CSS chỉ phụ trách hình thức; JavaScript phụ trách xử lý thao tác. -->
+    <link rel="stylesheet" href="css/checkout.css">
+    <!-- defer: đợi trình duyệt đọc xong HTML rồi mới chạy JavaScript. -->
+    <script src="js/checkout.js" defer></script>
+</head>
+<body>
+    <!-- PHỤ LỤC 1 - HTML: TẠO CẤU TRÚC TRANG THANH TOÁN. -->
+
+    <!-- 1. Header: dùng đúng xanh đậm và vàng của trang chủ đã có. -->
+    <header class="header">
+        <div class="header-content">
+            <a class="logo" href="trangchu.html">NGỌC YẾN<span>TRANG SỨC NGỌC</span></a>
+            <nav class="menu" aria-label="Menu chính">
+                <a href="trangchu.html">Trang chủ</a>
+                <a href="cart.html" class="cart-link">Giỏ hàng</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 2. Các bước đặt hàng: class active đánh dấu bước đang xem. -->
+        <nav class="steps" aria-label="Tiến trình đặt hàng">
+            <a href="cart.html"><span>1</span> Giỏ hàng</a>
+            <span class="step-line" aria-hidden="true"></span>
+            <span class="active" aria-current="step"><span>2</span> Thanh toán</span>
+            <span class="step-line" aria-hidden="true"></span>
+            <span><span>3</span> Hoàn tất</span>
+        </nav>
+
+        <h1>Hoàn tất đơn hàng</h1>
+        <p class="intro">Điền thông tin để món trang sức yêu thích đến tay bạn.</p>
+
+        <!-- 3. Form gồm hai cột: thông tin bên trái, đơn hàng bên phải.
+             action: trang mở sau khi gửi form trong bản HTML tĩnh.
+             Không đặt name cho thông tin cá nhân để bản xem tĩnh không đưa
+             tên, điện thoại, địa chỉ lên đường dẫn. JavaScript đọc qua id. -->
+        <form id="checkout-form" class="checkout-layout" action="order-success.html">
+            <div class="left-column">
+                <section class="box">
+                    <h2><span class="section-number">01</span> Thông tin nhận hàng</h2>
+                    <div class="form-row">
+                        <div class="field">
+                            <!-- for trùng id: bấm nhãn sẽ đưa con trỏ vào ô nhập. -->
+                            <label for="full-name">Họ và tên <span class="required">*</span></label>
+                            <!-- required: trình duyệt yêu cầu nhập, không cần JS. -->
+                            <input id="full-name" type="text" placeholder="Tên người nhận" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Số điện thoại <span class="required">*</span></label>
+                            <!-- pattern kiểm tra 10 số bắt đầu bằng 0. -->
+                            <input id="phone" type="tel" placeholder="Ví dụ: 0901234567" autocomplete="tel" pattern="0[0-9]{9}" title="Nhập 10 chữ số, bắt đầu bằng 0." required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email <span class="optional">(không bắt buộc)</span></label>
+                        <!-- type=email có sẵn kiểm tra định dạng email cơ bản. -->
+                        <input id="email" type="email" placeholder="Địa chỉ email của bạn" autocomplete="email">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="city">Tỉnh / thành phố <span class="required">*</span></label>
+                            <input id="city" type="text" placeholder="Ví dụ: Hà Nội" autocomplete="address-level1" required>
+                        </div>
+                        <div class="field">
+                            <label for="ward">Phường / xã <span class="required">*</span></label>
+                            <input id="ward" type="text" placeholder="Nhập phường / xã" autocomplete="address-level2" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="address">Địa chỉ cụ thể <span class="required">*</span></label>
+                        <input id="address" type="text" placeholder="Số nhà, tên đường, tòa nhà…" autocomplete="street-address" required>
+                    </div>
+
+                    <!-- details/summary tạo khối mở rộng bằng HTML, không cần JS. -->
+                    <details class="order-note">
+                        <summary>Thêm ghi chú cho đơn hàng</summary>
+                        <label class="note-label" for="note">Ghi chú giao hàng</label>
+                        <textarea id="note" rows="2" placeholder="Ví dụ: Gọi trước khi giao hàng."></textarea>
+                    </details>
+                </section>
+
+                <section class="box">
+                    <h2><span class="section-number">02</span> Phương thức vận chuyển</h2>
+                    <div class="options-row">
+                        <!-- Cùng name=shipping: chỉ chọn được một phương án. -->
+                        <label class="option">
+                            <input type="radio" name="shipping" value="standard" checked>
+                            <span><strong>Giao tiêu chuẩn</strong><small>Dự kiến 3–5 ngày</small><b id="standard-fee">Miễn phí</b></span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="shipping" value="express">
+                            <span><strong>Giao nhanh</strong><small>Dự kiến 1–2 ngày</small><b>80.000 ₫</b></span>
+                        </label>
+                    </div>
+                    <p class="small-note">Giao tiêu chuẩn 50.000 ₫; miễn phí cho đơn từ 2.000.000 ₫.</p>
+                </section>
+
+                <section class="box">
+                    <h2><span class="section-number">03</span> Phương thức thanh toán</h2>
+                    <div class="payment-options">
+                        <label class="option"><input type="radio" name="payment" value="cod" checked><span><strong>Thanh toán khi nhận hàng</strong><small>Tiền mặt (COD)</small></span></label>
+                        <label class="option"><input type="radio" name="payment" value="bank"><span><strong>Chuyển khoản ngân hàng</strong><small>Chuyển khoản trước khi giao hàng</small></span></label>
+                        <label class="option"><input type="radio" name="payment" value="card"><span><strong>Thẻ ngân hàng</strong><small>Thẻ nội địa / thẻ quốc tế</small></span></label>
+                    </div>
+                </section>
+
+                <a href="cart.html" class="back-link">← Quay lại giỏ hàng</a>
+            </div>
+
+            <!-- 4. Aside là phần thông tin bổ sung đặt cạnh nội dung chính. -->
+            <aside class="box order-summary">
+                <div class="summary-heading"><h2>Đơn hàng của bạn</h2><a href="cart.html">Sửa</a></div>
+
+                <!-- Viết sẵn sản phẩm để tắt JS vẫn xem được thiết kế.
+                     Hai sản phẩm và giá lấy từ cart.html người dùng gửi. -->
+                <div id="order-products">
+                    <div class="product">
+                        <div class="product-photo photo-amber" role="img" aria-label="Vòng bản Ngọc hòa điền"></div>
+                        <div><h3>Vòng bản Ngọc hòa điền</h3><p>Hoàng Khẩu Mật · Size 56</p><p>SL: 1</p><strong>3.200.000 ₫</strong></div>
+                    </div>
+                    <div class="product">
+                        <div class="product-photo photo-jade" role="img" aria-label="Vòng tay ngọc lam băng"></div>
+                        <div><h3>Vòng tay ngọc lam băng</h3><p>Ngọc lam băng · Size 8 li</p><p>SL: 1</p><strong>1.500.000 ₫</strong></div>
+                    </div>
+                </div>
+
+                <hr>
+                <label class="coupon-label" for="coupon">Mã giảm giá</label>
+                <div class="coupon-row">
+                    <input id="coupon" type="text" placeholder="Nhập mã ưu đãi">
+                    <!-- type=button: không vô tình gửi toàn bộ form. -->
+                    <button id="apply-coupon" type="button" class="secondary-button">Áp dụng</button>
+                </div>
+                <p class="small-note">Mã minh họa: NGOCYEN10 · Giảm 10%</p>
+                <p id="coupon-message" class="message" aria-live="polite"></p>
+                <hr>
+
+                <div class="price-row"><span>Tạm tính</span><span id="subtotal">4.700.000 ₫</span></div>
+                <div class="price-row"><span>Phí vận chuyển</span><span id="shipping-fee">Miễn phí</span></div>
+                <div class="price-row"><span>Giảm giá</span><span id="discount">—</span></div>
+                <!-- aria-live thông báo số tiền mới cho trình đọc màn hình. -->
+                <div class="total-row"><span>Tổng thanh toán</span><strong id="total" aria-live="polite">4.700.000 ₫</strong></div>
+                <button id="place-order" type="submit" class="primary-button">Đặt hàng <span aria-hidden="true">→</span></button>
+                <p class="bottom-note">Vui lòng kiểm tra thông tin trước khi đặt hàng.</p>
+                <p id="form-message" class="message" role="alert"></p>
+            </aside>
+        </form>
+    </main>
+
+    <footer class="footer">© 2026 Ngọc Yến — Trang Sức Ngọc Cao Cấp.</footer>
+</body>
+</html>

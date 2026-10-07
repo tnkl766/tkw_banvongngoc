@@ -1,0 +1,141 @@
+/* PHỤ LỤC 2 - CSS: CHỈ PHỤ TRÁCH CÁCH TRÌNH BÀY.
+   Xanh đậm #0d3b2e, vàng #d4af37, nền kem #fcfbf7 lấy từ code trang trước.
+   Dấu . chọn class; dấu # chọn id; ví dụ .box áp dụng cho class="box". */
+
+/* 1. Thiết lập chung.
+   border-box giúp width bao gồm cả padding và border, dễ căn kích thước. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; color: #333; background: #fcfbf7; }
+/* margin: khoảng cách bên ngoài. padding: khoảng cách bên trong. */
+h1, h2, h3, p { margin-top: 0; }
+a { text-decoration: none; color: #0d3b2e; }
+button, input, textarea { font: inherit; }
+button, summary { cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+[hidden] { display: none !important; }
+
+/* 2. Đầu trang. Flex xếp các phần tử trên cùng một hàng.
+   space-between đẩy logo và menu về hai phía. align-items căn giữa theo chiều dọc. */
+.header { background: #0d3b2e; border-bottom: 3px solid #d4af37; }
+.header-content { max-width: 1100px; margin: auto; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.logo { color: #d4af37; font-size: 24px; font-weight: bold; letter-spacing: 1px; }
+.logo span { display: block; font-size: 10px; font-weight: normal; letter-spacing: 3px; margin-top: 4px; color: #f4edd9; }
+.menu { display: flex; align-items: center; gap: 25px; }
+.menu a { color: white; font-size: 14px; }
+.menu .cart-link { color: #edcd63; border: 1px solid #729083; padding: 9px 15px; border-radius: 5px; }
+
+/* 3. Khung chính: max-width giới hạn độ rộng; margin auto căn giữa trang. */
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 28px 24px 40px; }
+h1 { font-size: 29px; color: #0d3b2e; margin-bottom: 8px; }
+.intro { color: #6c716a; font-size: 14px; margin-bottom: 24px; line-height: 1.5; }
+.steps { display: flex; justify-content: center; align-items: center; gap: 14px; margin-bottom: 30px; font-size: 13px; color: #747971; }
+.steps > a, .steps > span:not(.step-line) { display: flex; align-items: center; gap: 7px; }
+.steps > a > span, .steps > span > span { display: flex; align-items: center; justify-content: center; width: 27px; height: 27px; border: 1px solid #d9dfd6; border-radius: 50%; }
+.steps .active { color: #0d3b2e; font-weight: bold; }
+.steps .active > span { background: #0d3b2e; color: #f5d570; border-color: #0d3b2e; }
+.step-line { width: 35px; height: 1px; background: #d9dfd6; }
+
+/* 4. Grid chia form thành hai cột. Cột trái chiếm 1.5 phần, cột phải 1 phần.
+   minmax(0, ...) giúp nội dung dài không đẩy vỡ bố cục. gap là khoảng cách. */
+.checkout-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.left-column { display: grid; gap: 18px; }
+.box { background: white; border: 1px solid #e1e5df; border-radius: 12px; padding: 22px; }
+.box h2 { display: flex; align-items: center; gap: 9px; color: #0d3b2e; font-size: 17px; margin-bottom: 18px; }
+.section-number { display: flex; align-items: center; justify-content: center; background: #f2f1e9; color: #8c742e; border-radius: 7px; width: 29px; height: 29px; font-size: 12px; flex-shrink: 0; }
+
+/* 5. Các ô nhập. Hai field trong form-row sẽ nằm cạnh nhau. */
+.form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.field { margin-bottom: 15px; min-width: 0; }
+.field label, .coupon-label { display: block; font-size: 13px; margin-bottom: 7px; font-weight: bold; }
+.required { color: #937727; }
+.optional { font-weight: normal; color: #777; }
+input[type="text"], input[type="tel"], input[type="email"], textarea { width: 100%; min-width: 0; padding: 11px 12px; border: 1px solid #dfe3dc; border-radius: 7px; background: white; font-size: 14px; color: #333; }
+input::placeholder, textarea::placeholder { color: #81857d; }
+/* :focus chỉ áp dụng khi người dùng đang nhập vào ô đó. */
+input:focus, textarea:focus { border-color: #7f956a; outline: 2px solid #e9eedf; }
+textarea { resize: vertical; }
+.order-note { color: #6d7668; font-size: 13px; }
+.order-note summary { padding: 3px 0; }
+.note-label { display: block; margin: 12px 0 7px; }
+
+/* 6. Các lựa chọn vận chuyển và thanh toán.
+   Radio là nút tròn; accent-color đổi màu nút khi được chọn. */
+.options-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.option { display: flex; align-items: flex-start; gap: 9px; padding: 14px 12px; border: 1px solid #e1e5df; border-radius: 8px; cursor: pointer; }
+.option input { margin: 2px 0 0; accent-color: #0d3b2e; flex-shrink: 0; }
+.option strong { display: block; font-size: 13px; font-weight: 600; }
+.option small { display: block; margin-top: 5px; color: #72786d; font-size: 12px; line-height: 1.4; }
+.option b { display: block; margin-top: 10px; color: #0d3b2e; font-size: 14px; }
+/* :has(input:checked) tìm khung chứa radio đang chọn và đổi màu khung đó. */
+.option:has(input:checked) { background: #f3f6ef; border-color: #7a916b; }
+.payment-options { display: grid; gap: 9px; }
+.payment-options .option { padding: 12px; }
+.small-note { margin: 10px 0 0; color: #777d70; font-size: 12px; line-height: 1.5; }
+.back-link { font-size: 13px; padding: 3px 0; }
+
+/* 7. Tóm tắt đơn hàng.
+   sticky giữ khung đơn hàng trong tầm nhìn khi cuộn trang trên máy tính. */
+.order-summary { position: sticky; top: 20px; box-shadow: 0 8px 25px #0d3b2e0a; }
+.summary-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.summary-heading a { font-size: 13px; color: #86702c; text-decoration: underline; }
+.product { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
+.product:last-child { margin-bottom: 0; }
+.product h3 { font-size: 14px; color: #0d3b2e; margin-bottom: 5px; line-height: 1.4; }
+.product p { font-size: 12px; color: #74796d; margin-bottom: 4px; line-height: 1.4; }
+.product strong { display: block; color: #333; font-size: 14px; margin-top: 7px; }
+.product-photo { width: 68px; height: 74px; flex-shrink: 0; border-radius: 8px; background-color: #f4f1e8; background-size: cover; background-position: center; }
+/* Đường dẫn tính từ file CSS nên cần ../ để ra ngoài thư mục css.
+   Lớp radial-gradient phía sau chỉ là hình tròn minh họa khi chưa có ảnh.
+   Nếu có thư mục NgocYen_image gốc, ảnh thật sẽ nằm phía trước và che hình tròn. */
+.photo-amber { background-image: url("../NgocYen_image/Vòng bản/Ngọc hòa điền - Hoàng Khẩu Mật/2.jpg"), radial-gradient(circle, #f4f1e8 27%, #b89e53 29%, #d5c181 48%, #f4f1e8 50%); }
+.photo-jade { background-image: url("../NgocYen_image/Vòng hạt/ngọc lam băng/vong-tay-bang-lam-ngoc-7-8-ly-4.webp"), radial-gradient(circle, #f4f1e8 26%, #8da99c 29%, #b2c7ba 48%, #f4f1e8 50%); }
+hr { border: 0; border-top: 1px solid #e5e8e0; margin: 22px 0; }
+.coupon-row { display: flex; gap: 8px; }
+.coupon-row input { flex: 1; }
+.secondary-button { border: 1px solid #dddcca; background: #f5f3e9; border-radius: 7px; padding: 10px 13px; color: #665724; font-size: 13px; white-space: nowrap; }
+.price-row { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 13px; font-size: 13px; color: #71776a; }
+.price-row > :last-child { color: #333; white-space: nowrap; }
+.total-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e5e8e0; padding-top: 18px; margin-top: 18px; margin-bottom: 22px; font-size: 14px; color: #0d3b2e; }
+.total-row strong { font-size: 25px; }
+.primary-button { display: flex; justify-content: center; align-items: center; gap: 12px; width: 100%; padding: 15px; background: #0d3b2e; border: 0; border-radius: 7px; color: #f4d77a; font-weight: bold; font-size: 15px; }
+/* :hover đổi màu khi con trỏ chuột di chuyển lên nút. */
+.primary-button:hover { background: #18543d; }
+.bottom-note { text-align: center; font-size: 11px; line-height: 1.5; color: #7b8073; margin: 12px 0 0; }
+.message { font-size: 12px; line-height: 1.5; margin: 8px 0 0; color: #236144; }
+.message.error { color: #ad3434; }
+.footer { background: #0d3b2e; color: #e7dfc4; padding: 24px 15px; text-align: center; font-size: 12px; }
+
+/* 8. Trang xác nhận dùng chung CSS để hai trang đồng bộ. */
+.success-container { max-width: 680px; }
+.success-heading { text-align: center; padding: 12px 0 26px; }
+.check-icon { display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; border-radius: 50%; background: #edf4e9; color: #47764c; font-size: 34px; margin: 0 auto 20px; }
+.success-heading p { color: #757b6e; font-size: 14px; }
+.order-code { display: inline-block; background: #f1eedf; color: #7d682c; padding: 9px 15px; border-radius: 6px; margin-top: 5px; font-size: 13px; }
+.success-details { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 23px; }
+.detail-label { font-size: 12px; color: #79806f; margin-bottom: 7px; }
+.detail-value { font-size: 14px; color: #35472f; line-height: 1.6; margin-bottom: 0; overflow-wrap: anywhere; }
+.payment-status { color: #826a25; font-size: 12px; margin: 5px 0 0; }
+.success-actions { display: flex; justify-content: center; gap: 12px; margin-top: 24px; }
+.success-actions a { text-align: center; }
+.demo-message { margin-top: 15px; font-size: 12px; color: #79806f; text-align: center; }
+
+/* 9. Responsive: khi chiều rộng <= 760px, chuyển thành một cột.
+   Đây là CSS, không cần JavaScript để nhận diện điện thoại. */
+@media (max-width: 760px) {
+    .checkout-layout { grid-template-columns: minmax(0, 1fr); }
+    .order-summary { position: static; }
+    .container { padding: 24px 16px 32px; }
+    .header-content { padding: 20px 16px; }
+    input[type="text"], input[type="tel"], input[type="email"], textarea { font-size: 16px; }
+}
+/* Màn hình rất nhỏ: các ô họ tên/điện thoại cũng xếp dọc. */
+@media (max-width: 420px) {
+    .header-content { flex-direction: column; gap: 17px; }
+    .logo { text-align: center; }
+    .form-row, .options-row, .success-details { grid-template-columns: minmax(0, 1fr); }
+    .box { padding: 18px; }
+    h1 { font-size: 26px; }
+    .steps { gap: 7px; font-size: 12px; }
+    .steps > a, .steps > span:not(.step-line) { gap: 4px; }
+    .step-line { width: 12px; }
+}
