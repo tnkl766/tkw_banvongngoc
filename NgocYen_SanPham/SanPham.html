@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm | NGỌC YẾN</title>
+    <link rel="stylesheet" href="sanpham.css">
+</head>
+
+<body>
+
+   
+<!-- HEADER -->
+<header class="header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="index.html">NGỌC YẾN</a>
+    </div>
+
+    <!-- MENU -->
+    <nav class="main-menu">
+
+        <a href="index.html">Trang Chủ</a>
+
+        <!-- header-->
+        <div class="menu-item">
+            <a href="#">
+                Sản Phẩm
+                <span class="menu-arrow"></span>
+            </a>
+
+            
+<div class="mega-menu">
+
+    <!-- VÒNG NGỌC TỰ NHIÊN -->
+    <div class="menu-column">
+        <h4>VÒNG NGỌC TỰ NHIÊN</h4>
+        <a href="#" onclick="filterByName('Sơn Thủy'); return false;">Vòng Ngọc Sơn Thủy</a>
+        <a href="#" onclick="filterByName('Phỉ Thúy'); return false;">Vòng Ngọc Phỉ Thúy</a>
+        <a href="#" onclick="filterByName('Huyết'); return false;">Vòng Ngọc Huyết</a>
+        <a href="#" onclick="filterByName('Hòa Điền'); return false;">Vòng Ngọc Hòa Điền</a>
+        <a href="#" onclick="filterByName('Bạch Ngọc'); return false;">Vòng Bạch Ngọc</a>
+        <a href="#" onclick="filterByName('Ngọc Bích'); return false;">Vòng Ngọc Bích</a>
+        
+    </div>
+
+    <!-- VÒNG HẠT ĐEO TAY -->
+    <div class="menu-column">
+        <h4>VÒNG HẠT ĐEO TAY</h4>
+        <a href="#" onclick="filterByName('Phỉ Thúy'); return false;">Vòng Hạt Ngọc Phỉ Thúy</a>
+        <a href="#" onclick="filterByName('Bạch Ngọc'); return false;">Vòng Hạt Bạch Ngọc</a>
+        <a href="#" onclick="filterByName('Ngọc Bích'); return false;">Vòng Hạt Ngọc Bích</a>
+        <a href="#" onclick="filterByName('Hòa Điền'); return false;">Vòng Hạt Ngọc Hòa Điền</a>
+        <a href="#" onclick="filterByName('Sơn Thủy'); return false;">Vòng Hạt Ngọc Sơn Thủy</a>
+        <a href="#" onclick="filterByName('Huyết'); return false;">Vòng Hạt Ngọc Huyết</a>
+    </div>
+
+    <!-- NHẪN -->
+    <div class="menu-column">
+        <h4>NHẪN</h4>
+        <a href="#" onclick="filterByName('Nhẫn Ngọc'); return false;">Nhẫn Ngọc</a>
+        <a href="#" onclick="filterByName('Nhẫn Bạch Ngọc'); return false;">Nhẫn Bạch Ngọc</a>
+        <a href="#" onclick="filterByName('Nhẫn Ngọc Phỉ Thúy'); return false;">Nhẫn Ngọc Phỉ Thúy</a>   
+        <a href="#" onclick="filterByName('Nhẫn Ngọc Hòa Điền'); return false;">Nhẫn Ngọc Hòa Điền</a>
+    </div>
+
+</div>
+
+            
+            
+        </div>
+
+        <a href="#">Dịch Vụ</a>
+        <a href="#">Giới Thiệu</a>
+
+        <!-- GIỎ HÀNG -->
+        <a href="#" class="cart-link">Giỏ Hàng (0)</a>
+
+    </nav>
+</header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <div class="breadcrumb">
+            <a href="index.html">Trang chủ</a>
+            <span>/</span>
+            <span>Sản phẩm</span>
+        </div>
+
+        <div class="shop-layout">
+
+            <!-- BỘ LỌC -->
+            <aside class="filter-sidebar" id="filter-sidebar">
+
+                <div class="filter-title">
+                    <span>BỘ LỌC</span>
+                    <button type="button" onclick="resetFilters()">Đặt lại</button>
+                </div>
+
+                <!-- DÒNG SẢN PHẨM -->
+                <div class="filter-section">
+
+                    <div class="filter-heading">
+                        <span>Dòng sản phẩm</span>
+                        <span class="filter-plus">+</span>
+                    </div>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="all" class="category-filter" checked>
+                        <span>Tất cả</span>
+                    </label>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="vong-ban" class="category-filter">
+                        <span>Vòng bản</span>
+                    </label>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="vong-hat" class="category-filter">
+                        <span>Vòng hạt</span>
+                    </label>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="nhan" class="category-filter">
+                        <span>Nhẫn</span>
+                    </label>
+
+                </div>
+
+                <!-- MÀU SẮC -->
+                <div class="filter-section">
+
+                    <div class="filter-heading">
+                        <span>Màu sắc</span>
+                        <span class="filter-plus">+</span>
+                    </div>
+
+                    <div class="color-list">
+
+                        <button type="button" class="color beige" data-color="beige" title="Be"></button>
+                        <button type="button" class="color white" data-color="white" title="Trắng"></button>
+                        <button type="button" class="color pink" data-color="pink" title="Hồng"></button>
+                        <button type="button" class="color green" data-color="green" title="Xanh lá"></button>
+                        <button type="button" class="color blue" data-color="blue" title="Xanh dương"></button>
+                        <button type="button" class="color purple" data-color="purple" title="Tím"></button>
+                        <button type="button" class="color brown" data-color="brown" title="Nâu"></button>
+                        <button type="button" class="color black" data-color="black" title="Đen"></button>
+                        <button type="button" class="color red" data-color="red" title="Đỏ"></button>
+
+                    </div>
+                </div>
+
+                <!-- GIÁ: CHỈ MỘT THANH TRƯỢT -->
+                <div class="filter-section">
+
+                    <div class="filter-heading">
+                        <span>Giá</span>
+                        <span class="filter-plus">+</span>
+                    </div>
+
+                    <div class="price-label">
+                        <span>Đơn vị: <b>VNĐ</b></span>
+                    </div>
+
+                    <div class="price-range">
+                        <input
+                            type="range"
+                            id="max-price"
+                            min="0"
+                            max="100000000"
+                            step="500000"
+                            value="100000000"
+                        >
+                    </div>
+
+                    <div class="price-values">
+                        <span>0đ</span>
+                        <span id="max-price-value">100.000.000đ</span>
+                    </div>
+
+                </div>
+
+                <!-- CHẤT LIỆU -->
+                <div class="filter-section">
+
+                    <div class="filter-heading">
+                        <span>Chất liệu</span>
+                        <span class="filter-plus">+</span>
+                    </div>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="thach-anh" class="material-filter">
+                        <span>Đá thạch anh</span>
+                    </label>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="mat-ho" class="material-filter">
+                        <span>Đá mắt hổ</span>
+                    </label>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="ngoc-bich" class="material-filter">
+                        <span>Đá ngọc bích</span>
+                    </label>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="ma-nao" class="material-filter">
+                        <span>Đá mã não</span>
+                    </label>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="cam-thach" class="material-filter">
+                        <span>Đá cẩm thạch</span>
+                    </label>
+
+                    <label class="filter-check">
+                        <input type="checkbox" value="obsidian" class="material-filter">
+                        <span>Đá Obsidian</span>
+                    </label>
+
+                </div>
+
+
+            </aside>
+
+            <!-- KHU VỰC SẢN PHẨM -->
+            <section class="product-area">
+
+                <div class="mobile-filter-button">
+                    <button type="button" onclick="toggleFilterPopup()">
+                        <span>☰</span>
+                        <span>BỘ LỌC</span>
+                    </button>
+                </div>
+
+                <div class="product-top">
+
+                    <div class="sort-box">
+                        <span>Xem theo</span>
+
+                        <select id="sort-products" onchange="sortProducts()">
+                            <option value="newest">Mới nhất</option>
+                            <option value="price-low">Giá thấp đến cao</option>
+                            <option value="price-high">Giá cao đến thấp</option>
+                            <option value="name">Tên A - Z</option>
+                        </select>
+                    </div>
+
+                    <div class="product-count">
+                        Hiển thị
+                        <strong id="product-range">1 - 20</strong>
+                        /
+                        <strong id="total-products">30</strong>
+                        sản phẩm
+                    </div>
+
+                </div>
+
+                <div id="product-list"></div>
+
+            </section>
+
+        </div>
+    </main>
+    
+
+<!-- FOOTER: LIÊN HỆ & CỬA HÀNG -->
+<footer class="site-footer">
+
+    <section class="contact-section">
+        <h2 class="contact-title">LIÊN HỆ & CỬA HÀNG</h2>
+
+        <p class="contact-description">
+            Ngọc Yến luôn sẵn sàng tư vấn và giúp bạn lựa chọn
+            món trang sức phù hợp.
+        </p>
+
+        <div class="contact-container">
+
+            <!-- THÔNG TIN SHOWROOM -->
+            <div class="contact-info">
+                <h3 class="contact-subtitle">Showroom Ngọc Yến</h3>
+
+                <p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+                         alt="Địa chỉ">
+                    <span>
+                        <strong>Địa chỉ:</strong>
+                        <span>123 Đường Lê Lợi, Q.1, TP.HCM</span>
+                    </span>
+                </p>
+
+                <p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3059/3059502.png"
+                         alt="Hotline">
+                    <span>
+                        <strong>Hotline:</strong>
+                        <span>0909 123 456</span>
+                    </span>
+                </p>
+
+                <p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                         alt="Email">
+                    <span>
+                        <strong>Email:</strong>
+                        <span>lienhe@ngocyen.com</span>
+                    </span>
+                </p>
+
+                <p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png"
+                         alt="Giờ mở cửa">
+                    <span>
+                        <strong>Giờ mở cửa:</strong>
+                        <span>08:30 - 21:30</span>
+                    </span>
+                </p>
+            </div>
+
+            <!-- FORM TƯ VẤN -->
+            <div class="contact-form-column">
+                <h3 class="contact-subtitle">Gửi yêu cầu tư vấn</h3>
+
+                <form class="contact-form">
+                    <input
+                        type="text"
+                        name="fullname"
+                        placeholder="Họ và tên của bạn"
+                        aria-label="Họ và tên"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Số điện thoại"
+                        aria-label="Số điện thoại"
+                        required
+                    >
+
+                    <textarea
+                        name="message"
+                        placeholder="Nội dung cần tư vấn..."
+                        rows="4"
+                        aria-label="Nội dung cần tư vấn"
+                        required
+                    ></textarea>
+
+                    <button type="button">Gửi liên hệ</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-copyright">
+        <p>&copy; 2026 Ngọc Yến - Trang Sức Ngọc Cao Cấp.</p>
+    </div>
+
+</footer>
+<script src="sanpham.js"></script>
+</body>
+</html>
