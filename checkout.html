@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Ngọc Yến</title>
+    <link rel="stylesheet" href="css/checkout.css">
+    <script src="js/cart-store.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a class="logo" href="../trangchu.html">NGỌC YẾN<span>TRANG SỨC NGỌC</span></a>
+            <nav class="menu" aria-label="Menu chính">
+                <a href="../trangchu.html">Trang chủ</a>
+                <a href="../cart.html" class="cart-link">Giỏ hàng</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <nav class="steps" aria-label="Tiến trình đặt hàng">
+            <a href="../cart.html"><span>1</span> Giỏ hàng</a>
+            <span class="step-line" aria-hidden="true"></span>
+            <span class="active" aria-current="step"><span>2</span> Thanh toán</span>
+            <span class="step-line" aria-hidden="true"></span>
+            <span><span>3</span> Hoàn tất</span>
+        </nav>
+        <h1>Hoàn tất đơn hàng</h1>
+        <p class="intro">Điền thông tin để món trang sức yêu thích đến tay bạn.</p>
+        <p class="demo-banner">Bản minh họa bài tập · Không phát sinh giao dịch thanh toán.</p>
+        <noscript><p class="message error">Vui lòng bật JavaScript để kiểm tra giỏ hàng và đặt đơn minh họa.</p></noscript>
+
+        <!-- Không đặt name cho thông tin cá nhân để tránh đưa dữ liệu lên URL.
+             JavaScript kiểm tra và lưu đơn; nút chỉ mở khi đã đọc được giỏ hàng. -->
+        <form id="checkout-form" class="checkout-layout" novalidate>
+            <div class="left-column">
+                <section class="box" aria-labelledby="delivery-heading">
+                    <h2 id="delivery-heading"><span class="section-number">01</span> Thông tin nhận hàng</h2>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="full-name">Họ và tên <span class="required">*</span></label>
+                            <input id="full-name" type="text" placeholder="Tên người nhận" autocomplete="name" minlength="2" maxlength="100" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Số điện thoại <span class="required">*</span></label>
+                            <input id="phone" type="tel" inputmode="tel" placeholder="Ví dụ: 0901234567" autocomplete="tel" maxlength="20" aria-describedby="phone-hint" required>
+                            <p id="phone-hint" class="field-hint">10 chữ số bắt đầu bằng 0, hoặc dùng +84.</p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email <span class="optional">(không bắt buộc)</span></label>
+                        <input id="email" type="email" placeholder="Địa chỉ email của bạn" autocomplete="email" maxlength="254">
+                    </div>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="city">Tỉnh / thành phố <span class="required">*</span></label>
+                            <input id="city" type="text" placeholder="Ví dụ: Hà Nội" autocomplete="address-level1" maxlength="100" required>
+                        </div>
+                        <div class="field">
+                            <label for="ward">Phường / xã <span class="required">*</span></label>
+                            <input id="ward" type="text" placeholder="Nhập phường / xã" autocomplete="address-level2" maxlength="100" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="address">Địa chỉ cụ thể <span class="required">*</span></label>
+                        <input id="address" type="text" placeholder="Số nhà, tên đường, tòa nhà…" autocomplete="street-address" maxlength="250" required>
+                    </div>
+                    <details class="order-note">
+                        <summary>Thêm ghi chú cho đơn hàng</summary>
+                        <label class="note-label" for="note">Ghi chú giao hàng</label>
+                        <textarea id="note" rows="3" maxlength="500" placeholder="Ví dụ: Gọi trước khi giao hàng."></textarea>
+                    </details>
+                </section>
+                <section class="box" aria-labelledby="shipping-heading">
+                    <h2 id="shipping-heading"><span class="section-number">02</span> Phương thức vận chuyển</h2>
+                    <div class="options-row" role="group" aria-labelledby="shipping-heading">
+                        <label class="option">
+                            <input type="radio" name="shipping" value="standard" checked required>
+                            <span><strong>Giao tiêu chuẩn</strong><small>Dự kiến 3–5 ngày</small><b id="standard-fee">—</b></span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="shipping" value="express">
+                            <span><strong>Giao nhanh</strong><small>Dự kiến 1–2 ngày</small><b>80.000 ₫</b></span>
+                        </label>
+                    </div>
+                    <p class="small-note">Giao tiêu chuẩn 50.000 ₫; miễn phí khi tiền hàng trước giảm giá từ 2.000.000 ₫.</p>
+                </section>
+                <section class="box" aria-labelledby="payment-heading">
+                    <h2 id="payment-heading"><span class="section-number">03</span> Phương thức thanh toán</h2>
+                    <div class="payment-options" role="group" aria-labelledby="payment-heading">
+                        <label class="option"><input type="radio" name="payment" value="cod" checked required><span><strong>Thanh toán khi nhận hàng</strong><small>Tiền mặt (COD)</small></span></label>
+                        <label class="option"><input type="radio" name="payment" value="bank"><span><strong>Chuyển khoản ngân hàng</strong><small>Đơn minh họa ở trạng thái chờ thanh toán</small></span></label>
+                        <label class="option option-disabled"><input type="radio" name="payment" value="card" disabled><span><strong>Thẻ ngân hàng</strong><small>Chưa hỗ trợ trong bản minh họa</small></span></label>
+                    </div>
+                    <p id="payment-help" class="small-note" aria-live="polite">Thanh toán khi nhận hàng; chưa thu tiền khi đặt đơn.</p>
+                </section>
+                <a href="../cart.html" class="back-link">← Quay lại giỏ hàng</a>
+            </div>
+            <aside class="box order-summary" aria-labelledby="summary-heading">
+                <div class="summary-heading"><h2 id="summary-heading">Đơn hàng của bạn</h2><a href="../cart.html">Sửa</a></div>
+                <div id="order-products"><p class="small-note">Đang kiểm tra giỏ hàng…</p></div>
+                <hr>
+                <label class="coupon-label" for="coupon">Mã giảm giá</label>
+                <div class="coupon-row">
+                    <input id="coupon" type="text" placeholder="Nhập mã ưu đãi" maxlength="30" autocomplete="off" aria-describedby="coupon-message">
+                    <button id="apply-coupon" type="button" class="secondary-button" disabled>Áp dụng</button>
+                </div>
+                <p class="small-note">Mã minh họa: NGOCYEN10 · Giảm 10% tiền hàng</p>
+                <p id="coupon-message" class="message" aria-live="polite"></p>
+                <hr>
+                <div class="price-row"><span>Tạm tính</span><span id="subtotal">0 ₫</span></div>
+                <div class="price-row"><span>Phí vận chuyển</span><span id="shipping-fee">0 ₫</span></div>
+                <div class="price-row"><span>Giảm giá</span><span id="discount">—</span></div>
+                <div class="total-row"><span>Tổng thanh toán</span><strong id="total" aria-live="polite">0 ₫</strong></div>
+                <button id="place-order" type="submit" class="primary-button" disabled>Đặt hàng <span aria-hidden="true">→</span></button>
+                <p class="bottom-note">Vui lòng kiểm tra thông tin trước khi đặt hàng.</p>
+                <p id="form-message" class="message" role="alert"></p>
+            </aside>
+        </form>
+    </main>
+    <footer class="footer">© 2026 Ngọc Yến — Trang Sức Ngọc Cao Cấp.</footer>
+</body>
+</html>
