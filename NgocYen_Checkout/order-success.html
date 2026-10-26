@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin đơn hàng - Ngọc Yến</title>
+    <link rel="stylesheet" href="css/checkout.css">
+    <script src="js/cart-store.js" defer></script>
+    <script src="js/order-success.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a class="logo" href="../trangchu.html">NGỌC YẾN<span>TRANG SỨC NGỌC</span></a>
+            <nav class="menu" aria-label="Menu chính"><a href="../trangchu.html">Trang chủ</a><a href="../cart.html" class="cart-link">Giỏ hàng</a></nav>
+        </div>
+    </header>
+    <main class="container success-container">
+        <section id="empty-order" class="box empty-order" aria-labelledby="empty-heading">
+            <h1 id="empty-heading">Chưa có đơn hàng</h1>
+            <p>Không tìm thấy đơn hàng hợp lệ trong phiên này. Vui lòng quay lại giỏ hàng để bắt đầu.</p>
+            <a href="../cart.html" class="primary-button">Về giỏ hàng →</a>
+        </section>
+        <noscript><p class="message error">Vui lòng bật JavaScript để xem thông tin đơn hàng.</p></noscript>
+
+        <!-- Chỉ mở nội dung thành công khi dữ liệu đơn hàng đã được kiểm tra. -->
+        <div id="order-confirmation" hidden>
+            <nav class="steps" aria-label="Tiến trình đặt hàng">
+                <a href="../cart.html"><span>1</span> Giỏ hàng</a><span class="step-line" aria-hidden="true"></span>
+                <span><span>2</span> Thanh toán</span><span class="step-line" aria-hidden="true"></span>
+                <span class="active" aria-current="step"><span>3</span> Hoàn tất</span>
+            </nav>
+            <div class="success-heading">
+                <div class="check-icon" aria-hidden="true">✓</div>
+                <h1>Đã tạo đơn hàng minh họa!</h1>
+                <p>Cảm ơn bạn đã trải nghiệm mua sắm cùng Ngọc Yến.</p>
+                <div class="order-code">Mã đơn hàng: <strong id="success-code"></strong></div>
+                <p id="success-date" class="small-note"></p>
+            </div>
+            <section class="box" aria-label="Chi tiết đơn hàng">
+                <div class="success-details">
+                    <div><p class="detail-label">Người nhận</p><p class="detail-value" id="success-name"></p><p class="detail-value" id="success-phone"></p></div>
+                    <div><p class="detail-label">Địa chỉ giao hàng</p><p class="detail-value" id="success-address"></p></div>
+                    <div id="success-email-box" hidden><p class="detail-label">Email</p><p class="detail-value" id="success-email"></p></div>
+                    <div><p class="detail-label">Vận chuyển</p><p class="detail-value" id="success-shipping"></p></div>
+                    <div><p class="detail-label">Thanh toán</p><p class="detail-value" id="success-payment"></p><p class="payment-status" id="payment-status"></p></div>
+                    <div id="success-note-box" hidden><p class="detail-label">Ghi chú</p><p class="detail-value" id="success-note"></p></div>
+                </div>
+                <hr>
+                <h2>Sản phẩm đã đặt</h2>
+                <div id="success-products"></div>
+                <hr>
+                <div class="price-row"><span>Tạm tính</span><span id="success-subtotal"></span></div>
+                <div class="price-row"><span>Phí vận chuyển</span><span id="success-fee"></span></div>
+                <div class="price-row"><span id="success-discount-label">Giảm giá</span><span id="success-discount"></span></div>
+                <div class="total-row"><span>Tổng đơn hàng</span><strong id="success-total"></strong></div>
+            </section>
+            <div class="success-actions"><a href="../NgocYen_SanPham/SanPham.html" class="primary-button">Tiếp tục xem sản phẩm →</a></div>
+            <p class="demo-message">Đơn minh họa chưa được gửi đến cửa hàng và chưa phát sinh thanh toán.</p>
+        </div>
+    </main>
+    <footer class="footer">© 2026 Ngọc Yến — Trang Sức Ngọc Cao Cấp.</footer>
+</body>
+</html>
