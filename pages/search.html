@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tìm Kiếm Sản Phẩm | JADE – Natural Gemstone Jewelry</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages/products.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .search-input-container {
+      max-width: 680px;
+      margin: 1.5rem auto 1rem auto;
+      display: flex;
+      gap: 0.5rem;
+      background: #FFFFFF;
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    .search-input-field {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 0.75rem 1rem;
+      font-size: var(--font-size-base);
+      color: var(--color-heading);
+    }
+    .search-suggestions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+      font-size: var(--font-size-xs);
+    }
+    .search-suggest-tag {
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      color: #FFFFFF;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all var(--transition-fast);
+    }
+    .search-suggest-tag:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #192C24;
+      font-weight: 600;
+    }
+    .search-summary-bar {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+      font-size: var(--font-size-base);
+      color: var(--color-heading);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .search-sort-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .search-sort-box select {
+      padding: 0.45rem 1.75rem 0.45rem 0.75rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      background-color: #FFFFFF;
+      font-size: var(--font-size-sm);
+      color: var(--color-heading);
+      cursor: pointer;
+    }
+    /* Grid hiển thị sản phẩm kích thước chuẩn như trang sản phẩm */
+    .search-catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      min-height: 350px;
+    }
+    @media (max-width: 1100px) {
+      .search-catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .search-catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .search-catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <span>KHÁM PHÁ VẺ ĐẸP NGỌC QUÝ TỰ NHIÊN</span>
+    <span class="highlight">&bull;</span>
+    <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 2.000.000Đ</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <button class="mobile-toggle" aria-label="Mở menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      <a href="../index.html" class="site-logo" title="JADE Natural Gemstone Jewelry"><img src="../assets/images/logo.png" alt="JADE Natural Gemstone Jewelry" class="site-logo-img" /></a>
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">SẢN PHẨM</a></li>
+          <li class="nav-item"><a href="collections.html" class="nav-link">BỘ SƯU TẬP</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">CÂU CHUYỆN THƯƠNG HIỆU</a></li>
+          <li class="nav-item"><a href="stores.html" class="nav-link">CỬA HÀNG</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="search.html" class="action-btn" title="Tìm kiếm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+        <a href="account.html" class="action-btn" title="Tài khoản"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+        <a href="wishlist.html" class="action-btn" title="Yêu thích"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span class="badge-count badge-wishlist" style="display: none;">0</span></a>
+        <a href="cart.html" class="action-btn" title="Giỏ hàng"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span class="badge-count badge-cart" style="display: none;">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Category Hero Banner with Background Image (Synchronized with Products page) -->
+    <section class="category-banner-hero" style="background-image: url('../assets/images/product/pb.jpg'); margin-bottom: 0;">
+      <div class="container">
+        <nav class="breadcrumb" style="justify-content: center; margin-bottom: 0.75rem;">
+          <span class="breadcrumb-item"><a href="../index.html" style="color: #DDEAE3;">Trang chủ</a></span>
+          <span class="breadcrumb-separator" style="color: #A3B5AC;">/</span>
+          <span class="breadcrumb-item active" style="color: #FFFFFF;">Tìm Kiếm</span>
+        </nav>
+        <span class="section-subtitle">TRA CỨU TRANG SỨC NGỌC QUÝ</span>
+        <h1 class="section-title">TÌM KIẾM SẢN PHẨM</h1>
+        <p class="section-desc">Tìm kiếm theo tên, chất liệu ngọc (phỉ thúy, bạch ngọc, huyết ngọc), kiểu dáng hoặc mã sản phẩm.</p>
+
+        <form id="search-page-form" class="search-input-container">
+          <input type="text" id="search-page-input" class="search-input-field" placeholder="Tìm kiếm vòng ngọc, nhẫn, chuỗi hạt, phỉ thúy..." autocomplete="off" />
+          <button type="submit" class="btn btn-primary btn-sm">TÌM KIẾM</button>
+        </form>
+
+        <!-- Clickable Suggestion Tags -->
+        <div class="search-suggestions">
+          <span style="color: #DDEAE3; font-size: 0.85rem; font-weight: 500;">Gợi ý phổ biến:</span>
+          <button type="button" class="search-suggest-tag" data-keyword="Vòng Bản">Vòng Bản</button>
+          <button type="button" class="search-suggest-tag" data-keyword="Vòng Hạt">Vòng Hạt</button>
+          <button type="button" class="search-suggest-tag" data-keyword="Nhẫn Ngọc">Nhẫn Ngọc</button>
+          <button type="button" class="search-suggest-tag" data-keyword="Dây Chuyền">Dây Chuyền</button>
+          <button type="button" class="search-suggest-tag" data-keyword="Phỉ Thúy">Phỉ Thúy</button>
+          <button type="button" class="search-suggest-tag" data-keyword="Bạch Ngọc">Bạch Ngọc</button>
+          <button type="button" class="search-suggest-tag" data-keyword="Huyết Ngọc">Huyết Ngọc</button>
+          <button type="button" class="search-suggest-tag" data-keyword="Lục Đế Vương">Lục Đế Vương</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <!-- Top bar: Summary & Sort -->
+        <div class="search-summary-bar">
+          <div id="search-summary-text">
+            Đang tải kết quả...
+          </div>
+          <div class="search-sort-box">
+            <label for="sort-search-select" style="font-size: var(--font-size-xs); color: var(--color-text-muted); font-weight: 500;">SẮP XẾP:</label>
+            <select id="sort-search-select">
+              <option value="relevance">Độ phù hợp cao nhất</option>
+              <option value="price-asc">Giá: Thấp đến Cao</option>
+              <option value="price-desc">Giá: Cao đến Thấp</option>
+              <option value="bestseller">Bán chạy nhất</option>
+              <option value="new">Hàng mới về</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Catalog Grid (Kích thước chuẩn như trang sản phẩm) -->
+        <div id="search-results-grid" class="products-catalog-grid search-catalog-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none; padding-top:0;">
+        <div>&copy; 2026 JADE – NATURAL GEMSTONE JEWELRY. Vẻ đẹp tự nhiên, giá trị vượt thời gian.</div>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Trang Chủ</a>
+          <a href="stores.html">Cửa Hàng</a>
+          <a href="shipping.html">Vận Chuyển</a>
+          <a href="policies.html">Chính Sách</a>
+          <a href="contact.html">Liên Hệ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM
+   ========================================================================== */
+
+/* Medium Devices (Tablets & Small Laptops: <= 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 1.25rem;
+    --header-height: 72px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-col-brand {
+    grid-column: span 2;
+  }
+}
+
+/* Tablets (Portrait: <= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --space-4xl: 4rem;
+    --space-3xl: 3rem;
+    --space-2xl: 2rem;
+    --space-xl: 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer-col-brand {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+
+  .collection-card {
+    height: 380px;
+  }
+
+  .collection-content {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+    --header-height: 64px;
+    --announcement-height: 48px;
+  }
+
+  .logo-title {
+    font-size: 1.35rem;
+  }
+
+  .logo-tagline {
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+  }
+
+  .logo-symbol {
+    width: 36px;
+    height: 36px;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .product-info {
+    padding: 0.85rem 0.5rem;
+  }
+
+  .product-name {
+    font-size: 0.95rem;
+    height: 2.6em;
+  }
+
+  .product-price {
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 38px;
+    height: 38px;
+  }
+}
