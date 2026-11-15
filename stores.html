@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ Thống Cửa Hàng & Showroom Toàn Quốc | JADE – Natural Gemstone Jewelry</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/pages/products.css">
+  <link rel="stylesheet" href="../css/pages/stores.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>KHÁM PHÁ VẺ ĐẸP NGỌC QUÝ TỰ NHIÊN</span>
+    <span class="highlight">&bull;</span>
+    <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 2.000.000Đ</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <button class="mobile-toggle" aria-label="Mở menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <a href="../index.html" class="site-logo" title="JADE Natural Gemstone Jewelry">
+        <img src="../assets/images/logo.png" alt="JADE Natural Gemstone Jewelry" class="site-logo-img" />
+      </a>
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">SẢN PHẨM</a></li>
+          <li class="nav-item"><a href="collections.html" class="nav-link">BỘ SƯU TẬP</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">CÂU CHUYỆN THƯƠNG HIỆU</a></li>
+          <li class="nav-item"><a href="stores.html" class="nav-link active" style="color: var(--color-primary); font-weight: 600;">CỬA HÀNG</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="search.html" class="action-btn" title="Tìm kiếm">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </a>
+        <a href="account.html" class="action-btn" title="Tài khoản">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+        <a href="wishlist.html" class="action-btn" title="Yêu thích">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count badge-wishlist" style="display: none;">0</span>
+        </a>
+        <a href="cart.html" class="action-btn" title="Giỏ hàng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count badge-cart" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer-overlay">
+    <div class="mobile-drawer">
+      <div class="drawer-header">
+        <a href="../index.html" class="site-logo">
+          <img src="../assets/images/logo.png" alt="JADE" class="site-logo-img" style="height: 38px;" />
+        </a>
+        <button class="drawer-close btn-icon" aria-label="Đóng menu">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link">TRANG CHỦ</a></li>
+          <li class="mobile-nav-item"><a href="products.html" class="mobile-nav-link">SẢN PHẨM</a></li>
+          <li class="mobile-nav-item"><a href="collections.html" class="mobile-nav-link">BỘ SƯU TẬP</a></li>
+          <li class="mobile-nav-item"><a href="stores.html" class="mobile-nav-link active" style="color: var(--color-primary); font-weight: 600;">HỆ THỐNG CỬA HÀNG</a></li>
+          <li class="mobile-nav-item"><a href="shipping.html" class="mobile-nav-link">THÔNG TIN VẬN CHUYỂN</a></li>
+          <li class="mobile-nav-item"><a href="policies.html" class="mobile-nav-link">CHÍNH SÁCH BẢO HÀNH</a></li>
+          <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">CÂU CHUYỆN THƯƠNG HIỆU</a></li>
+          <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">LIÊN HỆ & TƯ VẤN</a></li>
+        </ul>
+      </div>
+      <div class="drawer-footer">
+        <a href="account.html" class="btn btn-primary btn-full btn-sm">Tài Khoản Khách Hàng</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Banner with Background Image (Synchronized with Products page) -->
+    <section class="category-banner-hero" style="background-image: url('../assets/images/product/pb.jpg'); margin-bottom: 0;">
+      <div class="container">
+        <nav class="breadcrumb" style="justify-content: center; margin-bottom: 0.75rem;">
+          <span class="breadcrumb-item"><a href="../index.html" style="color: #DDEAE3;">Trang chủ</a></span>
+          <span class="breadcrumb-separator" style="color: #A3B5AC;">/</span>
+          <span class="breadcrumb-item active" style="color: #FFFFFF;">Hệ Thống Cửa Hàng & Dịch Vụ</span>
+        </nav>
+        <span class="section-subtitle">SHOWROOMS & EXCLUSIVE SERVICES</span>
+        <h1 class="section-title">HỆ THỐNG CỬA HÀNG & DỊCH VỤ KHÁCH HÀNG</h1>
+        <p class="section-desc">Không gian thưởng lãm ngọc quý thượng lưu tại 8 showroom toàn quốc, cùng hệ thống chính sách bảo hành trọn đời và giao nhận hỏa tốc chuyên nghiệp.</p>
+        
+        <!-- Highlights Bar -->
+        <div class="stores-stats-bar">
+          <div class="stores-stat-item">
+            <div class="stores-stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <span class="stores-stat-title">8 Showroom Toàn Quốc</span>
+          </div>
+          <div class="stores-stat-item">
+            <div class="stores-stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <span class="stores-stat-title">Phòng Tiếp Đón VIP</span>
+          </div>
+          <div class="stores-stat-item">
+            <div class="stores-stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <span class="stores-stat-title">Giám Định Tại Chỗ</span>
+          </div>
+          <div class="stores-stat-item">
+            <div class="stores-stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <span class="stores-stat-title">Mở Cửa 7 Ngày / Tuần</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- In-Page Hub Navigation Tabs (Showrooms - Shipping - Warranty) -->
+    <nav class="stores-hub-nav-section" aria-label="Điều hướng dịch vụ cửa hàng">
+      <div class="container">
+        <div class="stores-hub-tabs">
+          <a href="#stores-locator-section" class="stores-hub-tab active" data-target="stores-locator-section">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Hệ Thống 8 Showroom</span>
+          </a>
+          <a href="#stores-shipping-section" class="stores-hub-tab" data-target="stores-shipping-section">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <span>Thông Tin Vận Chuyển</span>
+          </a>
+          <a href="#stores-warranty-section" class="stores-hub-tab" data-target="stores-warranty-section">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+            <span>Chính Sách Bảo Hành & Đổi Trả</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Store Locator & Map Section -->
+    <section id="stores-locator-section" class="section-padding" style="padding-top: 3rem;">
+      <div class="container">
+
+        <!-- Controls: Filters & Search -->
+        <div class="stores-controls">
+          <div class="city-filters" id="city-filters">
+            <button type="button" class="city-filter-btn active" data-city="all">Tất Cả Cửa Hàng (8)</button>
+            <button type="button" class="city-filter-btn" data-city="hanoi">Hà Nội (3)</button>
+            <button type="button" class="city-filter-btn" data-city="hcm">TP. Hồ Chí Minh (3)</button>
+            <button type="button" class="city-filter-btn" data-city="danang">Đà Nẵng (1)</button>
+            <button type="button" class="city-filter-btn" data-city="haiphong">Hải Phòng (1)</button>
+          </div>
+          <div class="store-search-box">
+            <input type="text" id="store-search-input" placeholder="Tìm theo tên đường, quận, TTTM..." />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+        </div>
+
+        <!-- 2-Column Split Layout -->
+        <div class="stores-layout">
+          
+          <!-- Column 1: Store Cards List -->
+          <div class="stores-list-col">
+            <div class="stores-list" id="stores-list-container">
+              <!-- Rendered dynamically by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Column 2: Sticky Google Map View -->
+          <div class="stores-map-col">
+            <div class="stores-map-sticky">
+              <!-- Map Header with Active Store Info -->
+              <div class="map-header-bar" id="map-header-bar">
+                <span class="store-badge badge-flagship" id="map-store-badge" style="margin-bottom: 0.5rem; display: inline-block;">Flagship Boutique</span>
+                <h3 id="map-store-title">JADE Flagship Tràng Tiền Plaza</h3>
+                <p id="map-store-address">Tầng 2, TTTM Tràng Tiền Plaza, 24 Hai Bà Trưng, Hoàn Kiếm, Hà Nội</p>
+                <div class="map-header-actions">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Tr%C3%A0ng+Ti%E1%BB%81n+Plaza,+24+Hai+B%C3%A0+Tr%C6%B0ng,+Ho%C3%A0n+Ki%E1%BA%BFm,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener noreferrer" class="btn-map-dir" id="map-btn-directions">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                    Chỉ Đường Google Maps
+                  </a>
+                  <a href="tel:0988888888" class="btn-map-call" id="map-btn-call">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Hotline: <span id="map-store-phone">0988 888 888</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Interactive Google Map Iframe -->
+              <div class="map-frame-wrapper">
+                <iframe 
+                  id="google-maps-iframe" 
+                  title="Google Maps JADE Showroom"
+                  src="https://maps.google.com/maps?q=Tr%C3%A0ng+Ti%E1%BB%81n+Plaza,+24+Hai+B%C3%A0+Tr%C6%B0ng,+Ho%C3%A0n+Ki%E1%BA%BFm,+H%C3%A0+N%E1%BB%99i&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <!-- Map Footer Bar -->
+              <div class="map-footer-cta">
+                <div class="map-footer-cta-text">
+                  <strong>Giờ tiếp đón:</strong> <span id="map-store-hours">09:30 - 21:30 (Mở cửa tất cả các ngày)</span>
+                </div>
+                <a href="#vip-booking" class="btn btn-outline btn-sm" style="white-space: nowrap;">Đặt Lịch Hẹn VIP &darr;</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- VIP Concierge Experience Section -->
+        <section class="vip-experience-section" id="vip-booking">
+          <div class="vip-grid">
+            
+            <!-- Features Description -->
+            <div>
+              <div style="color: #C5A059; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">TRẢI NGHIỆM THƯỢNG LƯU</div>
+              <h2 style="color: #FAF9F6; font-size: 2rem; margin-bottom: 1.25rem;">ĐẶC QUYỀN TIẾP ĐÓN TẠI SHOWROOM JADE</h2>
+              <p style="color: rgba(250, 249, 246, 0.85); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                Mỗi tác phẩm ngọc cẩm thạch là một báu vật độc bản của thiên nhiên. Tại hệ thống showroom JADE, chúng tôi kiến tạo không gian thưởng ngọc tĩnh lặng, sang trọng chuẩn quý tộc để quý khách tìm thấy chiếc vòng có duyên phận với chính mình.
+              </p>
+
+              <div class="vip-feature-item">
+                <div class="vip-feature-icon">1</div>
+                <div class="vip-feature-text">
+                  <h4>Không Gian Thưởng Trà Thử Ngọc Riêng Tư</h4>
+                  <p>Phòng VIP khép kín, thưởng trà thanh hương trong lúc chuyên viên đưa các mẫu vòng, mặt ngọc quý hiếm để quý khách ướm thử.</p>
+                </div>
+              </div>
+
+              <div class="vip-feature-item">
+                <div class="vip-feature-icon">2</div>
+                <div class="vip-feature-text">
+                  <h4>Kiểm Tra Bằng Kính Hiển Vi Quang Học & Đèn Soi Ngọc</h4>
+                  <p>Trực tiếp quan sát cấu trúc sợi tinh thể ngọc翡翠, kiểm tra độ mọng nước và độ trong suốt dưới ánh sáng chuyên dụng.</p>
+                </div>
+              </div>
+
+              <div class="vip-feature-item">
+                <div class="vip-feature-icon">3</div>
+                <div class="vip-feature-text">
+                  <h4>Khắc Tên & Tùy Biến Bọc Vàng Theo Ý Thích</h4>
+                  <p>Hỗ trợ đo ni tay chuẩn xác tới từng milimet, khắc chữ kỷ niệm và thiết kế bọc vàng 18K/24K riêng theo đơn đặt hàng.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="vip-booking-card">
+              <h3>ĐẶT LỊCH HẸN TIẾP ĐÓN RIÊNG</h3>
+              <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 1.5rem;">
+                Để chu đáo tiếp đón và chuẩn bị các mẫu ngọc theo đúng ni tay & sở thích của quý khách, xin vui lòng đặt lịch trước:
+              </p>
+
+              <form id="store-booking-form">
+                <div class="form-group">
+                  <label class="form-label" for="booking-name">Họ và tên quý khách <span class="required">*</span></label>
+                  <input type="text" id="booking-name" class="form-input" placeholder="Ví dụ: Nguyễn Phương Dung" required />
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="booking-phone">Số điện thoại <span class="required">*</span></label>
+                    <input type="tel" id="booking-phone" class="form-input" placeholder="0912 345 678" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="booking-store">Chọn Showroom <span class="required">*</span></label>
+                    <select id="booking-store" class="form-select" required>
+                      <option value="hn-trangtien">Tràng Tiền Plaza (Hà Nội)</option>
+                      <option value="hn-batrieu">Vincom Bà Triệu (Hà Nội)</option>
+                      <option value="hn-caugiay">Boutique Cầu Giấy (Hà Nội)</option>
+                      <option value="hcm-dongkhoi">Flagship Đồng Khởi (TP.HCM)</option>
+                      <option value="hcm-diamond">Diamond Plaza (TP.HCM)</option>
+                      <option value="hcm-crescent">Crescent Mall (TP.HCM)</option>
+                      <option value="dn-vincom">Vincom Ngô Quyền (Đà Nẵng)</option>
+                      <option value="hp-imperia">Vincom Imperia (Hải Phòng)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="booking-date">Ngày ghé thăm <span class="required">*</span></label>
+                    <input type="date" id="booking-date" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="booking-time">Khung giờ dự kiến <span class="required">*</span></label>
+                    <select id="booking-time" class="form-select" required>
+                      <option value="09:30 - 11:30">Buổi sáng (09:30 - 11:30)</option>
+                      <option value="14:00 - 16:30">Buổi chiều (14:00 - 16:30)</option>
+                      <option value="18:00 - 20:30">Buổi tối (18:00 - 20:30)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="booking-notes">Dòng sản phẩm quý khách quan tâm</label>
+                  <input type="text" id="booking-notes" class="form-input" placeholder="Ví dụ: Vòng bản ni 54, nhẫn ngọc bọc vàng, tư vấn quà tặng..." />
+                </div>
+                <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top: 0.5rem;">
+                  XÁC NHẬN ĐẶT LỊCH TIẾP ĐÓN &rarr;
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         INTEGRATED SECTION: THÔNG TIN VẬN CHUYỂN & GIAO NHẬN HỎA TỐC
+         ==================================================================== -->
+    <section id="stores-shipping-section" class="integrated-section">
+      <div class="container">
+        
+        <div class="integrated-header">
+          <span class="section-subtitle">DỊCH VỤ VẬN CHUYỂN TOÀN QUỐC</span>
+          <h2 class="section-title">THÔNG TIN VẬN CHUYỂN & GIAO NHẬN HỎA TỐC</h2>
+          <p class="section-desc">
+            Mỗi tác phẩm ngọc quý JADE khi xuất xưởng đều được bảo hiểm an toàn 100%, đóng gói bảo mật 3 lớp chuẩn bảo vật và giao hàng miễn phí toàn quốc cho tất cả đơn hàng từ <strong>2.000.000đ</strong>.
+          </p>
+        </div>
+
+        <!-- 4 Badges Grid -->
+        <div class="integrated-badges-grid">
+          <div class="integrated-badge-card">
+            <div class="integrated-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3>Miễn Phí Toàn Quốc</h3>
+            <p>Áp dụng tự động cho mọi đơn hàng từ 2.000.000đ trên khắp 63 tỉnh thành.</p>
+          </div>
+
+          <div class="integrated-badge-card">
+            <div class="integrated-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3>Hỏa Tốc 2 Giờ</h3>
+            <p>Nhận hàng ngay trong ngày tại nội thành Hà Nội & TP. Hồ Chí Minh với chuyên viên riêng.</p>
+          </div>
+
+          <div class="integrated-badge-card">
+            <div class="integrated-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Bảo Hiểm 100% Giá Trị</h3>
+            <p>Cam kết đền bù 100% nếu phát sinh rủi ro nứt vỡ hoặc thất lạc trong quá trình vận chuyển.</p>
+          </div>
+
+          <div class="integrated-badge-card">
+            <div class="integrated-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            </div>
+            <h3>Đồng Kiểm Khi Nhận</h3>
+            <p>Quý khách được mở hộp kiểm tra đúng mẫu mã, soi chất ngọc và chứng thư trước khi nhận.</p>
+          </div>
+        </div>
+
+        <!-- Shipping Rates & Timeline Table -->
+        <div class="integrated-table-wrapper">
+          <table class="integrated-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Khu Vực Giao Hàng</th>
+                <th style="width: 25%;">Hình Thức Vận Chuyển</th>
+                <th style="width: 25%;">Thời Gian Dự Kiến</th>
+                <th style="width: 25%;">Cước Phí Vận Chuyển</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Nội thành Hà Nội & TP.HCM</strong></td>
+                <td>Giao Hỏa Tốc Chuyên Biệt</td>
+                <td><strong>1 - 2 Giờ</strong> (Trong ngày)</td>
+                <td><span style="color: var(--color-primary); font-weight: 600;">MIỄN PHÍ</span> (Đơn &ge; 2tr)<br><small style="color: var(--color-text-muted);">Đơn &lt; 2tr: 35.000đ</small></td>
+              </tr>
+              <tr>
+                <td><strong>Đà Nẵng, Hải Phòng & Các Tỉnh Lớn</strong></td>
+                <td>Chuyển Phát Nhanh Đường Bay</td>
+                <td><strong>24 - 48 Giờ</strong></td>
+                <td><span style="color: var(--color-primary); font-weight: 600;">MIỄN PHÍ</span> (Đơn &ge; 2tr)<br><small style="color: var(--color-text-muted);">Đơn &lt; 2tr: 40.000đ</small></td>
+              </tr>
+              <tr>
+                <td><strong>Tuyến Huyện Xã & Vùng Xa</strong></td>
+                <td>Chuyển Phát Tiêu Chuẩn Bảo Mật</td>
+                <td><strong>2 - 3 Ngày</strong></td>
+                <td><span style="color: var(--color-primary); font-weight: 600;">MIỄN PHÍ</span> (Đơn &ge; 2tr)<br><small style="color: var(--color-text-muted);">Đơn &lt; 2tr: 45.000đ</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Packaging Standards Section -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="font-size: 1.4rem; color: var(--color-heading); margin-bottom: 0.5rem;">Quy Trình Đóng Gói Niêm Phong 3 Lớp Chuẩn Bảo Vật</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; max-width: 600px; margin: 0 auto;">Mỗi tuyệt tác ngọc đều được chăm chút cẩn trọng tuyệt đối từ đôi tay của nghệ nhân đến tận tay người thưởng lãm.</p>
+        </div>
+
+        <div class="packaging-steps-grid">
+          <div class="packaging-step-card">
+            <span class="packaging-step-badge">LỚP 1 &bull; BẢO BỌC</span>
+            <h4>Hộp Gấm Nhung Cao Cấp</h4>
+            <p>Ngọc được đặt trên gối nhung nhung êm ái kèm túi vải lụa tơ tằm, chống mọi ma sát trầy xước bề mặt ngọc.</p>
+          </div>
+
+          <div class="packaging-step-card">
+            <span class="packaging-step-badge">LỚP 2 &bull; CHỐNG VA ĐẬP</span>
+            <h4>Túi Đệm Khí 5 Lớp</h4>
+            <p>Lớp bóng khí đàn hồi cao bọc kín 360 độ, triệt tiêu xung lực chấn động và kháng ẩm hoàn toàn trong suốt hành trình.</p>
+          </div>
+
+          <div class="packaging-step-card">
+            <span class="packaging-step-badge">LỚP 3 &bull; NIÊM PHONG</span>
+            <h4>Thùng Carton & Tem Hologram</h4>
+            <p>Thùng carton cứng gia cố kèm tem niêm phong phản quang an ninh JADE. Quý khách từ chối nhận nếu tem bị rách.</p>
+          </div>
+        </div>
+
+        <!-- Integrated CTA Box -->
+        <div class="integrated-cta-box">
+          <div>
+            <h3>Cần Tra Cứu Vận Đơn Hoặc Giao Hẹn Giờ Riêng Biệt?</h3>
+            <p>Quý khách có thể kiểm tra lộ trình bưu phẩm trực tuyến hoặc xem đầy đủ chính sách bồi thường tại trang vận chuyển chuyên biệt.</p>
+          </div>
+          <a href="shipping.html" class="btn btn-secondary" style="white-space: nowrap;">XEM TRANG VẬN CHUYỂN &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         INTEGRATED SECTION: CHÍNH SÁCH BẢO HÀNH & ĐỔI TRẢ TRỌN ĐỜI
+         ==================================================================== -->
+    <section id="stores-warranty-section" class="integrated-section">
+      <div class="container">
+        
+        <div class="integrated-header">
+          <span class="section-subtitle">CAM KẾT CHẤT LƯỢNG & ĐẶC QUYỀN KHÁCH HÀNG</span>
+          <h2 class="section-title">CHÍNH SÁCH BẢO HÀNH & THẨM ĐỊNH NGỌC QUÝ</h2>
+          <p class="section-desc">
+            JADE cam kết 100% ngọc tự nhiên chuẩn Type A, đính kèm chứng thư giám định đá quý độc lập và chính sách bảo dưỡng làm bóng trọn đời tại tất cả 8 showroom trên toàn quốc.
+          </p>
+        </div>
+
+        <!-- 4 Pillars Grid -->
+        <div class="warranty-pillars-grid">
+          <div class="warranty-pillar-card">
+            <div class="warranty-pillar-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <div>
+              <h3>100% Ngọc Type A Tự Nhiên Thiên Nhiên</h3>
+              <p>JADE tuyệt đối nói không với ngọc tẩm màu nhân tạo hay ép keo polymer (Type B, C). Cam kết bồi thường <strong>100.000.000đ</strong> và hoàn tiền 200% nếu phát hiện ngọc xử lý hóa chất.</p>
+            </div>
+          </div>
+
+          <div class="warranty-pillar-card">
+            <div class="warranty-pillar-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div>
+              <h3>Chứng Thư Giám Định Đá Quý Độc Lập</h3>
+              <p>Mỗi món trang sức ngọc xuất xưởng đều có Giấy Chứng Thư Giám Định gốc từ các trung tâm uy tín bậc nhất Việt Nam (PNJ Lab, SJC, VGC, LIU) với mã số tra cứu minh bạch toàn quốc.</p>
+            </div>
+          </div>
+
+          <div class="warranty-pillar-card">
+            <div class="warranty-pillar-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+            </div>
+            <div>
+              <h3>Spa & Đánh Bóng Làm Mới Trọn Đời</h3>
+              <p>Miễn phí vệ sinh làm sạch bằng sóng siêu âm, kiểm tra ổ chấu vàng đính đá và đánh bóng ngọc mọng nước trọn đời cho toàn bộ khách hàng tại bất kỳ showroom nào của JADE.</p>
+            </div>
+          </div>
+
+          <div class="warranty-pillar-card">
+            <div class="warranty-pillar-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5"></path><path d="M4 20L21 3"></path><path d="M21 16v5h-5"></path><path d="M15 15l6 6"></path><path d="M4 4l5 5"></path></svg>
+            </div>
+            <div>
+              <h3>Đổi Size 48 Giờ & Thu Đổi Minh Bạch</h3>
+              <p>Hỗ trợ đổi size miễn phí trong 48 giờ nếu đeo không vừa ni tay. Chính sách thu đổi quay đầu rõ ràng: thu lại 80% - 85% giá trị khi nâng cấp sản phẩm ngọc giá trị cao hơn; 70% khi thu hồi tiền mặt.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-Step Warranty Process at Showrooms -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="font-size: 1.4rem; color: var(--color-heading); margin-bottom: 0.5rem;">Quy Trình Tiếp Nhận Dịch Vụ Bảo Hành Nhanh Chóng</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; max-width: 600px; margin: 0 auto;">Quý khách chỉ cần mang sản phẩm hoặc đọc số điện thoại đặt hàng tại bất kỳ chi nhánh showroom JADE.</p>
+        </div>
+
+        <div class="warranty-process-grid">
+          <div class="warranty-process-card">
+            <div class="warranty-process-num">1</div>
+            <h4>Tiếp Nhận & Kiểm Tra Quang Học</h4>
+            <p>Chuyên gia ngọc học soi độ thấu quang, kiểm tra tình trạng viền vàng/bạc và lắng nghe nhu cầu chăm sóc của quý khách.</p>
+          </div>
+
+          <div class="warranty-process-card">
+            <div class="warranty-process-num">2</div>
+            <h4>Spa Siêu Âm & Phục Hồi Độ Bóng</h4>
+            <p>Làm sạch vi hạt bụi trong thớ ngọc bằng sóng siêu âm cao tần và đánh bóng bằng sáp ong tự nhiên trong 15 – 30 phút tại chỗ.</p>
+          </div>
+
+          <div class="warranty-process-card">
+            <div class="warranty-process-num">3</div>
+            <h4>Bàn Giao & Tặng Kèm Khăn Lau</h4>
+            <p>Bàn giao tác phẩm sáng ngời như thuở ban đầu, gửi kèm cẩm nang dưỡng ngọc và hộp bảo quản nhung cao cấp.</p>
+          </div>
+        </div>
+
+        <!-- Integrated CTA Box -->
+        <div class="integrated-cta-box">
+          <div>
+            <h3>Quý Khách Muốn Tìm Hiểu Thêm Về Quyền Lợi VIP & Đổi Trả?</h3>
+            <p>Xem chi tiết chính sách thẻ thành viên Silver, Gold, Diamond và bảng câu hỏi thường gặp về cách phân biệt ngọc thật giả.</p>
+          </div>
+          <a href="policies.html#warranty" class="btn btn-secondary" style="white-space: nowrap;">XEM CHÍNH SÁCH BẢO HÀNH &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          
+          <!-- Column 1: Brand Info -->
+          <div class="footer-col-brand">
+            <a href="../index.html" class="footer-logo" style="display: inline-block; margin-bottom: 1.25rem;">
+              <img src="../assets/images/logo.png" alt="JADE Natural Gemstone Jewelry" style="height: 48px; border-radius: 4px; background: #FAF9F6; padding: 4px 8px; max-width: 190px; object-fit: contain;" />
+            </a>
+            <p class="footer-desc">
+              JADE – Thương hiệu trang sức ngọc thiên nhiên cao cấp. Vẻ đẹp tự nhiên, lưu giữ nét thanh tao vượt thời gian. Mang đến sự tự tin, an lành và trường thọ viên mãn.
+            </p>
+          </div>
+
+          <!-- Column 2: Explore Links -->
+          <div>
+            <h3 class="footer-title">KHÁM PHÁ</h3>
+            <ul class="footer-nav-list">
+              <li><a href="../index.html" class="footer-nav-link">Trang Chủ</a></li>
+              <li><a href="products.html" class="footer-nav-link">Tất Cả Sản Phẩm</a></li>
+              <li><a href="products.html?cat=vong-ban" class="footer-nav-link">Vòng Bản</a></li>
+              <li><a href="products.html?cat=vong-hat" class="footer-nav-link">Vòng Hạt</a></li>
+              <li><a href="collections.html" class="footer-nav-link">Bộ Sưu Tập Độc Quyền</a></li>
+              <li><a href="about.html" class="footer-nav-link">Câu Chuyện Thương Hiệu</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Customer Care -->
+          <div>
+            <h3 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h3>
+            <ul class="footer-nav-list">
+              <li><a href="policies.html#guide" class="footer-nav-link">Hướng Dẫn Đo Ni Vòng</a></li>
+              <li><a href="shipping.html" class="footer-nav-link" style="color: #C5A059; font-weight: 600;">Thông Tin Vận Chuyển & Giao Nhận</a></li>
+              <li><a href="policies.html#return" class="footer-nav-link">Chính Sách Đổi Trả & Thu Đổi</a></li>
+              <li><a href="policies.html#warranty" class="footer-nav-link">Chính Sách Bảo Hành & Giám Định</a></li>
+              <li><a href="stores.html" class="footer-nav-link" style="color: #C5A059; font-weight: 600;">Hệ Thống Cửa Hàng & Google Map</a></li>
+              <li><a href="contact.html" class="footer-nav-link">Liên Hệ Tư Vấn Trực Tiếp</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact & Showroom -->
+          <div>
+            <h3 class="footer-title">SHOWROOM TIÊU BIỂU</h3>
+            <div class="footer-contact-list">
+              <div class="contact-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Hà Nội: Tràng Tiền Plaza, 24 Hai Bà Trưng, Hoàn Kiếm</span>
+              </div>
+              <div class="contact-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>TP.HCM: 68 Đồng Khởi, Phường Bến Nghé, Quận 1</span>
+              </div>
+              <div class="contact-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Hotline Toàn Quốc: 1900 8899 / 0988 888 888</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 JADE – NATURAL GEMSTONE JEWELRY. Vẻ đẹp tự nhiên, giá trị vượt thời gian.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Trang Chủ</a>
+          <a href="stores.html">Cửa Hàng</a>
+          <a href="shipping.html">Vận Chuyển</a>
+          <a href="policies.html">Chính Sách</a>
+          <a href="contact.html">Liên Hệ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    (function initStoresPage() {
+      const stores = (window.JADE_DATA && window.JADE_DATA.stores) || [];
+      const listContainer = document.getElementById('stores-list-container');
+      const filterBtns = document.querySelectorAll('.city-filter-btn');
+      const searchInput = document.getElementById('store-search-input');
+      const iframe = document.getElementById('google-maps-iframe');
+      const storeBadge = document.getElementById('map-store-badge');
+      const storeTitle = document.getElementById('map-store-title');
+      const storeAddress = document.getElementById('map-store-address');
+      const storePhone = document.getElementById('map-store-phone');
+      const storeHours = document.getElementById('map-store-hours');
+      const btnDirections = document.getElementById('map-btn-directions');
+      const btnCall = document.getElementById('map-btn-call');
+      const bookingStoreSelect = document.getElementById('booking-store');
+
+      let currentCity = 'all';
+      let searchQuery = '';
+      let activeStoreId = stores[0] ? stores[0].id : '';
+
+      function renderStores() {
+        const filtered = stores.filter(store => {
+          const matchCity = currentCity === 'all' || store.city === currentCity;
+          const q = searchQuery.toLowerCase().trim();
+          const matchSearch = !q || 
+            store.name.toLowerCase().includes(q) ||
+            store.address.toLowerCase().includes(q) ||
+            store.cityName.toLowerCase().includes(q) ||
+            (store.phone && store.phone.includes(q));
+          return matchCity && matchSearch;
+        });
+
+        if (filtered.length === 0) {
+          listContainer.innerHTML = `
+            <div style="text-align: center; padding: 3rem 1.5rem; background: #FFFFFF; border: 1px dashed var(--color-border); border-radius: var(--radius-md);">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--color-text-muted); margin-bottom: 0.75rem;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+              <h3 style="font-size: 1.1rem; color: var(--color-heading); margin-bottom: 0.25rem;">Không tìm thấy showroom phù hợp</h3>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">Vui lòng thử lại với từ khóa khác hoặc bấm chọn "Tất Cả Cửa Hàng".</p>
+              <button type="button" class="btn btn-outline btn-sm" id="btn-reset-filters">Xem Tất Cả 8 Cửa Hàng</button>
+            </div>
+          `;
+          document.getElementById('btn-reset-filters')?.addEventListener('click', () => {
+            currentCity = 'all';
+            searchQuery = '';
+            if (searchInput) searchInput.value = '';
+            filterBtns.forEach(b => b.classList.toggle('active', b.dataset.city === 'all'));
+            renderStores();
+          });
+          return;
+        }
+
+        listContainer.innerHTML = filtered.map(store => {
+          const isActive = store.id === activeStoreId;
+          const badgeClass = store.badge.includes('Flagship') ? 'badge-flagship' : 'badge-showroom';
+          const servicesHtml = (store.services || []).map(s => `<span class="store-service-tag">${s}</span>`).join('');
+
+          return `
+            <article class="store-card ${isActive ? 'active' : ''}" data-store-id="${store.id}" tabindex="0" role="button" aria-pressed="${isActive}">
+              <div class="store-card-header">
+                <div>
+                  <span class="store-badge ${badgeClass}">${store.badge}</span>
+                  <h3 class="store-name">${store.name}</h3>
+                </div>
+              </div>
+
+              <div class="store-info-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>${store.address}</span>
+              </div>
+
+              <div class="store-info-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Hotline: <strong>${store.phone}</strong></span>
+              </div>
+
+              <div class="store-info-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Giờ mở cửa: ${store.hours}</span>
+              </div>
+
+              <div class="store-services">
+                ${servicesHtml}
+              </div>
+
+              <div class="store-actions">
+                <button type="button" class="btn btn-primary btn-sm btn-select-store" data-store-id="${store.id}">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                  Xem Bản Đồ
+                </button>
+                <a href="${store.googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" onclick="event.stopPropagation();">
+                  Chỉ Đường &rarr;
+                </a>
+                <a href="tel:${store.tel || store.phone.replace(/\\s/g, '')}" class="btn btn-outline btn-sm" style="padding: 0.35rem 0.65rem;" title="Gọi hotline" onclick="event.stopPropagation();">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </a>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        // Bind click events on cards
+        listContainer.querySelectorAll('.store-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const id = card.dataset.storeId;
+            selectStore(id);
+          });
+        });
+      }
+
+      function selectStore(storeId) {
+        const store = stores.find(s => s.id === storeId);
+        if (!store) return;
+
+        activeStoreId = storeId;
+
+        // Update active class on store cards
+        listContainer.querySelectorAll('.store-card').forEach(card => {
+          const match = card.dataset.storeId === storeId;
+          card.classList.toggle('active', match);
+          card.setAttribute('aria-pressed', match ? 'true' : 'false');
+        });
+
+        // Update Google Maps embed iframe
+        if (iframe && store.mapEmbedUrl) {
+          iframe.src = store.mapEmbedUrl;
+        }
+
+        // Update Map Header Info
+        if (storeBadge) {
+          storeBadge.textContent = store.badge;
+          storeBadge.className = `store-badge ${store.badge.includes('Flagship') ? 'badge-flagship' : 'badge-showroom'}`;
+        }
+        if (storeTitle) storeTitle.textContent = store.name;
+        if (storeAddress) storeAddress.textContent = store.address;
+        if (storePhone) storePhone.textContent = store.phone;
+        if (storeHours) storeHours.textContent = store.hours;
+        if (btnDirections) btnDirections.href = store.googleMapsUrl;
+        if (btnCall) {
+          btnCall.href = `tel:${store.tel || store.phone.replace(/\\s/g, '')}`;
+        }
+        if (bookingStoreSelect) {
+          bookingStoreSelect.value = store.id;
+        }
+
+        // On mobile, smoothly scroll map into view if clicked from list
+        if (window.innerWidth <= 992) {
+          const mapEl = document.querySelector('.stores-map-sticky');
+          if (mapEl) {
+            mapEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+
+      // Filter click listeners
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCity = btn.dataset.city || 'all';
+          renderStores();
+
+          // Auto select first visible store
+          const firstVisible = stores.find(s => currentCity === 'all' || s.city === currentCity);
+          if (firstVisible) {
+            selectStore(firstVisible.id);
+          }
+        });
+      });
+
+      // Search input listener
+      if (searchInput) {
+        let debounceTimer;
+        searchInput.addEventListener('input', (e) => {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+            searchQuery = e.target.value;
+            renderStores();
+          }, 200);
+        });
+      }
+
+      // VIP Booking form submit
+      const bookingForm = document.getElementById('store-booking-form');
+      if (bookingForm) {
+        // Set default minimum date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const yyyy = tomorrow.getFullYear();
+        const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+        const dd = String(tomorrow.getDate()).padStart(2, '0');
+        const dateInput = document.getElementById('booking-date');
+        if (dateInput) {
+          dateInput.min = `${yyyy}-${mm}-${dd}`;
+          dateInput.value = `${yyyy}-${mm}-${dd}`;
+        }
+
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('booking-name').value.trim();
+          const phone = document.getElementById('booking-phone').value.trim();
+          const storeName = bookingStoreSelect.options[bookingStoreSelect.selectedIndex]?.text || 'Showroom JADE';
+          const date = document.getElementById('booking-date').value;
+          const time = document.getElementById('booking-time').value;
+
+          showToast(
+            'Đặt Lịch Thành Công!', 
+            `JADE đã ghi nhận lịch hẹn của quý khách ${name} tại ${storeName} vào ${time} ngày ${date}. Quản lý showroom sẽ liên hệ xác nhận trong 15 phút.`, 
+            'success'
+          );
+          bookingForm.reset();
+        });
+      }
+
+      // Initial render
+      renderStores();
+      if (stores.length > 0) {
+        selectStore(stores[0].id);
+      }
+
+      // Hub Tabs smooth scroll & active toggle
+      const hubTabs = document.querySelectorAll('.stores-hub-tab');
+      hubTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = tab.getAttribute('data-target');
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            hubTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const navBarHeight = 130;
+            const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navBarHeight;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Scrollspy to auto-highlight active hub tab
+      const hubSectionIds = ['stores-locator-section', 'stores-shipping-section', 'stores-warranty-section'];
+      window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset;
+        hubSectionIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+            const top = el.offsetTop - 160;
+            const height = el.offsetHeight;
+            if (scrollY >= top && scrollY < top + height) {
+              hubTabs.forEach(tab => {
+                if (tab.getAttribute('data-target') === id) {
+                  tab.classList.add('active');
+                } else {
+                  tab.classList.remove('active');
+                }
+              });
+            }
+          }
+        });
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
