@@ -1,0 +1,29 @@
+.ny-grid--account { grid-template-columns: minmax(290px, .82fr) minmax(0, 1.4fr); }
+.ny-profile-form { display: grid; justify-items: start; gap: 13px; }
+.ny-profile-form .ny-field { width: 100%; }
+.ny-profile-form .ny-form-message { width: 100%; margin: 0; }
+.ny-profile-form [data-state="saved"] { background: var(--ny-tint); color: var(--ny-green); }
+
+.ny-account-heading { margin-bottom: 9px; }
+.ny-account-heading .ny-panel-heading { margin-bottom: 0; }
+.ny-account-orders { padding: 0; list-style: none; }
+.ny-account-orders:not(:empty) { margin-top: 17px; border-top: 1px solid var(--ny-border); }
+.ny-account-order { display: grid; grid-template-columns: minmax(0, 1fr) auto auto auto; gap: 6px 13px; align-items: center; padding: 15px 0; }
+.ny-account-order + .ny-account-order { border-top: 1px solid var(--ny-border); }
+.ny-account-order:last-child { padding-bottom: 3px; }
+.ny-account-order__meta { display: grid; justify-items: start; }
+.ny-account-order__code { color: var(--ny-green); font-size: .86rem; font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
+.ny-account-order__code:hover { text-decoration: underline; }
+.ny-account-order__price { white-space: nowrap; font-size: .88rem; }
+.ny-account-order .ny-text-link { font-size: .82rem; white-space: nowrap; }
+.ny-account-empty { border: 1px dashed var(--ny-border); border-radius: 8px; margin-top: 16px; padding: 30px 12px; }
+
+@media (max-width: 960px) {
+  .ny-grid--account { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 550px) {
+  .ny-account-order { grid-template-columns: minmax(0, 1fr) auto; padding-block: 12px; }
+  .ny-account-order__price { grid-column: 1; }
+  .ny-account-order :is(.ny-status, .ny-text-link) { justify-self: end; }
+}
