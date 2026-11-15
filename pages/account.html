@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tài khoản | Jade</title>
+  <link rel="stylesheet" href="../css/pages/cart-checkout.css">
+  <link rel="stylesheet" href="../css/pages/account.css">
+  <script src="../js/orders.js" defer></script>
+  <script src="../js/account.js" defer></script>
+</head>
+<body class="ny-workflow" data-page="account">
+  <a class="ny-skip" href="#main">Đến nội dung chính</a>
+  <header class="ny-site-header" data-site-header></header>
+
+  <main class="ny-wrap ny-main" id="main">
+    <div class="ny-page-head">
+      <h1>Tài khoản</h1>
+      <p class="ny-muted">Thông tin nhận hàng và đơn đã đặt được lưu trên trình duyệt này.</p>
+    </div>
+
+    <noscript><p class="ny-panel">Hãy bật JavaScript để xem thông tin tài khoản.</p></noscript>
+
+    <div class="ny-grid ny-grid--account">
+      <section class="ny-panel" aria-labelledby="profile-title">
+        <div class="ny-panel-heading">
+          <span class="ny-tile-icon" data-icon="account" aria-hidden="true"></span>
+          <h2 id="profile-title">Thông tin nhận hàng</h2>
+        </div>
+        <form class="ny-profile-form" id="profile-form" novalidate>
+          <div class="ny-field">
+            <label for="profile-name">Họ và tên <span aria-hidden="true">*</span></label>
+            <input id="profile-name" name="name" autocomplete="name" maxlength="100" required aria-describedby="profile-name-error">
+            <p class="ny-field-error" id="profile-name-error"></p>
+          </div>
+          <div class="ny-field">
+            <label for="profile-phone">Số điện thoại <span aria-hidden="true">*</span></label>
+            <input type="tel" id="profile-phone" name="phone" autocomplete="tel" maxlength="24" required aria-describedby="profile-phone-error">
+            <p class="ny-field-error" id="profile-phone-error"></p>
+          </div>
+          <div class="ny-field">
+            <label for="profile-address">Địa chỉ mặc định <span aria-hidden="true">*</span></label>
+            <textarea id="profile-address" name="address" autocomplete="street-address" rows="2" maxlength="240" required aria-describedby="profile-address-error"></textarea>
+            <p class="ny-field-error" id="profile-address-error"></p>
+          </div>
+          <button class="ny-button" type="submit">Lưu thông tin</button>
+          <p class="ny-form-message" data-profile-message role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="ny-panel" aria-labelledby="orders-title">
+        <div class="ny-heading-line ny-account-heading">
+          <div class="ny-panel-heading">
+            <span class="ny-tile-icon" data-icon="box" aria-hidden="true"></span>
+            <h2 id="orders-title">Lịch sử đơn hàng</h2>
+          </div>
+          <span class="ny-count" data-orders-count></span>
+        </div>
+        <ul class="ny-account-orders" data-account-orders></ul>
+        <div class="ny-empty ny-account-empty" data-account-empty hidden>
+          <p>Bạn chưa có đơn hàng trên trình duyệt này.</p>
+          <a class="ny-button ny-button--secondary" href="../index.html" data-link="home">Tiếp tục mua sắm</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="ny-site-footer" data-site-footer></footer>
+</body>
+</html>

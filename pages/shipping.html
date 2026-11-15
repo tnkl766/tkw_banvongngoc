@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chính sách vận chuyển | Jade</title>
+  <link rel="stylesheet" href="../css/pages/cart-checkout.css">
+  <script src="../js/orders.js" defer></script>
+</head>
+<body class="ny-workflow" data-page="shipping">
+  <a class="ny-skip" href="#main">Đến nội dung chính</a>
+  <header class="ny-site-header" data-site-header></header>
+
+  <main class="ny-wrap ny-main" id="main">
+    <div class="ny-page-head">
+      <a class="ny-back" href="checkout.html" data-link="checkout"><span aria-hidden="true">‹</span> Về thanh toán</a>
+      <h1>Chính sách vận chuyển</h1>
+      <p class="ny-muted">Thời gian giao dự kiến tính từ khi đơn hàng được xác nhận.</p>
+    </div>
+
+    <div class="ny-grid ny-grid--shipping">
+      <section class="ny-panel ny-rate" aria-labelledby="standard-title">
+        <span class="ny-tile-icon" data-icon="truck" aria-hidden="true"></span>
+        <h2 id="standard-title">Giao tiêu chuẩn</h2>
+        <p class="ny-rate__price" data-shipping-price="standard"></p>
+        <p class="ny-rate__time"><span data-icon="clock" aria-hidden="true"></span><span data-shipping-time="standard">Dự kiến 2–4 ngày làm việc</span></p>
+        <div class="ny-rate__note">Miễn phí giao hàng cho đơn từ <strong data-free-shipping></strong>.</div>
+      </section>
+      <section class="ny-panel ny-rate" aria-labelledby="express-title">
+        <span class="ny-tile-icon" data-icon="clock" aria-hidden="true"></span>
+        <h2 id="express-title">Giao hỏa tốc</h2>
+        <p class="ny-rate__price" data-shipping-price="express"></p>
+        <p class="ny-rate__time"><span data-icon="clock" aria-hidden="true"></span><span data-shipping-time="express">Dự kiến trong 2 giờ</span></p>
+        <div class="ny-rate__note">Phí hỏa tốc áp dụng theo mỗi đơn hàng.</div>
+      </section>
+    </div>
+
+    <section class="ny-panel ny-faq" aria-labelledby="shipping-faq-title">
+      <h2 id="shipping-faq-title">Câu hỏi thường gặp</h2>
+      <details>
+        <summary>Ngưỡng miễn phí vận chuyển được tính thế nào?</summary>
+        <p>Tổng tiền sản phẩm trước phí vận chuyển từ <strong data-free-shipping></strong> được miễn phí khi chọn giao tiêu chuẩn.</p>
+      </details>
+      <details>
+        <summary>Tôi theo dõi đơn hàng ở đâu?</summary>
+        <p>Mở <a class="ny-text-link" href="account.html" data-link="account">Tài khoản</a>, vào Lịch sử đơn hàng và chọn đơn bạn cần xem.</p>
+      </details>
+      <details>
+        <summary>Tôi cần đổi địa chỉ sau khi đã đặt hàng thì làm thế nào?</summary>
+        <p>Liên hệ Jade qua <a class="ny-text-link" href="tel:0909123456">0909 123 456</a> và cung cấp mã đơn để được hỗ trợ.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="ny-site-footer" data-site-footer></footer>
+</body>
+</html>
