@@ -1,0 +1,111 @@
+/* ==========================================================================
+   JADE - NATURAL GEMSTONE JEWELRY
+   DESIGN TOKENS & CSS VARIABLES
+   ========================================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --color-bg-primary: #FAF9F6;      /* Trắng kem - Main Background */
+  --color-bg-surface: #FFFFFF;      /* Trắng - Cards, Container */
+  --color-bg-subtle: #DDEAE3;       /* Xanh ngọc nhạt - Accent / Pill */
+  --color-bg-subtle-light: #EFF6F2; /* Xanh ngọc siêu nhạt */
+  --color-primary: #355B4A;         /* Xanh rêu - Button, CTA */
+  --color-primary-hover: #2B4C3E;   /* Xanh rêu đậm khi hover */
+  --color-heading: #243C32;         /* Xanh đậm - Headings, Footer, Luxury tone */
+  --color-heading-dark: #192C24;    /* Xanh đậm nhất */
+  --color-accent: #C6A66B;          /* Vàng champagne - Highlight, badge, star */
+  --color-accent-hover: #B59355;    /* Vàng champagne hover */
+  --color-text: #666666;            /* Xám chữ - Body */
+  --color-text-dark: #333333;       /* Xám đậm - Secondary text */
+  --color-text-light: #8E8E8E;      /* Xám nhạt - Metadata, SKU */
+  --color-text-muted: #6B7280;      /* Xám trung tính - Muted text */
+  --color-border: #E8E6E0;          /* Xám nhạt - Divider, Border */
+  --color-border-subtle: #F0EEE9;   /* Border mờ */
+  
+  /* State Colors */
+  --color-success: #2E7D32;
+  --color-error: #D32F2F;
+  --color-warning: #ED6C02;
+  --color-info: #0288D1;
+  --color-sale: #B73225;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.844rem;    /* 13.5px */
+  --font-size-base: 0.938rem;  /* 15px */
+  --font-size-md: 1.063rem;    /* 17px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.5rem;      /* 24px */
+  --font-size-2xl: 1.875rem;   /* 30px */
+  --font-size-3xl: 2.25rem;    /* 36px */
+  --font-size-4xl: 3rem;       /* 48px */
+  --font-size-hero: 3.5rem;    /* 56px */
+
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.8;
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Spacing */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4.5rem;   /* 72px */
+  --space-4xl: 6rem;     /* 96px */
+
+  /* Layout & Containers */
+  --container-max: 1280px;
+  --container-wide: 1400px;
+  --container-narrow: 960px;
+  --container-padding: 1.5rem;
+
+  /* Header & Navigation */
+  --header-height: 80px;
+  --header-height-mobile: 66px;
+  --announcement-height: 38px;
+
+  /* Borders & Radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 6px rgba(36, 60, 50, 0.04);
+  --shadow-md: 0 6px 18px rgba(36, 60, 50, 0.08);
+  --shadow-lg: 0 12px 32px rgba(36, 60, 50, 0.12);
+  --shadow-search: 0 12px 35px rgba(36, 60, 50, 0.15);
+  --shadow-card: 0 4px 14px rgba(36, 60, 50, 0.05);
+  --shadow-dropdown: 0 16px 40px rgba(36, 60, 50, 0.14);
+
+  /* Transitions */
+  --transition-fast: 180ms ease;
+  --transition-base: 280ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-slow: 450ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Z-Indices */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-header: 500;
+  --z-drawer: 800;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}

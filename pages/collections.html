@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bộ Sưu Tập Độc Quyền | JADE – Natural Gemstone Jewelry</title>
+  <meta name="description" content="Khám phá các bộ sưu tập trang sức ngọc thiên nhiên độc bản theo phong cách Lookbook nghệ thuật từ JADE.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .collections-hero {
+      position: relative;
+      background-color: var(--color-heading-dark, #192C24);
+      background-image: url('../assets/images/product/pb.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #FFFFFF;
+      padding: 5.5rem 0;
+      text-align: center;
+    }
+    .collections-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(25, 44, 36, 0.72);
+      z-index: 1;
+    }
+    .collections-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .collections-hero .section-subtitle {
+      color: var(--color-accent, #C5A059);
+    }
+    .collections-hero h1 {
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+    }
+    .collections-hero p {
+      color: #DDEAE3;
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    
+    .collection-row-card {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+    .collection-row-card:nth-child(even) {
+      grid-template-columns: 1fr 1.2fr;
+    }
+    .collection-row-card:nth-child(even) .col-img-box {
+      order: 2;
+    }
+    .col-img-box {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      box-shadow: var(--shadow-md);
+    }
+    .col-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .collection-row-card:hover .col-img-box img {
+      transform: scale(1.04);
+    }
+    .col-text-box .section-subtitle { margin-bottom: 0.5rem; }
+    .col-title { font-size: 2.2rem; margin-bottom: 1rem; }
+    .col-story { font-size: 1.05rem; line-height: 1.8; color: var(--color-text); margin-bottom: 1.75rem; }
+
+    @media (max-width: 900px) {
+      .collection-row-card, .collection-row-card:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .collection-row-card:nth-child(even) .col-img-box {
+        order: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>KHÁM PHÁ VẺ ĐẸP NGỌC QUÝ TỰ NHIÊN</span>
+    <span class="highlight">&bull;</span>
+    <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 2.000.000Đ</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <button class="mobile-toggle" aria-label="Mở menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="../index.html" class="site-logo" title="JADE Natural Gemstone Jewelry"><img src="../assets/images/logo.png" alt="JADE Natural Gemstone Jewelry" class="site-logo-img" /></a>
+
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">SẢN PHẨM</a></li>
+          <li class="nav-item active"><a href="collections.html" class="nav-link">BỘ SƯU TẬP</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">CÂU CHUYỆN THƯƠNG HIỆU</a></li>
+          <li class="nav-item"><a href="stores.html" class="nav-link">CỬA HÀNG</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="search.html" class="action-btn" title="Tìm kiếm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+        <a href="account.html" class="action-btn" title="Tài khoản"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+        <a href="wishlist.html" class="action-btn" title="Yêu thích">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count badge-wishlist" style="display: none;">0</span>
+        </a>
+        <a href="cart.html" class="action-btn" title="Giỏ hàng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count badge-cart" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Collection Hero Banner with Background Image (same luxury banner as products page) -->
+    <section id="collections-hero" class="category-banner-hero collections-hero" style="background-image: url('../assets/images/product/pb.jpg');">
+      <div class="container">
+        <nav class="breadcrumb" style="justify-content: center; margin-bottom: 0.75rem;">
+          <span class="breadcrumb-item"><a href="../index.html" style="color: #DDEAE3;">Trang chủ</a></span>
+          <span class="breadcrumb-separator" style="color: #A3B5AC;">/</span>
+          <span class="breadcrumb-item active" style="color: #FFFFFF;">Bộ Sưu Tập</span>
+        </nav>
+        <span class="section-subtitle">TUYỆT TÁC THEO CHỦ ĐỀ</span>
+        <h1 class="section-title">CÁC BỘ SƯU TẬP JADE</h1>
+        <p class="section-desc">
+          Mỗi bộ sưu tập là một chương tiểu thuyết riêng biệt về đất trời, văn hóa và tay nghề thủ công đỉnh cao của các nghệ nhân ngọc quý.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container" id="collections-list-container">
+        <!-- Dynamically populated from JADE_DATA.collections in data.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none; padding-top:0;">
+        <div>&copy; 2026 JADE – NATURAL GEMSTONE JEWELRY. Vẻ đẹp tự nhiên, giá trị vượt thời gian.</div>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Trang Chủ</a>
+          <a href="stores.html">Cửa Hàng</a>
+          <a href="shipping.html">Vận Chuyển</a>
+          <a href="policies.html">Chính Sách</a>
+          <a href="contact.html">Liên Hệ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Cập nhật ảnh banner hero BST lấy từ ảnh banner trang sản phẩm (productsHero)
+      const heroEl = document.getElementById('collections-hero') || document.querySelector('.category-banner-hero');
+      if (heroEl && window.JADE_DATA && window.JADE_DATA.images && window.JADE_DATA.images.productsHero) {
+        const heroImg = (typeof resolveProductImg === 'function') 
+          ? resolveProductImg(window.JADE_DATA.images.productsHero) 
+          : '../' + window.JADE_DATA.images.productsHero;
+        heroEl.style.backgroundImage = `url('${heroImg}')`;
+      }
+
+      const container = document.getElementById('collections-list-container');
+      if (!container || !window.JADE_DATA) return;
+      container.innerHTML = JADE_DATA.collections.map((col, idx) => {
+        const rawImg = col.bannerImage || col.image;
+        const resolvedImg = (typeof resolveProductImg === 'function') ? resolveProductImg(rawImg) : (rawImg.startsWith('http') ? rawImg : '../' + rawImg);
+        return `
+        <article class="collection-row-card">
+          <div class="col-img-box">
+            <img src="${resolvedImg}" alt="${col.name}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1200&auto=format&fit=crop';" />
+          </div>
+          <div class="col-text-box">
+            <span class="section-subtitle">BỘ SƯU TẬP 0${idx + 1} &bull; ${col.tagline.toUpperCase()}</span>
+            <h2 class="col-title">${col.name}</h2>
+            <p class="col-story">${col.desc}</p>
+            <a href="collection-detail.html?col=${col.id}" class="btn btn-primary">Xem Chi Tiết BST &rarr;</a>
+          </div>
+        </article>
+      `;
+      }).join('');
+    });
+  </script>
+</body>
+</html>
