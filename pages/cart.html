@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng Của Bạn | JADE – Natural Gemstone Jewelry</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    .cart-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2.5rem; align-items: start; }
+    .cart-item-card { display: grid; grid-template-columns: 96px 1fr auto; gap: 1.25rem; align-items: center; background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1rem; }
+    .cart-item-img { width: 96px; height: 96px; border-radius: var(--radius-xs); object-fit: cover; background: #F6F5F2; }
+    .cart-item-title { font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-heading); margin-bottom: 0.25rem; }
+    .cart-item-meta { font-size: var(--font-size-xs); color: var(--color-text-light); margin-bottom: 0.5rem; }
+    .cart-item-price { font-weight: var(--fw-bold); color: var(--color-primary); }
+    .cart-summary-card { background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.75rem; position: sticky; top: 100px; }
+    .shipping-progress-box { background: var(--color-bg-subtle-light); border: 1px solid var(--color-bg-subtle); border-radius: var(--radius-xs); padding: 1rem; margin-bottom: 1.5rem; font-size: var(--font-size-xs); }
+    .progress-track { width: 100%; height: 6px; background: #DDEAE3; border-radius: 999px; overflow: hidden; margin-top: 0.5rem; }
+    .progress-fill { height: 100%; background: var(--color-primary); transition: width 0.4s ease; }
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.85rem; font-size: var(--font-size-sm); }
+    .summary-total { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--color-border); padding-top: 1rem; margin-top: 1rem; margin-bottom: 1.5rem; font-weight: var(--fw-bold); }
+    .summary-total-price { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-heading); }
+    .btn-remove-item { color: var(--color-sale); font-size: var(--font-size-xs); margin-top: 0.5rem; text-decoration: underline; background: none; border: none; cursor: pointer; }
+    @media (max-width: 860px) { .cart-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <span>KHÁM PHÁ VẺ ĐẸP NGỌC QUÝ TỰ NHIÊN</span>
+    <span class="highlight">&bull;</span>
+    <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 2.000.000Đ</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="site-logo"><img src="../assets/images/logo.png" alt="JADE" class="site-logo-img" /></a>
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">SẢN PHẨM</a></li>
+          <li class="nav-item"><a href="collections.html" class="nav-link">BỘ SƯU TẬP</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section-padding">
+    <div class="container">
+      <h1 style="margin-bottom: 2rem;">GIỎ HÀNG CỦA BẠN</h1>
+
+      <div class="cart-layout" id="cart-page-content">
+        <div id="cart-items-container"></div>
+
+        <aside class="cart-summary-card">
+          <h3 style="margin-bottom: 1.25rem;">Tóm Tắt Đơn Hàng</h3>
+          <div class="shipping-progress-box">
+            <div id="progress-text">Đang tính ưu đãi vận chuyển...</div>
+            <div class="progress-track"><div id="progress-bar" class="progress-fill" style="width: 0%;"></div></div>
+          </div>
+          <div class="summary-row"><span>Tạm tính:</span><strong id="subtotal">0đ</strong></div>
+          <div class="summary-row"><span>Phí vận chuyển:</span><strong id="shipping-fee">0đ</strong></div>
+          <div class="summary-total"><span>Tổng cộng:</span><span class="summary-total-price" id="total-price">0đ</span></div>
+
+          <!-- Nút bấm chuyển thẳng sang checkout.html -->
+          <button id="btn-proceed-checkout" class="btn btn-primary btn-full btn-lg">
+            TIẾN HÀNH THANH TOÁN &rarr;
+          </button>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none; padding-top:0;">
+        <div>&copy; 2026 JADE – NATURAL GEMSTONE JEWELRY.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    const FREE_SHIP_LIMIT = 2000000;
+    const STANDARD_SHIP_FEE = 30000;
+
+    function renderJadeCartPage() {
+      const cart = getStoredCart();
+      const container = document.getElementById('cart-items-container');
+      const checkoutBtn = document.getElementById('btn-proceed-checkout');
+
+      if (!cart || cart.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state" style="background:#FFF; border:1px solid var(--color-border); border-radius:var(--radius-sm); padding:3rem 1.5rem; text-align:center;">
+            <h3 class="empty-state-title">Giỏ hàng của bạn đang trống</h3>
+            <p class="empty-state-desc">Hãy khám phá bộ sưu tập ngọc thiên nhiên JADE.</p>
+            <a href="products.html" class="btn btn-primary">KHÁM PHÁ SẢN PHẨM</a>
+          </div>
+        `;
+        document.getElementById('subtotal').textContent = '0đ';
+        document.getElementById('shipping-fee').textContent = '0đ';
+        document.getElementById('total-price').textContent = '0đ';
+        checkoutBtn.disabled = true;
+        checkoutBtn.style.opacity = '0.5';
+        return;
+      }
+
+      checkoutBtn.disabled = false;
+      checkoutBtn.style.opacity = '1';
+
+      container.innerHTML = cart.map(item => {
+        const imgUrl = typeof resolveProductImg === 'function' ? resolveProductImg(item.image) : item.image;
+        const sizeLabel = item.size || item.variant || 'Tiêu chuẩn';
+        return `
+          <div class="cart-item-card">
+            <img src="${imgUrl}" alt="${item.name}" class="cart-item-img" />
+            <div>
+              <h3 class="cart-item-title">${item.name}</h3>
+              <div class="cart-item-meta">Phân loại: ${sizeLabel}</div>
+              <div class="cart-item-price">${formatPrice(item.price * item.quantity)}</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="quantity-stepper">
+                <button type="button" class="stepper-btn" onclick="changeCartQty(${item.id}, '${sizeLabel}', ${item.quantity - 1})">&minus;</button>
+                <input type="text" class="stepper-input" value="${item.quantity}" readonly />
+                <button type="button" class="stepper-btn" onclick="changeCartQty(${item.id}, '${sizeLabel}', ${item.quantity + 1})">&plus;</button>
+              </div>
+              <div><button type="button" class="btn-remove-item" onclick="deleteCartItem(${item.id}, '${sizeLabel}')">Xóa</button></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const shipFee = subtotal >= FREE_SHIP_LIMIT ? 0 : STANDARD_SHIP_FEE;
+      const total = subtotal + shipFee;
+
+      document.getElementById('subtotal').textContent = formatPrice(subtotal);
+      document.getElementById('shipping-fee').textContent = shipFee === 0 ? 'Miễn phí' : formatPrice(shipFee);
+      document.getElementById('total-price').textContent = formatPrice(total);
+
+      const remaining = Math.max(0, FREE_SHIP_LIMIT - subtotal);
+      document.getElementById('progress-text').innerHTML = remaining > 0
+        ? `Mua thêm <strong>${formatPrice(remaining)}</strong> để được miễn phí vận chuyển.`
+        : `Đơn hàng của bạn đã được <strong>MIỄN PHÍ VẬN CHUYỂN</strong>.`;
+      document.getElementById('progress-bar').style.width = `${Math.min(100, (subtotal / FREE_SHIP_LIMIT) * 100)}%`;
+    }
+
+    window.changeCartQty = function(id, size, newQty) {
+      updateCartItemQuantity(id, size, newQty);
+      renderJadeCartPage();
+    };
+
+    window.deleteCartItem = function(id, size) {
+      removeCartItem(id, size);
+      renderJadeCartPage();
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderJadeCartPage();
+      // Bấm vào nút Tiến hành thanh toán sẽ chuyển thẳng sang trang checkout.html
+      document.getElementById('btn-proceed-checkout').addEventListener('click', () => {
+        const cart = getStoredCart();
+        if (cart && cart.length > 0) {
+          window.location.href = 'checkout.html';
+        } else {
+          alert('Giỏ hàng đang trống!');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

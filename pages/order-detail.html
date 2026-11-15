@@ -3,8 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chi tiết đơn hàng | Jade</title>
-  <link rel="stylesheet" href="../css/pages/cart-checkout.css">
+  <title>Chi tiết đơn hàng | JADE – Natural Gemstone Jewelry</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Đã sửa lại đường dẫn CSS chính xác -->
+  <link rel="stylesheet" href="../css/cart-checkout.css">
+  
   <script src="../js/orders.js" defer></script>
 </head>
 <body class="ny-workflow" data-page="order-detail">
@@ -13,6 +20,7 @@
 
   <main class="ny-wrap ny-main" id="main">
     <noscript><p class="ny-panel">Hãy bật JavaScript để xem chi tiết đơn hàng.</p></noscript>
+    
     <section class="ny-panel ny-empty" data-order-missing hidden>
       <span class="ny-tile-icon" data-icon="box" aria-hidden="true"></span>
       <h1>Chưa tìm thấy đơn hàng</h1>
@@ -52,6 +60,7 @@
               <div class="ny-totals__grand"><dt>Tổng thanh toán</dt><dd data-order-value="total"></dd></div>
             </dl>
           </section>
+          
           <section class="ny-panel" aria-labelledby="recipient-title">
             <div class="ny-panel-heading">
               <span class="ny-tile-icon" data-icon="pin" aria-hidden="true"></span>

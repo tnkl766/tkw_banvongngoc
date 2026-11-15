@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tài khoản & Lịch sử đơn hàng | JADE – Natural Gemstone Jewelry</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/cart-checkout.css">
+  <script src="../js/orders.js" defer></script>
+</head>
+<body class="ny-workflow" data-page="account">
+  <a class="ny-skip" href="#main">Đến nội dung chính</a>
+  <header class="ny-site-header" data-site-header></header>
+
+  <main class="ny-wrap ny-main" id="main">
+    <div class="ny-page-head">
+      <a class="ny-back" href="../index.html" data-link="home"><span aria-hidden="true">‹</span> Trang chủ</a>
+      <h1>Tài khoản của bạn</h1>
+    </div>
+
+    <div class="ny-stack" style="gap: 24px;">
+      <!-- Khung thông tin cá nhân tích hợp sẵn -->
+      <section class="ny-panel" aria-labelledby="profile-title">
+        <div class="ny-panel-heading">
+          <span class="ny-tile-icon" data-icon="account" aria-hidden="true"></span>
+          <h2 id="profile-title">Thông tin tài khoản & Địa chỉ mặc định</h2>
+        </div>
+        <form id="account-profile-form" class="ny-fields">
+          <div class="ny-field">
+            <label for="acc-name">Họ và tên</label>
+            <input type="text" id="acc-name" name="name" placeholder="Ví dụ: Nguyễn Thị Hà" maxlength="100">
+          </div>
+          <div class="ny-field">
+            <label for="acc-phone">Số điện thoại</label>
+            <input type="tel" id="acc-phone" name="phone" placeholder="Ví dụ: 0912 345 678" maxlength="20">
+          </div>
+          <div class="ny-field ny-field--wide">
+            <label for="acc-address">Địa chỉ nhận hàng mặc định</label>
+            <input type="text" id="acc-address" name="address" placeholder="Số nhà, tên đường, phường/xã, quận/huyện, TP" maxlength="240">
+          </div>
+          <div class="ny-field ny-field--wide" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px;">
+            <button type="submit" class="ny-button">Lưu thông tin</button>
+            <span class="ny-small ny-muted" id="profile-msg" style="color: var(--ny-green); font-weight: 600;"></span>
+          </div>
+        </form>
+      </section>
+
+      <!-- Khung lịch sử đơn hàng -->
+      <section class="ny-panel" aria-labelledby="orders-title">
+        <div class="ny-panel-heading">
+          <span class="ny-tile-icon" data-icon="bag" aria-hidden="true"></span>
+          <h2 id="orders-title">Lịch sử đơn hàng đã đặt</h2>
+        </div>
+        
+        <div class="ny-empty" data-account-empty hidden>
+          <span class="ny-tile-icon" data-icon="bag" aria-hidden="true"></span>
+          <p>Bạn chưa có đơn hàng nào trong lịch sử.</p>
+          <a class="ny-button" href="../index.html" data-link="home">Khám phá sản phẩm ngay</a>
+        </div>
+
+        <ul class="ny-products" data-account-orders></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="ny-site-footer" data-site-footer></footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        if (!window.NgocYen) return;
+
+        // Xử lý form profile
+        const profileForm = document.getElementById("account-profile-form");
+        const profileMsg = document.getElementById("profile-msg");
+        const currentProfile = window.NgocYen.getProfile();
+
+        if (profileForm) {
+          if (currentProfile.name) profileForm.elements.name.value = currentProfile.name;
+          if (currentProfile.phone) profileForm.elements.phone.value = currentProfile.phone;
+          if (currentProfile.address) profileForm.elements.address.value = currentProfile.address;
+
+          profileForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const updated = {
+              name: profileForm.elements.name.value.trim(),
+              phone: profileForm.elements.phone.value.trim(),
+              address: profileForm.elements.address.value.trim()
+            };
+            window.NgocYen.saveProfile(updated);
+            profileMsg.textContent = "Đã lưu thông tin thành công!";
+            setTimeout(() => { profileMsg.textContent = ""; }, 3000);
+          });
+        }
+
+        // Xử lý danh sách đơn hàng
+        const orders = window.NgocYen.getOrders();
+        const list = document.querySelector("[data-account-orders]");
+        const empty = document.querySelector("[data-account-empty]");
+        
+        if (!orders.length) {
+          if (empty) empty.hidden = false;
+          if (list) list.hidden = true;
+          return;
+        }
+
+        if (empty) empty.hidden = true;
+        if (list) {
+          list.hidden = false;
+          list.replaceChildren(...orders.map(order => {
+            const row = window.NgocYen.make("li", "", "ny-product");
+            row.style.gridTemplateColumns = "minmax(0, 1fr) auto auto";
+            row.style.gap = "16px";
+            row.style.padding = "16px 0";
+
+            const info = document.createElement("div");
+            info.className = "ny-product__copy";
+            info.innerHTML = `
+              <strong>Mã đơn: ${order.id}</strong>
+              <span class="ny-muted ny-small">Đặt ngày: ${window.NgocYen.dateText(order.createdAt)} · ${order.items.length} sản phẩm</span>
+            `;
+
+            const status = document.createElement("span");
+            status.className = "ny-status";
+            status.textContent = window.NgocYen.statusText(order.status);
+
+            const total = document.createElement("strong");
+            total.className = "ny-product__price";
+            const cost = window.NgocYen.orderTotals(order);
+            total.textContent = window.NgocYen.money.format(cost.total);
+
+            const actionWrap = document.createElement("div");
+            actionWrap.style.display = "flex";
+            actionWrap.style.alignItems = "center";
+            actionWrap.style.gap = "12px";
+            actionWrap.append(status, total);
+
+            const link = document.createElement("a");
+            link.href = window.NgocYen.href("order-detail", order.id);
+            link.className = "ny-button ny-button--secondary";
+            link.style.minHeight = "36px";
+            link.style.padding = "4px 12px";
+            link.textContent = "Xem chi tiết";
+
+            row.append(info, actionWrap, link);
+            return row;
+          }));
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>
