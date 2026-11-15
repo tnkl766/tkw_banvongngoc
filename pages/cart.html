@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng Của Bạn | JADE – Natural Gemstone Jewelry</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--color-bg, #FAF9F6); color: var(--color-text, #243C32); }
+    .cart-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2.5rem; align-items: start; padding-bottom: 4rem; }
+    .cart-item-card { display: grid; grid-template-columns: 96px 1fr auto; gap: 1.25rem; align-items: center; background: #FFFFFF; border: 1px solid var(--color-border, #E8E6E0); border-radius: var(--radius-sm, 8px); padding: 1.25rem; margin-bottom: 1rem; }
+    .cart-item-img { width: 96px; height: 96px; border-radius: 6px; object-fit: cover; background: #F6F5F2; }
+    .cart-item-title { font-family: var(--font-heading, 'Playfair Display'), serif; font-size: 1.1rem; color: var(--color-heading, #243C32); margin-bottom: 0.25rem; }
+    .cart-item-meta { font-size: 0.82rem; color: var(--color-text-light, #666); margin-bottom: 0.5rem; }
+    
+    /* Ép số tiền sản phẩm thẳng đứng chuẩn xác */
+    .cart-item-price { font-weight: 700; color: var(--color-primary, #355B4A); font-style: normal !important; font-family: 'Be Vietnam Pro', sans-serif !important; }
+    
+    .cart-summary-card { background: #FFFFFF; border: 1px solid var(--color-border, #E8E6E0); border-radius: var(--radius-sm, 8px); padding: 1.75rem; position: sticky; top: 30px; }
+    .shipping-progress-box { background: #F4F7F0; border: 1px solid #C9D6CA; border-radius: 6px; padding: 1rem; margin-bottom: 1.5rem; font-size: 0.85rem; }
+    .progress-track { width: 100%; height: 6px; background: #DDEAE3; border-radius: 999px; overflow: hidden; margin-top: 0.5rem; }
+    .progress-fill { height: 100%; background: var(--color-primary, #355B4A); transition: width 0.4s ease; }
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.85rem; font-size: 0.9rem; }
+    .summary-row strong { font-style: normal !important; font-family: 'Be Vietnam Pro', sans-serif !important; }
+    
+    .summary-total { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--color-border, #E8E6E0); padding-top: 1rem; margin-top: 1rem; margin-bottom: 1.5rem; font-weight: 700; }
+    
+    /* Ép tổng cộng thẳng đứng chuẩn xác */
+    .summary-total-price { font-family: 'Be Vietnam Pro', sans-serif !important; font-size: 1.5rem; color: var(--color-heading, #243C32); font-style: normal !important; font-weight: 700 !important; }
+    
+    .btn-remove-item { color: var(--color-sale, #D32F2F); font-size: 0.82rem; margin-top: 0.5rem; text-decoration: underline; background: none; border: none; cursor: pointer; padding: 0; }
+    @media (max-width: 860px) { .cart-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>KHÁM PHÁ VẺ ĐẸP NGỌC QUÝ TỰ NHIÊN</span>
+    <span class="highlight">&bull;</span>
+    <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 2.000.000Đ</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="site-logo"><img src="../assets/images/logo.png" alt="JADE" class="site-logo-img" /></a>
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">Trang chủ</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Sản phẩm</a></li>
+          <li class="nav-item"><a href="collections.html" class="nav-link">Bộ sưu tập</a></li>
+          <li class="nav-item"><a href="shipping.html" class="nav-link">Chính sách</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="action-btn" title="Tài khoản"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></a>
+        <a href="cart.html" class="action-btn" title="Giỏ hàng"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="padding-top: 2rem;">
+    <div style="padding-bottom: 1rem; font-size: 0.85rem; color: var(--color-text-light, #666);">
+      <a href="../index.html" style="color: inherit; text-decoration: none;">Trang chủ</a> &nbsp;/&nbsp; <span>Giỏ hàng</span>
+    </div>
+
+    <h1 style="font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 2rem; color: var(--color-heading);">Giỏ hàng của bạn</h1>
+
+    <div class="cart-layout" id="cart-page-content">
+      <div id="cart-items-container"></div>
+
+      <aside class="cart-summary-card">
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-heading);">Tóm Tắt Đơn Hàng</h3>
+        <div class="shipping-progress-box">
+          <div id="progress-text">Đang tính ưu đãi vận chuyển...</div>
+          <div class="progress-track"><div id="progress-bar" class="progress-fill" style="width: 0%;"></div></div>
+        </div>
+        <div class="summary-row"><span>Tạm tính:</span><strong id="subtotal">0 ₫</strong></div>
+        <div class="summary-row"><span>Phí vận chuyển:</span><strong id="shipping-fee">0 ₫</strong></div>
+        <div class="summary-total"><span>Tổng cộng:</span><span class="summary-total-price" id="total-price">0 ₫</span></div>
+
+        <button id="btn-proceed-checkout" class="btn btn-primary btn-full btn-lg">
+          TIẾN HÀNH THANH TOÁN &rarr;
+        </button>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid" style="display:grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2rem; padding: 4rem 0 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div>
+          <h3 style="font-family:var(--font-heading); font-size:1.5rem; color:var(--color-gold, #C6A66B); margin-bottom:1rem; letter-spacing:0.1em;">JADE</h3>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.6; max-width:28ch;">Trang sức ngọc tự nhiên được tuyển chọn, tôn vinh vẻ đẹp tinh tế và khí chất riêng của người phụ nữ. <em>Vẻ đẹp tinh túy từ thiên nhiên.</em></p>
+        </div>
+        <div>
+          <h4 style="font-size:0.9rem; font-weight:600; color:#FFF; margin-bottom:1.2rem; text-transform:uppercase; letter-spacing:0.05em;">Liên kết nhanh</h4>
+          <ul style="list-style:none; padding:0; display:grid; gap:0.6rem; font-size:0.85rem;">
+            <li><a href="../index.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Trang chủ</a></li>
+            <li><a href="products.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Sản phẩm</a></li>
+            <li><a href="collections.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Bộ sưu tập</a></li>
+            <li><a href="shipping.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Chính sách vận chuyển</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:0.9rem; font-weight:600; color:#FFF; margin-bottom:1.2rem; text-transform:uppercase; letter-spacing:0.05em;">Thông tin liên hệ</h4>
+          <ul style="list-style:none; padding:0; display:grid; gap:0.6rem; font-size:0.85rem; color:rgba(255,255,255,0.7);">
+            <li>18 Đồng Khởi, Quận 1, TP.HCM</li>
+            <li>Hotline: 1900 6868</li>
+            <li>hello@jadejewelry.vn</li>
+            <li>09:00 – 21:00, Thứ 2 – CN</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:0.9rem; font-weight:600; color:#FFF; margin-bottom:1.2rem; text-transform:uppercase; letter-spacing:0.05em;">Chính sách & Hỗ trợ</h4>
+          <ul style="list-style:none; padding:0; display:grid; gap:0.6rem; font-size:0.85rem;">
+            <li><a href="shipping.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Hướng dẫn mua hàng</a></li>
+            <li><a href="shipping.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Chính sách bảo hành</a></li>
+            <li><a href="shipping.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Chính sách đổi trả</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding: 1.5rem 0; font-size:0.82rem; color:rgba(255,255,255,0.6);">
+        <div>&copy; 2026 JADE. All Rights Reserved.</div>
+        <div>Ngọc tự nhiên · Tuyển chọn minh bạch · Chế tác tinh tế</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    const FREE_SHIP_LIMIT = 2000000;
+    const STANDARD_SHIP_FEE = 30000;
+
+    function renderJadeCartPage() {
+      const cart = typeof getStoredCart === 'function' ? getStoredCart() : [];
+      const container = document.getElementById('cart-items-container');
+      const checkoutBtn = document.getElementById('btn-proceed-checkout');
+
+      if (!cart || cart.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state" style="background:#FFF; border:1px solid var(--color-border); border-radius:var(--radius-sm); padding:3rem 1.5rem; text-align:center;">
+            <h3 style="font-family:var(--font-heading); font-size:1.25rem; margin-bottom:0.5rem; color:var(--color-heading);">Giỏ hàng của bạn đang trống</h3>
+            <p style="color:var(--color-text-light); font-size:0.9rem; margin-bottom:1.5rem;">Hãy khám phá bộ sưu tập ngọc thiên nhiên JADE.</p>
+            <a href="products.html" class="btn btn-primary">KHÁM PHÁ SẢN PHẨM</a>
+          </div>
+        `;
+        document.getElementById('subtotal').textContent = '0 ₫';
+        document.getElementById('shipping-fee').textContent = '0 ₫';
+        document.getElementById('total-price').textContent = '0 ₫';
+        checkoutBtn.disabled = true;
+        checkoutBtn.style.opacity = '0.5';
+        return;
+      }
+
+      checkoutBtn.disabled = false;
+      checkoutBtn.style.opacity = '1';
+
+      container.innerHTML = cart.map(item => {
+        const imgUrl = typeof resolveProductImg === 'function' ? resolveProductImg(item.image) : item.image;
+        const sizeLabel = item.size || item.variant || 'Tiêu chuẩn';
+        const itemTotal = item.price * item.quantity;
+        return `
+          <div class="cart-item-card">
+            <img src="${imgUrl}" alt="${item.name}" class="cart-item-img" />
+            <div>
+              <h3 class="cart-item-title">${item.name}</h3>
+              <div class="cart-item-meta">Phân loại: ${sizeLabel}</div>
+              <div class="cart-item-price">${typeof formatPrice === 'function' ? formatPrice(itemTotal) : itemTotal + ' ₫'}</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="quantity-stepper" style="display:inline-flex; align-items:center; border:1px solid var(--color-border); border-radius:4px; overflow:hidden;">
+                <button type="button" class="stepper-btn" onclick="changeCartQty(${item.id}, '${sizeLabel}', ${item.quantity - 1})" style="padding:6px 12px; background:#F6F5F2; border:none; cursor:pointer;">&minus;</button>
+                <input type="text" class="stepper-input" value="${item.quantity}" readonly style="width:36px; text-align:center; border:none; font:inherit;" />
+                <button type="button" class="stepper-btn" onclick="changeCartQty(${item.id}, '${sizeLabel}', ${item.quantity + 1})" style="padding:6px 12px; background:#F6F5F2; border:none; cursor:pointer;">&plus;</button>
+              </div>
+              <div><button type="button" class="btn-remove-item" onclick="deleteCartItem(${item.id}, '${sizeLabel}')">Xóa</button></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const shipFee = subtotal >= FREE_SHIP_LIMIT ? 0 : STANDARD_SHIP_FEE;
+      const total = subtotal + shipFee;
+
+      document.getElementById('subtotal').textContent = typeof formatPrice === 'function' ? formatPrice(subtotal) : subtotal + ' ₫';
+      document.getElementById('shipping-fee').textContent = shipFee === 0 ? 'Miễn phí' : (typeof formatPrice === 'function' ? formatPrice(shipFee) : shipFee + ' ₫');
+      document.getElementById('total-price').textContent = typeof formatPrice === 'function' ? formatPrice(total) : total + ' ₫';
+
+      const remaining = Math.max(0, FREE_SHIP_LIMIT - subtotal);
+      const formattedRemaining = typeof formatPrice === 'function' ? formatPrice(remaining) : remaining + ' ₫';
+      document.getElementById('progress-text').innerHTML = remaining > 0
+        ? `Mua thêm <strong>${formattedRemaining}</strong> để được miễn phí vận chuyển.`
+        : `Đơn hàng của bạn đã được <strong>MIỄN PHÍ VẬN CHUYỂN</strong>.`;
+      document.getElementById('progress-bar').style.width = `${Math.min(100, (subtotal / FREE_SHIP_LIMIT) * 100)}%`;
+    }
+
+    window.changeCartQty = function(id, size, newQty) {
+      if (typeof updateCartItemQuantity === 'function') {
+        updateCartItemQuantity(id, size, newQty);
+      }
+      renderJadeCartPage();
+    };
+
+    window.deleteCartItem = function(id, size) {
+      if (typeof removeCartItem === 'function') {
+        removeCartItem(id, size);
+      }
+      renderJadeCartPage();
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderJadeCartPage();
+      document.getElementById('btn-proceed-checkout').addEventListener('click', () => {
+        const cart = typeof getStoredCart === 'function' ? getStoredCart() : [];
+        if (cart && cart.length > 0) {
+          window.location.href = 'checkout.html';
+        } else {
+          alert('Giỏ hàng đang trống!');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
