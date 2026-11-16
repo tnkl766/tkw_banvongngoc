@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính Sách & Hỗ Trợ Khách Hàng | JADE – Natural Gemstone Jewelry</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    /* Top utility bar subpage style */
+    .top-utility-bar {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--color-border);
+      font-size: var(--font-size-xs);
+      color: var(--color-heading);
+      padding: 0.65rem var(--container-padding);
+    }
+    .utility-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.5rem;
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+    .utility-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #4A5550;
+      text-decoration: none;
+      font-weight: var(--fw-medium);
+      transition: color var(--transition-fast);
+    }
+    .utility-item:hover, .utility-item.active {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .utility-item svg {
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .utility-bar-inner {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    .policies-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem;
+      align-items: flex-start;
+    }
+    .policy-nav-sticky {
+      position: sticky;
+      top: 100px;
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+    }
+    .policy-nav-link {
+      display: block;
+      padding: 0.65rem 1rem;
+      font-size: var(--font-size-sm);
+      color: var(--color-text);
+      border-radius: var(--radius-xs);
+      transition: all var(--transition-fast);
+      margin-bottom: 0.25rem;
+    }
+    .policy-nav-link:hover, .policy-nav-link.active {
+      background: var(--color-bg-subtle-light);
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .policy-article {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .policy-article h2 {
+      font-size: 1.6rem;
+      color: var(--color-heading);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .policy-article p, .policy-article li {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+    .policy-shipping-banner {
+      background: linear-gradient(135deg, #FAFDFB 0%, #E8F2EC 100%);
+      border: 1.5px solid var(--color-primary);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    @media (max-width: 860px) {
+      .policies-layout {
+        grid-template-columns: 1fr;
+      }
+      .policy-nav-sticky {
+        position: static;
+      }
+      .policy-shipping-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>KHÁM PHÁ VẺ ĐẸP NGỌC QUÝ TỰ NHIÊN</span>
+    <span class="highlight">&bull;</span>
+    <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 2.000.000Đ</span>
+  </div>
+
+  <!-- Top Utility Bar -->
+  <div class="top-utility-bar">
+    <div class="utility-bar-inner">
+      <a href="stores.html" class="utility-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span>Hệ thống cửa hàng</span>
+      </a>
+      <a href="shipping.html" class="utility-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="1" y="3" width="15" height="13"></rect>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+          <circle cx="5.5" cy="18.5" r="2.5"></circle>
+          <circle cx="18.5" cy="18.5" r="2.5"></circle>
+        </svg>
+        <span>Thông tin vận chuyển</span>
+      </a>
+      <a href="policies.html#warranty" class="utility-item active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>Chính sách tích điểm & bảo hành</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <button class="mobile-toggle" aria-label="Mở menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      <a href="../index.html" class="site-logo" title="JADE Natural Gemstone Jewelry"><img src="../assets/images/logo.png" alt="JADE Natural Gemstone Jewelry" class="site-logo-img" /></a>
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">SẢN PHẨM</a></li>
+          <li class="nav-item"><a href="collections.html" class="nav-link">BỘ SƯU TẬP</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">CÂU CHUYỆN THƯƠNG HIỆU</a></li>
+          <li class="nav-item"><a href="stores.html" class="nav-link">CỬA HÀNG</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="search.html" class="action-btn" title="Tìm kiếm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+        <a href="account.html" class="action-btn" title="Tài khoản"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+        <a href="wishlist.html" class="action-btn" title="Yêu thích"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span class="badge-count badge-wishlist" style="display: none;">0</span></a>
+        <a href="cart.html" class="action-btn" title="Giỏ hàng"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span class="badge-count badge-cart" style="display: none;">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-padding" style="background-color: #F8F6F1; border-bottom: 1px solid var(--color-border); padding: 3rem 0;">
+      <div class="container text-center">
+        <nav class="breadcrumb" style="justify-content: center;">
+          <span class="breadcrumb-item"><a href="../index.html">Trang chủ</a></span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-item active">Chính Sách & Hỗ Trợ</span>
+        </nav>
+        <h1 class="section-title">CHÍNH SÁCH & HỖ TRỢ KHÁCH HÀNG</h1>
+        <p class="section-desc">Mọi quy định về mua sắm, bảo hiểm vận chuyển và cam kết giám định ngọc tại JADE.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="policies-layout">
+          
+          <!-- Sticky Policy Nav -->
+          <aside class="policy-nav-sticky">
+            <a href="#guide" class="policy-nav-link active">1. Hướng Dẫn Mua & Đo Ni</a>
+            <a href="#warranty" class="policy-nav-link">2. Bảo Hành & Giám Định</a>
+            <a href="#vip" class="policy-nav-link">3. Tích Điểm VIP Club</a>
+            <a href="#return" class="policy-nav-link">4. Chính Sách Đổi Trả</a>
+            <a href="shipping.html" class="policy-nav-link" style="color: var(--color-primary); font-weight: 600;">5. Vận Chuyển & Giao Hàng &rarr;</a>
+            <a href="#privacy" class="policy-nav-link">6. Chính Sách Bảo Mật</a>
+            <a href="#terms" class="policy-nav-link">7. Điều Khoản Dịch Vụ</a>
+            <a href="#faq" class="policy-nav-link">8. Câu Hỏi Thường Gặp</a>
+          </aside>
+
+          <!-- Content Articles -->
+          <div class="policies-content-col">
+            
+            <!-- 1. Guide -->
+            <article id="guide" class="policy-article">
+              <h2>1. Hướng Dẫn Mua Hàng & Đo Ni Vòng Tay</h2>
+              <p>Trang sức ngọc thiên nhiên, đặc biệt là vòng bản liền, đòi hỏi việc chọn ni tay chính xác để người đeo cảm thấy thoải mái nhất.</p>
+              <h4 style="margin: 1rem 0 0.5rem 0;">Cách 1: Đo đường kính lòng trong của chiếc vòng đang đeo vừa</h4>
+              <p>Đặt thước kẻ ngang qua điểm rộng nhất trong lòng chiếc vòng của bạn. Ví dụ: đường kính lòng đo được 54mm, ni tay của bạn là Ni 54.</p>
+              <h4 style="margin: 1rem 0 0.5rem 0;">Cách 2: Đo chu vi bàn tay khum lại</h4>
+              <p>Chụm 5 đầu ngón tay lại như tư thế xỏ vòng, dùng một sợi thước dây quấn quanh vị trí lớn nhất của khớp bàn tay. So sánh số đo chu vi với bảng size của JADE hoặc nhắn tin hotline để nhân viên hỗ trợ quy đổi.</p>
+            </article>
+
+            <!-- 2. Warranty -->
+            <article id="warranty" class="policy-article">
+              <h2>2. Chính Sách Bảo Hành & Giám Định Ngọc Thật Type A</h2>
+              <p><strong>Cam kết ngọc tự nhiên Type A:</strong> JADE tuyệt đối nói không với ngọc tẩm màu, ngọc ép keo (Type B, C) hoặc đá nhân tạo. Tất cả sản phẩm xuất xưởng đều có mã số giám định từ các trung tâm kiểm định uy tín hàng đầu Việt Nam (PNJ, SJC, VGC, LIU).</p>
+              <p><strong>Giấy Chứng Thư Giám Định Đá Quý Độc Lập:</strong> Mỗi tác phẩm đều đi kèm chứng thư giám định gốc ghi rõ khối lượng, thông số khúc xạ quang học, phổ hấp thụ và kết luận "Ngọc cẩm thạch tự nhiên thiên nhiên Type A".</p>
+              <p><strong>Bảo dưỡng làm bóng trọn đời:</strong> Miễn phí kiểm tra mối chấu, làm sạch bằng sóng siêu âm và đánh bóng làm mới trọn đời cho toàn bộ trang sức ngọc của JADE tại bất kỳ showroom nào trên toàn quốc.</p>
+            </article>
+
+            <!-- 3. VIP Points Club -->
+            <article id="vip" class="policy-article">
+              <h2>3. Chính Sách Khách Hàng Thân Thiết & Tích Điểm (VIP Club)</h2>
+              <p>Chương trình tri ân dành riêng cho các quý khách hàng đồng hành cùng JADE:</p>
+              <ul>
+                <li><strong>Cơ chế tích lũy:</strong> Cứ mỗi 100.000đ chi tiêu, quý khách tích lũy được 1 Điểm Thưởng (tương đương 1.000đ trừ trực tiếp vào đơn sau).</li>
+                <li><strong>Hạng Thẻ Silver (Chi tiêu từ 10.000.000đ):</strong> Ưu đãi giảm 5% cho tất cả đơn hàng trang sức tiếp theo, tặng quà sinh nhật.</li>
+                <li><strong>Hạng Thẻ Gold (Chi tiêu từ 30.000.000đ):</strong> Ưu đãi giảm 8%, miễn phí chỉnh size khắc chữ trọn đời, quyền ưu tiên thưởng lãm bộ sưu tập mới.</li>
+                <li><strong>Hạng Thẻ Diamond (Chi tiêu từ 100.000.000đ):</strong> Ưu đãi đặc quyền 12%, đón tiếp tại Phòng VIP riêng với trà đạo cao cấp, chuyên gia thiết kế bản vẽ độc bản riêng.</li>
+              </ul>
+            </article>
+
+            <!-- 4. Return -->
+            <article id="return" class="policy-article">
+              <h2>4. Chính Sách Đổi Trả & Thu Đổi Minh Bạch</h2>
+              <p><strong>Đổi size miễn phí trong 48 giờ:</strong> Nếu quý khách nhận vòng hoặc nhẫn đeo không vừa tay, JADE hỗ trợ đổi sang size khác hoàn toàn miễn phí (sản phẩm phải còn nguyên vẹn tem niêm phong và chứng thư).</p>
+              <p><strong>Chính sách thu đổi quay đầu:</strong></p>
+              <ul>
+                <li>Đổi sang sản phẩm ngọc giá trị cao hơn: Thu lại 80% - 85% giá trị niêm yết ban đầu.</li>
+                <li>Bán lại (thu hồi tiền mặt): Thu lại 70% giá trị theo biểu phí niêm yết minh bạch.</li>
+              </ul>
+            </article>
+
+            <!-- 5. Shipping Notification Box (Anchor for legacy links) -->
+            <article id="shipping" class="policy-article">
+              <h2>5. Thông Tin Vận Chuyển & Giao Hàng</h2>
+              <div class="policy-shipping-banner">
+                <div>
+                  <h4 style="font-size: 1.15rem; color: var(--color-primary); margin-bottom: 0.35rem;">Chính Sách Vận Chuyển Chuyên Biệt</h4>
+                  <p style="margin-bottom: 0; font-size: 0.9rem; color: var(--color-text);">
+                    Nhằm cung cấp thông tin đầy đủ nhất về biểu phí, bảo hiểm ngọc quý 100%, quy trình giao hỏa tốc 2 giờ và tra cứu đơn hàng, JADE đã tạo riêng <strong>Trang Thông Tin Vận Chuyển</strong> độc lập.
+                  </p>
+                </div>
+                <a href="shipping.html" class="btn btn-primary" style="white-space: nowrap;">XEM TRANG VẬN CHUYỂN &rarr;</a>
+              </div>
+              <ul style="font-size: 0.9rem; color: var(--color-text);">
+                <li>Miễn phí vận chuyển toàn quốc cho tất cả đơn hàng từ <strong>2.000.000đ</strong>.</li>
+                <li>Giao hỏa tốc 2 giờ nội thành Hà Nội & TP. Hồ Chí Minh.</li>
+                <li>Cam kết bảo hiểm rủi ro thất lạc, nứt vỡ 100% giá trị hàng hóa.</li>
+              </ul>
+            </article>
+
+            <!-- 5. Privacy -->
+            <article id="privacy" class="policy-article">
+              <h2>5. Chính Sách Bảo Mật Thông Tin</h2>
+              <p>JADE cam kết bảo mật tuyệt đối thông tin cá nhân và lịch sử mua hàng của quý khách hàng VIP. Thông tin chỉ được sử dụng cho mục đích giao hàng, bảo hành và gửi đặc quyền ưu đãi dành riêng cho quý khách.</p>
+            </article>
+
+            <!-- 6. Terms -->
+            <article id="terms" class="policy-article">
+              <h2>6. Điều Khoản Dịch Vụ</h2>
+              <p>Toàn bộ hình ảnh, nội dung, thiết kế nhận diện thương hiệu JADE được bảo hộ độc quyền. Mọi hành vi sao chép không xin phép đều vi phạm luật sở hữu trí tuệ.</p>
+            </article>
+
+            <!-- 7. FAQ -->
+            <article id="faq" class="policy-article">
+              <h2>7. Câu Hỏi Thường Gặp (FAQ)</h2>
+              
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button type="button" class="accordion-header">
+                    <span>Làm sao để biết ngọc cẩm thạch là tự nhiên 100%?</span>
+                    <span class="accordion-icon">+</span>
+                  </button>
+                  <div class="accordion-content">
+                    <div class="accordion-body">
+                      Mỗi sản phẩm của JADE đều đi kèm một Giấy Chứng Thư Giám Định Đá Quý độc lập có mã số và tem bảo mật của cơ quan kiểm định uy tín. Quý khách có thể tra cứu mã vạch và thông số tỷ trọng, độ khúc xạ ánh sáng trên website của trung tâm giám định.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <button type="button" class="accordion-header">
+                    <span>Đeo ngọc cẩm thạch có bị mất màu theo thời gian không?</span>
+                    <span class="accordion-icon">+</span>
+                  </button>
+                  <div class="accordion-content">
+                    <div class="accordion-body">
+                      Ngọc tự nhiên chuẩn Type A hoàn toàn không tẩm màu nhân tạo, do đó màu sắc là vĩnh cửu. Ngược lại, nhờ hấp thụ mồ hôi và tinh dầu tự nhiên từ cơ thể người đeo, sau thời gian dài ngọc sẽ càng lên nước bóng mượt, thấu quang trong trẻo hơn ("người dưỡng ngọc").
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <button type="button" class="accordion-header">
+                    <span>Tôi có thể đến xem trực tiếp sản phẩm tại đâu?</span>
+                    <span class="accordion-icon">+</span>
+                  </button>
+                  <div class="accordion-content">
+                    <div class="accordion-body">
+                      Quý khách có thể ghé thăm hai showroom Flagship của JADE tại Tràng Tiền Plaza (Hà Nội) hoặc 68 Đồng Khởi (Quận 1, TP. Hồ Chí Minh). Để có trải nghiệm đón tiếp tốt nhất trong phòng VIP, quý khách có thể liên hệ hotline 1900 8899 để đặt lịch hẹn riêng.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none; padding-top:0;">
+        <div>&copy; 2026 JADE – NATURAL GEMSTONE JEWELRY. Vẻ đẹp tự nhiên, giá trị vượt thời gian.</div>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Trang Chủ</a>
+          <a href="stores.html">Cửa Hàng</a>
+          <a href="shipping.html">Vận Chuyển</a>
+          <a href="policies.html">Chính Sách</a>
+          <a href="contact.html">Liên Hệ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const content = item.querySelector('.accordion-content');
+        const isActive = item.classList.contains('active');
+
+        if (isActive) {
+          item.classList.remove('active');
+          content.style.maxHeight = null;
+        } else {
+          item.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

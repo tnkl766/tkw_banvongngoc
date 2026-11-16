@@ -1,0 +1,873 @@
+/* ==========================================================================
+   JADE - STORES & SHOWROOM LOCATOR STYLES
+   ========================================================================== */
+
+.stores-hero {
+  background: linear-gradient(180deg, #F4F6F3 0%, #FAF9F6 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: 3.5rem 0 2.5rem;
+  text-align: center;
+}
+
+.stores-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1rem 1.75rem;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(27, 59, 43, 0.05);
+  align-items: center;
+}
+
+.stores-stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.85rem;
+  text-align: left;
+}
+
+.stores-stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg-subtle-light);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.stores-stat-icon svg {
+  display: block;
+}
+
+.stores-stat-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-heading);
+  line-height: 1;
+  white-space: nowrap;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Control Bar: Filters & Search */
+.stores-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.city-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.city-filter-btn {
+  padding: 0.55rem 1.2rem;
+  border-radius: 30px;
+  border: 1px solid var(--color-border);
+  background: #FFFFFF;
+  color: var(--color-text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.city-filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.city-filter-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(27, 59, 43, 0.2);
+}
+
+.store-search-box {
+  position: relative;
+  min-width: 280px;
+  flex: 0 1 340px;
+}
+
+.store-search-box input {
+  width: 100%;
+  padding: 0.6rem 2.5rem 0.6rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  font-size: 0.88rem;
+  outline: none;
+  background: #FFFFFF;
+  transition: border-color var(--transition-fast);
+}
+
+.store-search-box input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 59, 43, 0.08);
+}
+
+.store-search-box svg {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* Main Layout: Split Screen */
+.stores-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* Store Cards List */
+.stores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-height: 820px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.stores-list::-webkit-scrollbar {
+  width: 6px;
+}
+.stores-list::-webkit-scrollbar-thumb {
+  background: #D8DFD5;
+  border-radius: 3px;
+}
+
+.store-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.store-card:hover {
+  border-color: var(--color-moss-light);
+  box-shadow: 0 6px 20px rgba(27, 59, 43, 0.06);
+  transform: translateY(-2px);
+}
+
+.store-card.active {
+  border-color: var(--color-primary);
+  background: #FAFDFB;
+  box-shadow: 0 8px 24px rgba(27, 59, 43, 0.1);
+}
+
+.store-card.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--color-primary);
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+.store-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.store-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.badge-flagship {
+  background: #F9F1E2;
+  color: #8C6616;
+  border: 1px solid #E4CDA2;
+}
+
+.badge-showroom {
+  background: #E8F2EC;
+  color: #1B3B2B;
+}
+
+.store-name {
+  font-size: 1.18rem;
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+
+.store-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.store-info-row svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.store-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.store-service-tag {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  background: #F0F6F2;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.store-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+/* Sticky Google Map View */
+.stores-map-sticky {
+  position: sticky;
+  top: 90px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.map-header-bar {
+  padding: 1.25rem 1.5rem;
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.map-header-bar h3 {
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.map-header-bar p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.75rem;
+}
+
+.map-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.map-header-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-map-dir {
+  background: #C5A059;
+  color: #1A1A1A;
+}
+
+.btn-map-dir:hover {
+  background: #D9B570;
+  color: #000000;
+}
+
+.btn-map-call {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-map-call:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.map-frame-wrapper {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: #EAE6DF;
+}
+
+.map-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.map-footer-cta {
+  padding: 1rem 1.5rem;
+  background: #FAF9F6;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.map-footer-cta-text {
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.map-footer-cta-text strong {
+  color: var(--color-heading);
+}
+
+/* VIP Private Appointment Section */
+.vip-experience-section {
+  background: #1B3B2B;
+  color: #FAF9F6;
+  border-radius: var(--radius-md);
+  padding: 3.5rem;
+  margin-top: 4rem;
+}
+
+.vip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.vip-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.vip-feature-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(197, 160, 89, 0.2);
+  color: #C5A059;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.vip-feature-text h4 {
+  color: #FAF9F6;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.vip-feature-text p {
+  color: rgba(250, 249, 246, 0.75);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.vip-booking-card {
+  background: #FFFFFF;
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.vip-booking-card h3 {
+  font-size: 1.35rem;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .stores-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stores-layout {
+    grid-template-columns: 1fr;
+  }
+  .stores-map-sticky {
+    position: static;
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  .map-frame-wrapper {
+    height: 360px;
+  }
+  .vip-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .vip-experience-section {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .stores-stats-bar {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .stores-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .store-search-box {
+    min-width: 100%;
+  }
+  .city-filters {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+  }
+  .city-filter-btn {
+    flex-shrink: 0;
+  }
+  .map-footer-cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   INTEGRATED HUB NAVIGATION & SECTIONS (SHIPPING & WARRANTY IN STORES PAGE)
+   ========================================================================== */
+
+/* Hub Navigation Tabs */
+.stores-hub-nav-section {
+  position: sticky;
+  top: 70px;
+  z-index: 95;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  padding: 0.85rem 0;
+}
+
+.stores-hub-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.stores-hub-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--color-border);
+  background: #FAF9F6;
+  color: var(--color-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.stores-hub-tab:hover {
+  background: #E8F2EC;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.stores-hub-tab.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(27, 59, 43, 0.25);
+}
+
+.stores-hub-tab svg {
+  flex-shrink: 0;
+}
+
+/* Common Section Dividers & Headers */
+.integrated-section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.integrated-section:nth-of-type(even) {
+  background: #FAF9F6;
+}
+
+.integrated-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+}
+
+.integrated-header .section-subtitle {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.integrated-header .section-title {
+  font-size: 2.1rem;
+  margin-bottom: 0.85rem;
+  color: var(--color-heading);
+}
+
+.integrated-header .section-desc {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+/* Shipping Badges Grid */
+.integrated-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.integrated-badge-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(27, 59, 43, 0.04);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.integrated-badge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(27, 59, 43, 0.1);
+  border-color: var(--color-primary);
+}
+
+.integrated-badge-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #E8F2EC;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.integrated-badge-card h3 {
+  font-size: 1.05rem;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.integrated-badge-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Luxury Table */
+.integrated-table-wrapper {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  margin-bottom: 3.5rem;
+}
+
+.integrated-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.integrated-table th {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.integrated-table td {
+  padding: 1.15rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  vertical-align: middle;
+}
+
+.integrated-table tr:last-child td {
+  border-bottom: none;
+}
+
+.integrated-table tr:nth-child(even) {
+  background: #FAFDFB;
+}
+
+/* Packaging 3-Step Grid */
+.packaging-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.packaging-step-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.5rem 1.75rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.packaging-step-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #C5A059;
+  color: #1A1A1A;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.9rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.packaging-step-card h4 {
+  font-size: 1.05rem;
+  color: var(--color-heading);
+  margin: 0.5rem 0 0.5rem;
+}
+
+.packaging-step-card p {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Warranty Pillars Grid */
+.warranty-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.warranty-pillar-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.warranty-pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(27, 59, 43, 0.08);
+}
+
+.warranty-pillar-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: #E8F2EC;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.warranty-pillar-card h3 {
+  font-size: 1.15rem;
+  color: var(--color-heading);
+  margin-bottom: 0.45rem;
+}
+
+.warranty-pillar-card p {
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Warranty Showroom Process Steps */
+.warranty-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.warranty-process-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  text-align: center;
+  position: relative;
+}
+
+.warranty-process-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.warranty-process-card h4 {
+  font-size: 1.05rem;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.warranty-process-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Banner CTA Box inside Integrated Sections */
+.integrated-cta-box {
+  background: linear-gradient(135deg, #1B3B2B 0%, #294D3B 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 10px 30px rgba(27, 59, 43, 0.2);
+}
+
+.integrated-cta-box h3 {
+  color: #FFFFFF;
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.integrated-cta-box p {
+  color: #DDEAE3;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  max-width: 620px;
+}
+
+@media (max-width: 992px) {
+  .integrated-badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .packaging-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .warranty-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .warranty-process-grid {
+    grid-template-columns: 1fr;
+  }
+  .integrated-cta-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .integrated-badges-grid {
+    grid-template-columns: 1fr;
+  }
+  .stores-hub-tabs {
+    gap: 0.65rem;
+  }
+  .stores-hub-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+  }
+  .warranty-pillar-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+}

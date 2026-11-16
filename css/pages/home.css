@@ -1,0 +1,730 @@
+/* ==========================================================================
+   HOMEPAGE STYLES - JM DRESS DESIGN AUTO-SLIDER & FLOATING SEARCH BAR
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Top Utility Bar (From Reference Screenshot)
+   -------------------------------------------------------------------------- */
+.top-utility-bar {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  color: var(--color-heading);
+  padding: 0.65rem var(--container-padding);
+}
+
+.utility-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.utility-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4A5550;
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  transition: color var(--transition-fast);
+}
+
+.utility-item:hover {
+  color: var(--color-primary);
+}
+
+.utility-item svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Section 1: Hero Banner Auto-Slider (JM Style)
+   -------------------------------------------------------------------------- */
+.hero-slider-section {
+  position: relative;
+  width: 100%;
+  height: 72vh;
+  min-height: 480px;
+  max-height: 640px;
+  background-color: #EDE8DE;
+  overflow: visible; /* Allows floating search bar to overlap bottom */
+  margin-bottom: 3.5rem;
+}
+
+.hero-slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.slide-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  transform: none;
+  filter: contrast(105%) brightness(102%);
+}
+
+.hero-slide.active .slide-bg-img {
+  transform: none;
+}
+
+/* Bỏ lớp phủ mờ trên banner slide để ảnh hiển thị sắc nét 100% nguyên bản */
+.slide-overlay {
+  display: none !important;
+}
+
+/* Slide Content Positioning */
+.slide-content-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slide-text-col {
+  max-width: 620px;
+  padding: 2rem 0;
+  margin-left: 5%;
+  text-align: left;
+}
+
+/* Calligraphy Heading Style - Exact match to "Chạm Thu" in screenshot */
+.slide-calligraphy-title {
+  font-family: 'Pinyon Script', 'Alex Brush', cursive;
+  font-size: clamp(3.8rem, 6.5vw, 6.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #FFFFFF;
+  text-shadow: 0 2px 14px rgba(25, 44, 36, 0.35);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.slide-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+  color: #FFFFFF;
+  font-weight: var(--fw-light);
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+/* Pill Outline Button - Exact match to "MUA NGAY" in screenshot */
+.btn-slide-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2.5rem;
+  font-size: 0.85rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+}
+
+.btn-slide-pill:hover {
+  background-color: #FFFFFF;
+  color: var(--color-heading);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Slider Controls: Arrows */
+.slider-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: var(--color-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(6px);
+}
+
+.slider-arrow-btn:hover {
+  background: #FFFFFF;
+  color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.slider-prev {
+  left: 1.5rem;
+}
+
+.slider-next {
+  right: 1.5rem;
+}
+
+/* Slider Dots Indicator */
+.slider-dots {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 6;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.slider-dot.active {
+  width: 28px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Floating Search Bar - Exact Match to Reference Screenshot
+   -------------------------------------------------------------------------- */
+.jm-floating-search-wrapper {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 780px;
+  z-index: 20;
+}
+
+.jm-search-box {
+  background: #FFFFFF;
+  box-shadow: 0 8px 28px rgba(36, 60, 50, 0.18);
+  display: flex;
+  align-items: stretch;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.jm-search-input {
+  flex: 1;
+  padding: 0.95rem 1.5rem;
+  font-size: 0.95rem;
+  color: #333333;
+  border: none;
+  background: #FFFFFF;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.jm-search-input::placeholder {
+  color: #777777;
+  font-size: 0.92rem;
+}
+
+.jm-search-btn {
+  background-color: #242A27; /* Dark button from screenshot */
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.02em;
+  padding: 0.95rem 2.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.jm-search-btn:hover {
+  background-color: var(--color-primary);
+}
+
+/* Search Keywords under search bar */
+.search-keywords-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.keyword-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.keyword-pill {
+  font-size: 0.75rem;
+  color: var(--color-heading);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+}
+
+.keyword-pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Floating Concierge / Support Button (Like blue circle in screenshot)
+   -------------------------------------------------------------------------- */
+.floating-concierge-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 52px;
+  height: 52px;
+  background: #00A2E8; /* Cyan blue like screenshot or jade accent */
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 162, 232, 0.4);
+  z-index: 100;
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.floating-concierge-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 162, 232, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   Categories Grid (Section 2) - Chỉ hiển thị duy nhất 1 hàng
+   -------------------------------------------------------------------------- */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.15rem;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .categories-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 0.85rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+  .categories-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+  .categories-grid::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+  .categories-grid .category-card {
+    min-width: 175px;
+    flex: 0 0 calc((100% - 3rem) / 4);
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .categories-grid .category-card {
+    min-width: 140px;
+    flex: 0 0 calc((100% - 1.5rem) / 2.3);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   New Collection Banner (Section 3)
+   -------------------------------------------------------------------------- */
+.new-collection-banner {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  background-color: #243C32;
+}
+
+.new-collection-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+}
+
+.collection-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(20, 36, 30, 0.9) 0%, rgba(20, 36, 30, 0.5) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.collection-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+  padding: 3rem 4rem;
+  color: #FFFFFF;
+}
+
+.collection-banner-content .section-subtitle {
+  color: var(--color-accent);
+}
+
+.collection-banner-content h2 {
+  color: #FFFFFF;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.collection-banner-content p {
+  color: #DDEAE3;
+  font-size: var(--font-size-base);
+  line-height: var(--lh-relaxed);
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Product Grids (Sections 4 & 5)
+   -------------------------------------------------------------------------- */
+.products-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.section-footer-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* --------------------------------------------------------------------------
+   Brand Story Strip (Section 6)
+   -------------------------------------------------------------------------- */
+.brand-story-strip {
+  background-color: var(--color-bg-subtle-light);
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.story-strip-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.story-strip-image {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 3;
+}
+
+.story-strip-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-strip-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-style: italic;
+  color: var(--color-heading);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.story-strip-quote::before {
+  content: '“';
+  font-size: 4rem;
+  position: absolute;
+  top: -1.75rem;
+  left: -1.5rem;
+  color: var(--color-accent);
+  opacity: 0.3;
+  font-family: serif;
+}
+
+/* --------------------------------------------------------------------------
+   Featured Collections (Section 7)
+   -------------------------------------------------------------------------- */
+.collections-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   Special Offers (Section 8)
+   -------------------------------------------------------------------------- */
+.offers-banner-card {
+  background: linear-gradient(135deg, #FAF7F2 0%, #EFF5F1 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   Jade Promise (Section 9)
+   -------------------------------------------------------------------------- */
+.promises-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.promise-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: #FFFFFF;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+  transition: all var(--transition-base);
+}
+
+.promise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-accent);
+}
+
+.promise-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem auto;
+  border-radius: 50%;
+  background: var(--color-bg-subtle-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promise-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.promise-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: var(--lh-relaxed);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Customer Reviews (Section 10 - Hiển thị chuẩn 4 đánh giá)
+   -------------------------------------------------------------------------- */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 1100px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Newsletter (Section 11)
+   -------------------------------------------------------------------------- */
+.newsletter-section {
+  background-color: var(--color-bg-subtle);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.newsletter-box {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  padding: 0.9rem 1.25rem;
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-xs);
+  color: var(--color-heading);
+}
+
+.newsletter-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-slider-section {
+    min-height: 520px;
+    height: 70vh;
+  }
+  
+  .utility-bar-inner {
+    gap: 1.5rem;
+  }
+
+  .slide-calligraphy-title {
+    font-size: 4rem;
+  }
+
+  .products-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .story-strip-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .collections-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promises-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .utility-bar-inner {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .hero-slider-section {
+    min-height: 480px;
+    margin-bottom: 5rem;
+  }
+
+  .slide-text-col {
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .slide-calligraphy-title {
+    font-size: 3.2rem;
+  }
+
+  .jm-floating-search-wrapper {
+    width: 94%;
+    bottom: -45px;
+  }
+
+  .jm-search-box {
+    flex-direction: column;
+  }
+
+  .jm-search-btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .promises-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+
+  .slider-arrow-btn {
+    display: none; /* Hide arrow buttons on small screens */
+  }
+}

@@ -1,0 +1,98 @@
+/* ==========================================================================
+   ACCOUNT & AUTH PAGES STYLES
+   ========================================================================== */
+
+.account-tabs-header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2.5rem;
+}
+
+.account-tab-btn {
+  padding: 1rem 2rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-text-light);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.account-tab-btn.active {
+  color: var(--color-heading);
+  border-bottom-color: var(--color-primary);
+  font-weight: 600;
+}
+
+.account-auth-container {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  padding: 2.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.dashboard-sidebar-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.dashboard-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-bg-subtle-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.dashboard-nav-item {
+  display: block;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-xs);
+  color: var(--color-heading);
+  font-size: var(--font-size-sm);
+  margin-bottom: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.dashboard-nav-item:hover, .dashboard-nav-item.active {
+  background: var(--color-bg-subtle-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.order-history-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background: #FFFFFF;
+}
+
+@media (max-width: 860px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}

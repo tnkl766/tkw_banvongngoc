@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Sản Phẩm | JADE – Natural Gemstone Jewelry</title>
+  <meta name="description" content="Chi tiết sản phẩm trang sức ngọc thiên nhiên JADE với hình ảnh sắc nét, kích cỡ, chất liệu Type A và bảo hành trọn đời.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages/product-detail.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span>KHÁM PHÁ VẺ ĐẸP NGỌC QUÝ TỰ NHIÊN</span>
+    <span class="highlight">&bull;</span>
+    <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 2.000.000Đ</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <button class="mobile-toggle" aria-label="Mở menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="../index.html" class="site-logo" title="JADE Natural Gemstone Jewelry"><img src="../assets/images/logo.png" alt="JADE Natural Gemstone Jewelry" class="site-logo-img" /></a>
+
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">SẢN PHẨM</a></li>
+          <li class="nav-item"><a href="collections.html" class="nav-link">BỘ SƯU TẬP</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">CÂU CHUYỆN THƯƠNG HIỆU</a></li>
+          <li class="nav-item"><a href="stores.html" class="nav-link">CỬA HÀNG</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="search.html" class="action-btn" title="Tìm kiếm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+        <a href="account.html" class="action-btn" title="Tài khoản"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+        <a href="wishlist.html" class="action-btn" title="Yêu thích">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count badge-wishlist" style="display: none;">0</span>
+        </a>
+        <a href="cart.html" class="action-btn" title="Giỏ hàng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count badge-cart" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-detail-section">
+      <div class="container">
+        
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb" style="margin-bottom: 1.5rem;">
+          <span class="breadcrumb-item"><a href="../index.html">Trang chủ</a></span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-item"><a href="products.html">Sản phẩm</a></span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-item"><a id="detail-breadcrumb-cat" href="#">Danh mục</a></span>
+          <span class="breadcrumb-separator">/</span>
+          <span id="detail-breadcrumb-current" class="breadcrumb-item active">Đang tải...</span>
+        </nav>
+
+        <!-- Product Main Layout -->
+        <div class="product-detail-layout">
+          
+          <!-- Left Column: Gallery -->
+          <div class="product-gallery-sticky">
+            <div class="gallery-main-viewport">
+              <img id="gallery-main-image" src="" alt="Trang sức ngọc JADE" class="gallery-main-img" />
+            </div>
+            <div id="gallery-thumbs-row" class="gallery-thumbs-row">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Right Column: Product Info & Purchase Controls -->
+          <div class="product-detail-info-col">
+            <div class="product-detail-meta">
+              <span id="detail-stock-status"></span>
+              <span>&bull;</span>
+              <span>Mã SP: <strong id="detail-product-sku" class="product-sku-badge">...</strong></span>
+            </div>
+
+            <h1 id="detail-product-name" class="product-detail-title">Đang tải tên sản phẩm...</h1>
+
+            <div class="product-rating-row">
+              <div class="product-rating-stars" id="detail-header-stars">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <a href="#product-reviews-section" class="text-muted" style="text-decoration: underline; cursor: pointer;">
+                (Đánh giá <span id="detail-rating-score">5.0</span> &bull; <span id="detail-review-count">...</span> nhận xét)
+              </a>
+            </div>
+
+            <!-- Price -->
+            <div id="detail-price-box" class="product-detail-price-box">
+              <!-- Dynamically populated -->
+            </div>
+
+            <!-- Description -->
+            <p id="detail-product-desc" class="product-short-desc"></p>
+
+            <!-- Size / Variant Selector -->
+            <div class="product-option-block">
+              <div class="option-title">
+                <span>Chọn Kích Thước (Ni Tay / Size)</span>
+                <a href="policies.html#guide" class="guide-link">Bảng hướng dẫn đo ni &rarr;</a>
+              </div>
+              <div id="detail-sizes-group" class="size-pill-group">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Quantity & Actions -->
+            <div class="purchase-actions-box">
+              <div class="qty-and-cart-row">
+                <div class="quantity-stepper">
+                  <button type="button" id="detail-qty-minus" class="stepper-btn" aria-label="Giảm">&minus;</button>
+                  <input type="number" id="detail-quantity-input" class="stepper-input" value="1" min="1" readonly />
+                  <button type="button" id="detail-qty-plus" class="stepper-btn" aria-label="Tăng">&#43;</button>
+                </div>
+                
+                <button type="button" id="detail-btn-add-cart" class="btn btn-primary btn-add-cart-main">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  THÊM VÀO GIỎ HÀNG
+                </button>
+
+                <button type="button" id="detail-wishlist-btn" class="btn-icon" title="Lưu yêu thích" aria-label="Yêu thích">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <button type="button" id="detail-btn-buy-now" class="btn btn-buy-now-main">
+                MUA NGAY (GIAO HỎA TỐC 2H)
+              </button>
+            </div>
+
+            <!-- Accordions for detailed tabs -->
+            <div class="detail-accordions">
+              <div class="accordion-item">
+                <button type="button" class="accordion-header">
+                  <span>Mô Tả & Đặc Điểm Chế Tác</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                  <div id="acc-content-desc" class="accordion-body"></div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button type="button" class="accordion-header">
+                  <span>Thông Tin Chất Liệu & Giám Định</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                  <div id="acc-content-material" class="accordion-body"></div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button type="button" class="accordion-header">
+                  <span>Hướng Dẫn Bảo Quản & Dưỡng Ngọc</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                  <div id="acc-content-care" class="accordion-body"></div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button type="button" class="accordion-header">
+                  <span>Chính Sách Bảo Hành & Thu Đổi</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="accordion-body">
+                    <p><strong>Bảo hành làm bóng trọn đời:</strong> Miễn phí kiểm tra độ an toàn của chấu kim loại và đánh bóng bề mặt ngọc không giới hạn số lần.</p>
+                    <p><strong>Chính sách thu đổi minh bạch:</strong> Hỗ trợ thu đổi 70% - 85% giá trị sản phẩm theo biểu phí niêm yết khi còn đầy đủ chứng thư giám định và hộp gốc.</p>
+                    <p><a href="policies.html#warranty" style="color: var(--color-primary); font-weight: 600;">Xem chi tiết chính sách bảo hành &rarr;</a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button type="button" class="accordion-header">
+                  <span>Vận Chuyển & Bảo Hiểm Ngọc Quý</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                  <div class="accordion-body">
+                    <p><strong>Miễn phí vận chuyển:</strong> Áp dụng cho đơn hàng từ 2.000.000đ trên toàn quốc.</p>
+                    <p><strong>Giao hỏa tốc 2h:</strong> Nội thành Hà Nội & TP. Hồ Chí Minh với bưu tá chuyên trách.</p>
+                    <p><strong>Đồng kiểm & Bảo hiểm 100%:</strong> Quý khách được mở hộp kiểm tra ngọc và chứng thư trước khi thanh toán. Bồi thường 100% nếu phát sinh rủi ro.</p>
+                    <p><a href="shipping.html" style="color: var(--color-primary); font-weight: 600;">Xem bảng cước phí & thời gian giao hàng chi tiết &rarr;</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Product Reviews & Feedback Section -->
+        <section id="product-reviews-section" class="product-reviews-section">
+          <div class="reviews-section-header">
+            <div>
+              <span class="section-subtitle">TRẢI NGHIỆM THỰC TẾ TỪ KHÁCH HÀNG</span>
+              <h2 class="section-title">ĐÁNH GIÁ & PHẢN HỒI SẢN PHẨM</h2>
+            </div>
+            <a href="feedback.html" class="all-feedback-link">Xem tất cả phản hồi thương hiệu &rarr;</a>
+          </div>
+
+          <!-- Rating Summary Overview Card -->
+          <div class="reviews-summary-card">
+            <div class="summary-score-col">
+              <div class="summary-score-number" id="detail-rev-summary-score">5.0</div>
+              <div class="summary-score-stars" id="detail-rev-summary-stars">
+                ★★★★★
+              </div>
+              <div class="summary-score-count"><span id="detail-rev-total-count">...</span> đánh giá đã xác thực</div>
+            </div>
+
+            <div class="summary-breakdown-col" id="detail-rev-breakdown">
+              <!-- Dynamically populated breakdown -->
+            </div>
+
+            <div class="summary-action-col">
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5;">Bạn đã sở hữu tác phẩm ngọc này? Hãy chia sẻ cảm nhận thực tế của bạn với cộng đồng.</p>
+              <button type="button" id="btn-toggle-review-form" class="btn btn-primary" style="align-self: flex-start;">
+                ✍️ VIẾT ĐÁNH GIÁ
+              </button>
+            </div>
+          </div>
+
+          <!-- Review Form (Hidden by default, toggled on click) -->
+          <div id="product-review-form-container" class="review-form-card" style="display: none;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--color-heading);">
+              Chia Sẻ Cảm Nhận Của Bạn Về Tác Phẩm
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1.25rem;">
+              Ý kiến của quý khách giúp JADE ngày một hoàn thiện và đem lại trải nghiệm trọn vẹn nhất.
+            </p>
+            <form id="product-review-form">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="review-input-name">Họ và tên *</label>
+                  <input type="text" id="review-input-name" class="form-control" placeholder="Ví dụ: Hoàng Mai Chi" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="review-input-contact">Số điện thoại / Email *</label>
+                  <input type="text" id="review-input-contact" class="form-control" placeholder="Để xác nhận quà VIP tri ân" required />
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1rem;">
+                <label class="form-label">Mức độ hài lòng của bạn</label>
+                <div class="rating-picker" id="review-rating-picker" style="display: flex; gap: 0.5rem; cursor: pointer; font-size: 1.6rem; color: #D4AF37;">
+                  <span class="star-btn" data-rating="1">★</span>
+                  <span class="star-btn" data-rating="2">★</span>
+                  <span class="star-btn" data-rating="3">★</span>
+                  <span class="star-btn" data-rating="4">★</span>
+                  <span class="star-btn" data-rating="5">★</span>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1rem;">
+                <label class="form-label" for="review-input-title">Tiêu đề đánh giá *</label>
+                <input type="text" id="review-input-title" class="form-control" placeholder="Ví dụ: Nước ngọc trong mát, chạm khắc vô cùng tinh xảo" required />
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label class="form-label" for="review-input-content">Nội dung chi tiết nhận xét *</label>
+                <textarea id="review-input-content" class="form-control" rows="4" placeholder="Cảm nhận về độ bóng mịn, màu sắc, giấy giám định và quy cách đóng gói..." required></textarea>
+              </div>
+
+              <div style="display: flex; justify-content: flex-end; gap: 1rem; align-items: center;">
+                <button type="button" id="btn-cancel-review" class="btn btn-secondary">Hủy bỏ</button>
+                <button type="submit" class="btn btn-primary">GỬI ĐÁNH GIÁ</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Product Reviews List Container -->
+          <div id="product-reviews-list" class="product-reviews-list">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- Related Products Section -->
+        <section class="related-products-section">
+          <div class="section-header">
+            <span class="section-subtitle">GỢI Ý KẾT HỢP</span>
+            <h2 class="section-title">SẢN PHẨM CÙNG BỘ SƯU TẬP</h2>
+          </div>
+          <div id="detail-related-products-grid" class="products-grid-4">
+            <!-- Dynamically populated from js/product-detail.js -->
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none; padding-top:0;">
+        <div>&copy; 2026 JADE – NATURAL GEMSTONE JEWELRY. Vẻ đẹp tự nhiên, giá trị vượt thời gian.</div>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Trang Chủ</a>
+          <a href="stores.html">Cửa Hàng</a>
+          <a href="shipping.html">Vận Chuyển</a>
+          <a href="policies.html">Chính Sách</a>
+          <a href="contact.html">Liên Hệ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/home.js"></script>
+  <script src="../js/product-detail.js"></script>
+</body>
+</html>

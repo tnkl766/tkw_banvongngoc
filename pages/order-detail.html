@@ -1,263 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chi tiết đơn hàng | JADE – Natural Gemstone Jewelry</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Đơn Hàng | JADE – Natural Gemstone Jewelry</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
+  
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages/cart-checkout.css">
   <link rel="stylesheet" href="../css/responsive.css">
-  <link rel="stylesheet" href="../css/cart-checkout.css">
-
-  <script src="../js/data.js" defer></script>
-  <script src="../js/main.js" defer></script>
-  <script src="../js/orders.js" defer></script>
-
-  <style>
-    body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--color-bg, #FAF9F6); color: var(--color-text, #243C32); }
-    .ny-wrap { max-width: 1120px; margin-inline: auto; padding-block: 2.5rem 4rem; width: min(100% - 48px, 1120px); }
-    .ny-page-head { margin-bottom: 2rem; }
-    .ny-back { display: inline-flex; align-items: center; gap: 6px; color: var(--color-text-light, #666); font-size: 0.88rem; text-decoration: none; margin-bottom: 0.75rem; }
-    .ny-back:hover { text-decoration: underline; }
-    .ny-page-head h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.75rem); color: var(--color-heading, #243C32); margin-bottom: 0.5rem; }
-    
-    .ny-panel { background: #FFFFFF; border: 1px solid var(--color-border, #E8E6E0); border-radius: 8px; padding: 2rem; margin-bottom: 1.75rem; box-shadow: 0 4px 16px rgba(36, 60, 50, 0.04); }
-    .ny-panel-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
-    .ny-panel-heading h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--color-heading, #243C32); }
-    
-    .ny-grid--detail { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; align-items: start; }
-    
-    .ny-timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding: 0; list-style: none; }
-    .ny-timeline__step { position: relative; display: grid; justify-items: start; align-content: start; gap: 4px; color: var(--color-text-light, #666); }
-    .ny-timeline__step:not(:last-child)::after { content: ""; position: absolute; height: 1px; background: #C9D6CA; left: 46px; right: -4px; top: 19px; }
-    .ny-timeline__step.is-reached { color: var(--color-primary, #355B4A); }
-    .ny-timeline__mark { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: 3px; border-radius: 50%; border: 1px solid #C9D6CA; color: #587462; background: #F4F7F0; }
-    .ny-timeline__step.is-reached .ny-timeline__mark { color: #FFF; background: var(--color-primary, #355B4A); border-color: var(--color-primary, #355B4A); }
-
-    /* TRIỆT ĐỂ: Ép toàn bộ số tiền và tổng thanh toán thẳng đứng chuẩn xác tuyệt đối bằng Be Vietnam Pro */
-    .ny-product__price, 
-    .ny-totals dd, 
-    .ny-totals__grand dd, 
-    [data-order-total], 
-    [data-order-subtotal] {
-      font-style: normal !important;
-      font-family: 'Be Vietnam Pro', sans-serif !important;
-      font-weight: 700 !important;
-    }
-    .ny-totals__grand dd { 
-      font-size: 1.75rem !important; 
-      color: var(--color-heading, #243C32) !important;
-    }
-
-    @media (max-width: 900px) {
-      .ny-grid--detail { grid-template-columns: 1fr; }
-      .ny-timeline { grid-template-columns: 1fr; gap: 16px; }
-    }
-  </style>
 </head>
-<body class="ny-workflow" data-page="order-detail">
-  <a class="ny-skip" href="#main">Đến nội dung chính</a>
+<body>
 
-  <!-- Announcement Bar -->
   <div class="announcement-bar">
     <span>KHÁM PHÁ VẺ ĐẸP NGỌC QUÝ TỰ NHIÊN</span>
     <span class="highlight">&bull;</span>
     <span>MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 2.000.000Đ</span>
   </div>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="header-container">
-      <a href="../index.html" class="site-logo"><img src="../assets/images/logo.png" alt="JADE" class="site-logo-img" /></a>
+      <button class="mobile-toggle" aria-label="Mở menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      <a href="../index.html" class="site-logo" title="JADE Natural Gemstone Jewelry"><img src="../assets/images/logo.png" alt="JADE Natural Gemstone Jewelry" class="site-logo-img" /></a>
       <nav class="desktop-nav">
         <ul class="nav-list">
-          <li class="nav-item"><a href="../index.html" class="nav-link">Trang chủ</a></li>
-          <li class="nav-item"><a href="products.html" class="nav-link">Sản phẩm</a></li>
-          <li class="nav-item"><a href="collections.html" class="nav-link">Bộ sưu tập</a></li>
-          <li class="nav-item"><a href="shipping.html" class="nav-link">Chính sách</a></li>
+          <li class="nav-item"><a href="../index.html" class="nav-link">TRANG CHỦ</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">SẢN PHẨM</a></li>
+          <li class="nav-item"><a href="collections.html" class="nav-link">BỘ SƯU TẬP</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">CÂU CHUYỆN THƯƠNG HIỆU</a></li>
+          <li class="nav-item"><a href="stores.html" class="nav-link">CỬA HÀNG</a></li>
         </ul>
       </nav>
       <div class="header-actions">
-        <a href="account.html" class="action-btn" title="Tài khoản"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></a>
-        <a href="cart.html" class="action-btn" title="Giỏ hàng"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
+        <a href="search.html" class="action-btn" title="Tìm kiếm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+        <a href="account.html" class="action-btn" title="Tài khoản"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+        <a href="wishlist.html" class="action-btn" title="Yêu thích"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span class="badge-count badge-wishlist" style="display: none;">0</span></a>
+        <a href="cart.html" class="action-btn" title="Giỏ hàng"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span class="badge-count badge-cart" style="display: none;">0</span></a>
       </div>
     </div>
   </header>
 
-  <main class="ny-wrap ny-main" id="main">
-    <div class="ny-page-head">
-      <a class="ny-back" href="account.html" data-link="account"><span aria-hidden="true">‹</span> Lịch sử đơn hàng</a>
-      <h1>Chi tiết đơn hàng</h1>
-      <div class="ny-order-meta" style="display:flex; align-items:center; gap:1rem; margin-top:0.5rem;">
-        <strong class="ny-order-code" data-order-code style="font-size:1.1rem; color:var(--color-primary);"></strong>
-        <span class="ny-muted" data-order-date style="font-size:0.9rem;"></span>
-        <span class="ny-status" data-order-status-badge style="background:#EFF5ED; color:var(--color-primary); padding:4px 10px; border-radius:999px; font-weight:600; font-size:0.85rem;">Đã tiếp nhận</span>
-      </div>
-    </div>
-
-    <noscript><p class="ny-panel">Hãy bật JavaScript để xem chi tiết đơn hàng.</p></noscript>
-
-    <!-- Hành trình đơn hàng -->
-    <section class="ny-panel" aria-labelledby="tracking-title">
-      <div class="ny-panel-heading">
-        <h2 id="tracking-title">Hành trình đơn hàng</h2>
-      </div>
-      <ol class="ny-timeline" data-timeline>
-        <li class="ny-timeline__step is-reached">
-          <div class="ny-timeline__mark">✓</div>
-          <strong>Đã tiếp nhận</strong>
-          <span style="font-size:0.8rem;">Đơn hàng đã được ghi nhận.</span>
-        </li>
-        <li class="ny-timeline__step is-reached">
-          <div class="ny-timeline__mark">📦</div>
-          <strong>Đang chuẩn bị</strong>
-          <span style="font-size:0.8rem;">Kiểm tra và đóng gói sản phẩm.</span>
-        </li>
-        <li class="ny-timeline__step">
-          <div class="ny-timeline__mark">🚚</div>
-          <strong>Đang giao</strong>
-          <span style="font-size:0.8rem;">Vận chuyển đến địa chỉ nhận.</span>
-        </li>
-        <li class="ny-timeline__step">
-          <div class="ny-timeline__mark">📍</div>
-          <strong>Đã giao</strong>
-          <span style="font-size:0.8rem;">Bàn giao cho người nhận.</span>
-        </li>
-      </ol>
-    </section>
-
-    <div class="ny-grid ny-grid--detail" data-detail-layout>
-      <section class="ny-panel" aria-labelledby="products-title">
-        <div class="ny-panel-heading">
-          <h2 id="products-title">Sản phẩm đã đặt</h2>
-        </div>
-        <ul class="ny-products" data-order-items></ul>
-        <dl class="ny-totals" style="margin-top:1.5rem;">
-          <div><dt>Tạm tính</dt><dd data-order-subtotal>0 ₫</dd></div>
-          <div><dt>Phí vận chuyển</dt><dd data-order-shipping>Miễn phí</dd></div>
-          <div class="ny-totals__grand"><dt>Tổng thanh toán</dt><dd data-order-total>0 ₫</dd></div>
-        </dl>
-      </section>
-
-      <section class="ny-panel" aria-labelledby="shipping-info-title">
-        <div class="ny-panel-heading">
-          <h2 id="shipping-info-title">Thông tin giao nhận</h2>
-        </div>
-        <div class="ny-data-list" data-shipping-info style="display:grid; gap:0.85rem; font-size:0.9rem;">
-          <div><span style="color:var(--color-text-light);">Người nhận:</span> <strong data-info="name"></strong></div>
-          <div><span style="color:var(--color-text-light);">Điện thoại:</span> <strong data-info="phone"></strong></div>
-          <div><span style="color:var(--color-text-light);">Email:</span> <strong data-info="email"></strong></div>
-          <div><span style="color:var(--color-text-light);">Địa chỉ:</span> <strong data-info="address"></strong></div>
-          <div><span style="color:var(--color-text-light);">Ghi chú:</span> <span data-info="note"></span></div>
-          <div><span style="color:var(--color-text-light);">Giao hàng:</span> <strong data-info="shippingMethod"></strong></div>
-          <div><span style="color:var(--color-text-light);">Thanh toán:</span> <strong data-info="paymentMethod"></strong></div>
-        </div>
-      </section>
+  <main class="section-padding">
+    <div class="container" style="max-width: 860px;" id="order-detail-content">
+      <!-- Dynamically populated from js/orders.js -->
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid" style="display:grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2rem; padding: 4rem 0 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-        <div>
-          <h3 style="font-family:var(--font-heading); font-size:1.5rem; color:var(--color-gold, #C6A66B); margin-bottom:1rem; letter-spacing:0.1em;">JADE</h3>
-          <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.6; max-width:28ch;">Trang sức ngọc tự nhiên được tuyển chọn, tôn vinh vẻ đẹp tinh tế và khí chất riêng của người phụ nữ. <em>Vẻ đẹp tinh túy từ thiên nhiên.</em></p>
+      <div class="footer-bottom" style="border:none; padding-top:0;">
+        <div>&copy; 2026 JADE – NATURAL GEMSTONE JEWELRY. Vẻ đẹp tự nhiên, giá trị vượt thời gian.</div>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Trang Chủ</a>
+          <a href="products.html">Sản Phẩm</a>
+          <a href="about.html">Về Chúng Tôi</a>
+          <a href="contact.html">Liên Hệ</a>
         </div>
-        <div>
-          <h4 style="font-size:0.9rem; font-weight:600; color:#FFF; margin-bottom:1.2rem; text-transform:uppercase; letter-spacing:0.05em;">Liên kết nhanh</h4>
-          <ul style="list-style:none; padding:0; display:grid; gap:0.6rem; font-size:0.85rem;">
-            <li><a href="../index.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Trang chủ</a></li>
-            <li><a href="products.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Sản phẩm</a></li>
-            <li><a href="collections.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Bộ sưu tập</a></li>
-            <li><a href="shipping.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Chính sách vận chuyển</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="font-size:0.9rem; font-weight:600; color:#FFF; margin-bottom:1.2rem; text-transform:uppercase; letter-spacing:0.05em;">Thông tin liên hệ</h4>
-          <ul style="list-style:none; padding:0; display:grid; gap:0.6rem; font-size:0.85rem; color:rgba(255,255,255,0.7);">
-            <li>18 Đồng Khởi, Quận 1, TP.HCM</li>
-            <li>Hotline: 1900 6868</li>
-            <li>hello@jadejewelry.vn</li>
-            <li>09:00 – 21:00, Thứ 2 – CN</li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="font-size:0.9rem; font-weight:600; color:#FFF; margin-bottom:1.2rem; text-transform:uppercase; letter-spacing:0.05em;">Chính sách & Hỗ trợ</h4>
-          <ul style="list-style:none; padding:0; display:grid; gap:0.6rem; font-size:0.85rem;">
-            <li><a href="shipping.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Hướng dẫn mua hàng</a></li>
-            <li><a href="shipping.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Chính sách bảo hành</a></li>
-            <li><a href="shipping.html" style="color:rgba(255,255,255,0.7); text-decoration:none;">Chính sách đổi trả</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom" style="display:flex; justify-content:space-between; align-items:center; padding: 1.5rem 0; font-size:0.82rem; color:rgba(255,255,255,0.6);">
-        <div>&copy; 2026 JADE. All Rights Reserved.</div>
-        <div>Ngọc tự nhiên · Tuyển chọn minh bạch · Chế tác tinh tế</div>
       </div>
     </div>
   </footer>
 
-  <!-- Script nạp dữ liệu đơn hàng -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const orderId = urlParams.get('id');
-      const orders = JSON.parse(localStorage.getItem('jade_orders_list') || '[]');
-      const order = orders.find(o => o.id === orderId) || orders[0];
-
-      if (!order) return;
-
-      document.querySelector('[data-order-code]').textContent = `Mã đơn: ${order.id}`;
-      document.querySelector('[data-order-date]').textContent = `Đặt ngày: ${typeof dateText === 'function' ? dateText(order.createdAt) : order.createdAt}`;
-
-      const itemsList = document.querySelector('[data-order-items]');
-      if (itemsList && order.items) {
-        itemsList.innerHTML = order.items.map(item => {
-          const imgUrl = typeof resolveProductImg === 'function' ? resolveProductImg(item.image) : item.image;
-          const sizeLabel = item.size || item.variant || 'Tiêu chuẩn';
-          const totalItemPrice = item.price * item.quantity;
-          return `
-            <li class="ny-product" style="display:grid; grid-template-columns:60px 1fr auto; gap:12px; align-items:center; padding:12px 0; border-bottom:1px solid var(--color-border);">
-              <img src="${imgUrl}" alt="${item.name}" style="width:60px; height:60px; border-radius:6px; object-fit:cover; background:#F6F5F2;" />
-              <div>
-                <strong style="font-size:0.95rem; color:var(--color-heading); display:block; margin-bottom:2px;">${item.name}</strong>
-                <span style="font-size:0.8rem; color:var(--color-text-light);">Phân loại: ${sizeLabel} · SL: ${item.quantity}</span>
-              </div>
-              <strong class="ny-product__price" style="font-size:0.95rem; color:var(--color-primary); font-style:normal!important; font-family:'Be Vietnam Pro',sans-serif!important;">${typeof formatPrice === 'function' ? formatPrice(totalItemPrice) : totalItemPrice + ' ₫'}</strong>
-            </li>
-          `;
-        }).join('');
-      }
-
-      const subtotalEl = document.querySelector('[data-order-subtotal]');
-      const shippingEl = document.querySelector('[data-order-shipping]');
-      const totalEl = document.querySelector('[data-order-total]');
-
-      if (subtotalEl) subtotalEl.textContent = typeof formatPrice === 'function' ? formatPrice(order.subtotal) : order.subtotal + ' ₫';
-      if (shippingEl) shippingEl.textContent = order.shippingFee === 0 ? 'Miễn phí' : (typeof formatPrice === 'function' ? formatPrice(order.shippingFee) : order.shippingFee + ' ₫');
-      if (totalEl) totalEl.textContent = typeof formatPrice === 'function' ? formatPrice(order.total) : order.total + ' ₫';
-
-      if (order.customer) {
-        const info = order.customer;
-        document.querySelector('[data-info="name"]').textContent = info.name || '';
-        document.querySelector('[data-info="phone"]').textContent = info.phone || '';
-        document.querySelector('[data-info="email"]').textContent = info.email || 'Chưa cung cấp';
-        document.querySelector('[data-info="address"]').textContent = info.address || '';
-        document.querySelector('[data-info="note"]').textContent = info.note || '—';
-      }
-      document.querySelector('[data-info="shippingMethod"]').textContent = order.shippingMethod === 'express' ? 'Giao hàng nhanh' : 'Giao hàng tiêu chuẩn';
-      document.querySelector('[data-info="paymentMethod"]').textContent = order.paymentMethod === 'vietqr' ? 'Chuyển khoản ngân hàng (VietQR)' : 'Thanh toán khi nhận hàng (COD)';
-    });
-  </script>
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/orders.js"></script>
 </body>
 </html>
