@@ -1643,7 +1643,7 @@ function getStoreById(id) {
 
 // Universal helper: Tự động chuẩn hoá đường dẫn ảnh sản phẩm dù ở trang chủ hay các trang trong /pages/
 function resolveProductImg(url) {
-  if (!url) return '';
+  if (!url) return 'https://images.unsplash.com/photo-1611591475871-331e8b2bf376?q=80&w=800&auto=format&fit=crop';
   // Tự động sửa lỗi nếu gõ thiếu 's' thành 'asset/'
   if (url.startsWith('asset/')) {
     url = 'assets/' + url.substring(6);
@@ -1651,14 +1651,19 @@ function resolveProductImg(url) {
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
     return url;
   }
-  const isInPages = (typeof window !== 'undefined') && (
-    window.location.pathname.includes('/pages/') || 
-    window.location.href.includes('/pages/')
-  );
+  const href = (typeof window !== 'undefined' && window.location && window.location.href) ? window.location.href.toLowerCase() : '';
+  const pathname = (typeof window !== 'undefined' && window.location && window.location.pathname) ? window.location.pathname.toLowerCase() : '';
+  const isInPages = href.includes('/pages/') || pathname.includes('/pages/') ||
+                    href.includes('\\pages\\') || pathname.includes('\\pages\\') ||
+                    href.endsWith('/pages') || pathname.endsWith('/pages');
+
   if (isInPages) {
+    if (url.startsWith('../')) return url;
     if (url.startsWith('assets/')) return '../' + url;
+    return '../' + url;
   } else {
     if (url.startsWith('../assets/')) return url.substring(3);
+    if (url.startsWith('../')) return url.substring(3);
   }
   return url;
 }

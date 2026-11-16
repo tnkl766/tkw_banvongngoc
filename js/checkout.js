@@ -57,7 +57,7 @@ function renderCheckoutSummary() {
     itemsContainer.innerHTML = cart.map(item => `
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.85rem; font-size: var(--font-size-sm);">
         <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <img src="${typeof resolveProductImg === 'function' ? resolveProductImg(item.image) : item.image}" alt="${item.name}" style="width: 48px; height: 48px; border-radius: 4px; object-fit: cover; border: 1px solid var(--color-border);" />
+          <img src="${typeof resolveProductImg === 'function' ? resolveProductImg(item.image) : (item.image && item.image.startsWith('assets/') ? '../' + item.image : item.image)}" alt="${item.name}" style="width: 48px; height: 48px; border-radius: 4px; object-fit: cover; border: 1px solid var(--color-border);" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1611591475871-331e8b2bf376?q=80&w=800&auto=format&fit=crop';" />
           <div>
             <div style="font-weight: 500; color: var(--color-heading);">${item.name}</div>
             <div style="font-size: 0.75rem; color: var(--color-text-light);">Ni: ${item.size} &times; ${item.quantity}</div>

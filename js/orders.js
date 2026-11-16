@@ -119,6 +119,23 @@ function initOrderSuccessPage(orderId) {
   `;
 }
 
+function resolveOrderImg(url) {
+  if (!url) return 'https://images.unsplash.com/photo-1611591475871-331e8b2bf376?q=80&w=800&auto=format&fit=crop';
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
+    return url;
+  }
+  if (typeof resolveProductImg === 'function') {
+    return resolveProductImg(url);
+  }
+  if (url.startsWith('../assets/')) {
+    return url;
+  }
+  if (url.startsWith('assets/')) {
+    return '../' + url;
+  }
+  return url;
+}
+
 function initOrderDetailPage(orderId) {
   const container = document.getElementById('order-detail-content');
   if (!container) return;
@@ -232,7 +249,7 @@ function initOrderDetailPage(orderId) {
         ${order.items.map(item => `
           <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--color-border-subtle);">
             <div style="display: flex; align-items: center; gap: 1rem;">
-              <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px; border: 1px solid var(--color-border);" />
+              <img src="${resolveOrderImg(item.image)}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px; border: 1px solid var(--color-border);" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1611591475871-331e8b2bf376?q=80&w=800&auto=format&fit=crop';" />
               <div>
                 <a href="product-detail.html?id=${item.id}" style="font-weight: 500; font-family: var(--font-heading); font-size: 1rem; color: var(--color-heading);">${item.name}</a>
                 <div style="font-size: 0.8rem; color: var(--color-text-light);">Mã SP: ${item.sku} &bull; Ni: ${item.size}</div>
