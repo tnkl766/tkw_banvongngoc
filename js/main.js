@@ -610,12 +610,16 @@ function createProductCardHtml(p, options = {}) {
 
   let badgeHtml = '';
   if (options.badge) {
-    if (options.badge.includes('%')) {
-      badgeHtml = `<span class="badge badge-sale">${options.badge}</span>`;
-    } else if (options.badge === 'BEST SELLER' || options.badge === 'BÁN CHẠY') {
-      badgeHtml = `<span class="badge badge-bestseller">BÁN CHẠY</span>`;
+    const formatSingleBadge = (b) => {
+      if (!b) return '';
+      if (b.includes('%')) return `<span class="badge badge-sale">${b}</span>`;
+      if (b === 'BEST SELLER' || b === 'BÁN CHẠY') return `<span class="badge badge-bestseller">BÁN CHẠY</span>`;
+      return `<span class="badge badge-new">${b}</span>`;
+    };
+    if (Array.isArray(options.badge)) {
+      badgeHtml = options.badge.map(formatSingleBadge).join('');
     } else {
-      badgeHtml = `<span class="badge badge-new">${options.badge}</span>`;
+      badgeHtml = formatSingleBadge(options.badge);
     }
   }
 
