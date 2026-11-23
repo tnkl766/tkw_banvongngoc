@@ -50,120 +50,41 @@ function setupAuthTabs() {
   }
 }
 
-
-/* ĐĂNG NHẬP VÀ ĐĂNG KÝ - BẢN DEMO JADE */
-const JADE_ACCOUNTS_KEY = 'jade_demo_accounts';
-
-function getDemoAccounts() {
-  try {
-    const accounts = JSON.parse(
-      localStorage.getItem(JADE_ACCOUNTS_KEY) || '[]'
-    );
-    return Array.isArray(accounts) ? accounts : [];
-  } catch {
-    return [];
-  }
-}
-
-async function hashDemoPassword(password, salt) {
-  const bytes = new TextEncoder().encode(salt + ':' + password);
-  const digest = await crypto.subtle.digest('SHA-256', bytes);
-
-  return Array.from(
-    new Uint8Array(digest),
-    b => b.toString(16).padStart(2, '0')
-  ).join('');
-}
-
-function finishAccountLogin(account) {
-  const user = {
-    name: account.name,
-    email: account.email,
-    phone: account.phone || '',
-    address: account.address || 'Chưa cập nhật địa chỉ mặc định',
-    loggedIn: true
-  };
-
-  saveCurrentUser(user);
-  checkAuthState();
-
-  if (typeof updateAccountHeaderUI === 'function') {
-    updateAccountHeaderUI();
-  }
-
-  showToast(
-    'Đăng nhập thành công',
-    'Xin chào ' + user.name + '!',
-    'success'
-  );
-
-  const redirect = new URLSearchParams(location.search).get('redirect');
-
-  if (redirect) {
-    const destination = new URL(redirect, location.href);
-
-    if (
-      destination.origin === location.origin &&
-      /^https?:$/.test(destination.protocol)
-    ) {
-      setTimeout(() => location.assign(destination.href), 500);
-    }
-  }
-}
-
 function setupLoginForm() {
   const form = document.getElementById('login-form');
   if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const pass = document.getElementById('login-password').value.trim();
 
-    const identifier = document.getElementById('login-email')
-      .value.trim().toLowerCase();
-
-    const password = document.getElementById('login-password').value;
-
-    if (!identifier || !password) {
-      showToast(
-        'Thiếu thông tin',
-        'Nhập email/số điện thoại và mật khẩu.',
-        'error'
-      );
+    if (!email || !pass) {
+      showToast('Lỗi đăng nhập', 'Vui lòng nhập email và mật khẩu.', 'error');
       return;
     }
 
-    // Tài khoản thử nghiệm
-    if (
-      identifier === 'khachhang.vip@gmail.com' &&
-      password === 'demo1234'
-    ) {
-      finishAccountLogin({
-        name: 'Khách Hàng VIP',
-        email: identifier,
-        phone: '0988 888 888',
-        address: '24 Hai Bà Trưng, Hoàn Kiếm, Hà Nội'
-      });
-      return;
+    // Demo successful login
+    const user = {
+      name: email.split('@')[0].toUpperCase(),
+      email: email,
+      phone: '0988 888 888',
+      address: '24 Hai Bà Trưng, Hoàn Kiếm, Hà Nội',
+      loggedIn: true
+    };
+
+    saveCurrentUser(user);
+    showToast('Đăng nhập thành công', `Chào mừng trở lại, ${user.name}!`, 'success');
+    checkAuthState();
+
+    // Check redirect param
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectUrl = urlParams.get('redirect');
+    if (redirectUrl) {
+      setTimeout(() => {
+        window.location.href = decodeURIComponent(redirectUrl);
+      }, 700);
     }
-
-    const account = getDemoAccounts().find(a =>
-      a.email.toLowerCase() === identifier ||
-      a.phone === identifier
-    );
-
-    if (
-      !account ||
-      await hashDemoPassword(password, account.salt) !== account.passwordHash
-    ) {
-      showToast(
-        'Đăng nhập thất bại',
-        'Email/số điện thoại hoặc mật khẩu không đúng.',
-        'error'
-      );
-      return;
-    }
-
-    finishAccountLogin(account);
   });
 }
 
@@ -171,71 +92,40 @@ function setupRegisterForm() {
   const form = document.getElementById('register-form');
   if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const name = document.getElementById('reg-name').value.trim();
-    const email = document.getElementById('reg-email')
-      .value.trim().toLowerCase();
+    const email = document.getElementById('reg-email').value.trim();
     const phone = document.getElementById('reg-phone').value.trim();
-    const password = document.getElementById('reg-password').value;
+    const pass = document.getElementById('reg-password').value.trim();
 
-    if (!name || !email || !phone || !password) {
-      showToast(
-        'Thiếu thông tin',
-        'Vui lòng nhập đủ thông tin.',
-        'error'
-      );
+    if (!name || !email || !phone || !pass) {
+      showToast('Lỗi đăng ký', 'Vui lòng điền đầy đủ các trường thông tin.', 'error');
       return;
     }
 
-    if (password.length < 6) {
-      showToast(
-        'Mật khẩu quá ngắn',
-        'Mật khẩu phải có ít nhất 6 ký tự.',
-        'error'
-      );
-      return;
-    }
-
-    const accounts = getDemoAccounts();
-
-    if (
-      email === 'khachhang.vip@gmail.com' ||
-      accounts.some(a => a.email === email || a.phone === phone)
-    ) {
-      showToast(
-        'Đăng ký thất bại',
-        'Email hoặc số điện thoại đã được sử dụng.',
-        'error'
-      );
-      return;
-    }
-
-    const salt = Array.from(
-      crypto.getRandomValues(new Uint8Array(16)),
-      b => b.toString(16).padStart(2, '0')
-    ).join('');
-
-    const account = {
-      name,
-      email,
-      phone,
-      salt,
-      passwordHash: await hashDemoPassword(password, salt)
+    const user = {
+      name: name,
+      email: email,
+      phone: phone,
+      address: 'Chưa cập nhật địa chỉ mặc định',
+      loggedIn: true
     };
 
-    accounts.push(account);
+    saveCurrentUser(user);
+    showToast('Đăng ký thành công!', `Chào mừng quý khách ${name} gia nhập thành viên VIP của JADE.`, 'success');
+    checkAuthState();
 
-    localStorage.setItem(
-      JADE_ACCOUNTS_KEY,
-      JSON.stringify(accounts)
-    );
-
-    finishAccountLogin(account);
+    // Check redirect param
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectUrl = urlParams.get('redirect');
+    if (redirectUrl) {
+      setTimeout(() => {
+        window.location.href = decodeURIComponent(redirectUrl);
+      }, 700);
+    }
   });
 }
-
 
 function setupForgotPassword() {
   const forgotLink = document.getElementById('link-forgot-pass');

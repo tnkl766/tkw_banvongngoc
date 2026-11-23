@@ -1,6 +1,4 @@
-/* ==========================================================================
-   JADE - CATEGORY PAGE CONTROLLER
-   ========================================================================== */
+/*category*/
 
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);

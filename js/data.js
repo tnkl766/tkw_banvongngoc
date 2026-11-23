@@ -175,8 +175,8 @@ const JADE_DATA = {
        collection: "timeless-jade",
        collectionName: "Timeless Jade",
        price: 25000000,
-       originalPrice: null,
-       discountPercent: 0,
+       originalPrice: 28000000,
+       discountPercent: 10,
        isNew: true,        // true: tự động lên mục SẢN PHẨM MỚI trang chủ
        isBestSeller: true, // true: tự động lên mục SẢN PHẨM BÁN CHẠY trang chủ
        isFeatured: true,
@@ -203,9 +203,9 @@ const JADE_DATA = {
       collection: "timeless-jade",
       collectionName: "Timeless Jade",
       price: 28500000,
-      originalPrice: null,
-      discountPercent: null,
-      isNew: false,
+      originalPrice: 32000000,
+      discountPercent: 11,
+      isNew: true,
       isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
@@ -269,8 +269,8 @@ const JADE_DATA = {
       collection: "emerald-elegance",
       collectionName: "Emerald Elegance",
       price: 18500000,
-      originalPrice: null,
-      discountPercent: 0,
+      originalPrice: 21000000,
+      discountPercent: 12,
       isNew: false,
       isBestSeller: true,
       isFeatured: true,
@@ -302,9 +302,9 @@ const JADE_DATA = {
       collection: "natural-harmony",
       collectionName: "Natural Harmony",
       price: 15200000,
-      originalPrice: null,
-      discountPercent: 0,
-      isNew: false,
+      originalPrice: 17500000,
+      discountPercent: 13,
+      isNew: true,
       isBestSeller: true,
       isFeatured: true,
       rating: 4.8,
@@ -336,8 +336,8 @@ const JADE_DATA = {
       collection: "emerald-elegance",
       collectionName: "Emerald Elegance",
       price: 9800000,
-      originalPrice: null,
-      discountPercent: 0,
+      originalPrice: 11500000,
+      discountPercent: 15,
       isNew: false,
       isBestSeller: true,
       isFeatured: true,
@@ -371,7 +371,7 @@ const JADE_DATA = {
       price: 24500000,
       originalPrice: null,
       discountPercent: null,
-      isNew: false,
+      isNew: true,
       isBestSeller: false,
       isFeatured: true,
       rating: 5.0,
@@ -402,8 +402,8 @@ const JADE_DATA = {
       collection: "timeless-jade",
       collectionName: "Timeless Jade",
       price: 13900000,
-      originalPrice: null,
-      discountPercent: 0,
+      originalPrice: 15500000,
+      discountPercent: 10,
       isNew: false,
       isBestSeller: true,
       isFeatured: false,
@@ -468,10 +468,10 @@ const JADE_DATA = {
       collection: "natural-harmony",
       collectionName: "Natural Harmony",
       price: 6800000,
-      originalPrice: 7700000,
-      discountPercent: 12,
+      originalPrice: 7800000,
+      discountPercent: 13,
       isNew: false,
-      isBestSeller: false,
+      isBestSeller: true,
       isFeatured: false,
       rating: 4.7,
       reviewCount: 68,
@@ -501,10 +501,10 @@ const JADE_DATA = {
       collection: "timeless-jade",
       collectionName: "Timeless Jade",
       price: 11200000,
-      originalPrice: 13200000,
-      discountPercent: 15,
+      originalPrice: null,
+      discountPercent: null,
       isNew: false,
-      isBestSeller: false,
+      isBestSeller: true,
       isFeatured: false,
       rating: 4.9,
       reviewCount: 34,
@@ -534,8 +534,8 @@ const JADE_DATA = {
       collection: "natural-harmony",
       collectionName: "Natural Harmony",
       price: 17800000,
-      originalPrice: null,
-      discountPercent: 0,
+      originalPrice: 20000000,
+      discountPercent: 11,
       isNew: true,
       isBestSeller: false,
       isFeatured: false,
@@ -567,10 +567,10 @@ const JADE_DATA = {
       collection: "the-art-of-jade",
       collectionName: "The Art of Jade",
       price: 19500000,
-      originalPrice: 22900000,
+      originalPrice: 23000000,
       discountPercent: 15,
       isNew: false,
-      isBestSeller: false,
+      isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
       reviewCount: 41,
@@ -600,8 +600,8 @@ const JADE_DATA = {
       collection: "the-art-of-jade",
       collectionName: "The Art of Jade",
       price: 58000000,
-      originalPrice: null,
-      discountPercent: 0,
+      originalPrice: 65000000,
+      discountPercent: 11,
       isNew: true,
       isBestSeller: false,
       isFeatured: true,
@@ -636,7 +636,7 @@ const JADE_DATA = {
       originalPrice: 9900000,
       discountPercent: 10,
       isNew: false,
-      isBestSeller: false,
+      isBestSeller: true,
       isFeatured: false,
       rating: 4.8,
       reviewCount: 27,
@@ -666,8 +666,8 @@ const JADE_DATA = {
       collection: "timeless-jade",
       collectionName: "Timeless Jade",
       price: 14200000,
-      originalPrice: null,
-      discountPercent: 0,
+      originalPrice: 16500000,
+      discountPercent: 14,
       isNew: true,
       isBestSeller: false,
       isFeatured: false,
@@ -734,9 +734,9 @@ const JADE_DATA = {
       collection: "timeless-jade",
       collectionName: "Timeless Jade",
       price: 42000000,
-      originalPrice: null,
-      discountPercent: 0,
-      isNew: false,
+      originalPrice: 46000000,
+      discountPercent: 9,
+      isNew: true,
       isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
@@ -767,10 +767,10 @@ const JADE_DATA = {
       collection: "emerald-elegance",
       collectionName: "Emerald Elegance",
       price: 26500000,
-      originalPrice: 29400000,
+      originalPrice: 29500000,
       discountPercent: 10,
       isNew: false,
-      isBestSeller: false,
+      isBestSeller: true,
       isFeatured: true,
       rating: 4.9,
       reviewCount: 34,
@@ -833,8 +833,8 @@ const JADE_DATA = {
       collection: "natural-harmony",
       collectionName: "Natural Harmony",
       price: 65000000,
-      originalPrice: null,
-      discountPercent: null,
+      originalPrice: 72000000,
+      discountPercent: 10,
       isNew: false,
       isBestSeller: true,
       isFeatured: true,
@@ -866,9 +866,9 @@ const JADE_DATA = {
       collection: "timeless-jade",
       collectionName: "Timeless Jade",
       price: 14800000,
-      originalPrice: 16800000,
-      discountPercent: 12,
-      isNew: false,
+      originalPrice: 16500000,
+      discountPercent: 10,
+      isNew: true,
       isBestSeller: false,
       isFeatured: true,
       rating: 4.8,
@@ -902,7 +902,7 @@ const JADE_DATA = {
       originalPrice: null,
       discountPercent: null,
       isNew: false,
-      isBestSeller: false,
+      isBestSeller: true,
       isFeatured: true,
       rating: 4.9,
       reviewCount: 27,
@@ -934,8 +934,8 @@ const JADE_DATA = {
       price: 19800000,
       originalPrice: 22000000,
       discountPercent: 10,
-      isNew: false,
-      isBestSeller: false,
+      isNew: true,
+      isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
       reviewCount: 36,
@@ -965,10 +965,10 @@ const JADE_DATA = {
       collection: "natural-harmony",
       collectionName: "Natural Harmony",
       price: 9800000,
-      originalPrice: null,
-      discountPercent: null,
+      originalPrice: 11200000,
+      discountPercent: 12,
       isNew: false,
-      isBestSeller: true,
+      isBestSeller: false,
       isFeatured: true,
       rating: 4.9,
       reviewCount: 15,
@@ -998,9 +998,9 @@ const JADE_DATA = {
       collection: "emerald-elegance",
       collectionName: "Emerald Elegance",
       price: 15600000,
-      originalPrice: null,
-      discountPercent: 0,
-      isNew: false,
+      originalPrice: 17500000,
+      discountPercent: 11,
+      isNew: true,
       isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
@@ -1031,8 +1031,8 @@ const JADE_DATA = {
       collection: "timeless-jade",
       collectionName: "Timeless Jade",
       price: 21500000,
-      originalPrice: null,
-      discountPercent: null,
+      originalPrice: 24500000,
+      discountPercent: 12,
       isNew: false,
       isBestSeller: true,
       isFeatured: true,
@@ -1097,10 +1097,10 @@ const JADE_DATA = {
       collection: "natural-harmony",
       collectionName: "Natural Harmony",
       price: 17200000,
-      originalPrice: 20000000,
-      discountPercent: 14,
-      isNew: false,
-      isBestSeller: false,
+      originalPrice: 19500000,
+      discountPercent: 12,
+      isNew: true,
+      isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
       reviewCount: 26,
@@ -1130,9 +1130,9 @@ const JADE_DATA = {
       collection: "natural-harmony",
       collectionName: "Natural Harmony",
       price: 28000000,
-      originalPrice: null,
-      discountPercent: null,
-      isNew: false,
+      originalPrice: 32000000,
+      discountPercent: 12,
+      isNew: true,
       isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
@@ -1166,7 +1166,7 @@ const JADE_DATA = {
       originalPrice: 34000000,
       discountPercent: 12,
       isNew: false,
-      isBestSeller: false,
+      isBestSeller: true,
       isFeatured: true,
       rating: 4.9,
       reviewCount: 23,
@@ -1198,7 +1198,7 @@ const JADE_DATA = {
       price: 14500000,
       originalPrice: null,
       discountPercent: null,
-      isNew: false,
+      isNew: true,
       isBestSeller: false,
       isFeatured: true,
       rating: 4.9,
@@ -1229,8 +1229,8 @@ const JADE_DATA = {
       collection: "the-art-of-jade",
       collectionName: "The Art of Jade",
       price: 18500000,
-      originalPrice: null,
-      discountPercent: null,
+      originalPrice: 21000000,
+      discountPercent: 12,
       isNew: false,
       isBestSeller: true,
       isFeatured: true,
@@ -1262,9 +1262,9 @@ const JADE_DATA = {
       collection: "timeless-jade",
       collectionName: "Timeless Jade",
       price: 8900000,
-      originalPrice: null,
-      discountPercent: null,
-      isNew: false,
+      originalPrice: 9900000,
+      discountPercent: 10,
+      isNew: true,
       isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
@@ -1295,9 +1295,9 @@ const JADE_DATA = {
       collection: "natural-harmony",
       collectionName: "Natural Harmony",
       price: 11800000,
-      originalPrice: 13900000,
-      discountPercent: 15,
-      isNew: false,
+      originalPrice: 13500000,
+      discountPercent: 12,
+      isNew: true,
       isBestSeller: false,
       isFeatured: true,
       rating: 4.9,
@@ -1328,9 +1328,9 @@ const JADE_DATA = {
       collection: "the-art-of-jade",
       collectionName: "The Art of Jade",
       price: 15800000,
-      originalPrice: null,
-      discountPercent: 0,
-      isNew: false,
+      originalPrice: 18000000,
+      discountPercent: 12,
+      isNew: true,
       isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
@@ -1361,10 +1361,10 @@ const JADE_DATA = {
       collection: "emerald-elegance",
       collectionName: "Emerald Elegance",
       price: 22800000,
-      originalPrice: 25300000,
-      discountPercent: 10,
-      isNew: false,
-      isBestSeller: false,
+      originalPrice: 26500000,
+      discountPercent: 14,
+      isNew: true,
+      isBestSeller: true,
       isFeatured: true,
       rating: 5.0,
       reviewCount: 25,
@@ -1643,7 +1643,7 @@ function getStoreById(id) {
 
 // Universal helper: Tự động chuẩn hoá đường dẫn ảnh sản phẩm dù ở trang chủ hay các trang trong /pages/
 function resolveProductImg(url) {
-  if (!url) return 'https://images.unsplash.com/photo-1611591475871-331e8b2bf376?q=80&w=800&auto=format&fit=crop';
+  if (!url) return '';
   // Tự động sửa lỗi nếu gõ thiếu 's' thành 'asset/'
   if (url.startsWith('asset/')) {
     url = 'assets/' + url.substring(6);
@@ -1651,19 +1651,14 @@ function resolveProductImg(url) {
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
     return url;
   }
-  const href = (typeof window !== 'undefined' && window.location && window.location.href) ? window.location.href.toLowerCase() : '';
-  const pathname = (typeof window !== 'undefined' && window.location && window.location.pathname) ? window.location.pathname.toLowerCase() : '';
-  const isInPages = href.includes('/pages/') || pathname.includes('/pages/') ||
-                    href.includes('\\pages\\') || pathname.includes('\\pages\\') ||
-                    href.endsWith('/pages') || pathname.endsWith('/pages');
-
+  const isInPages = (typeof window !== 'undefined') && (
+    window.location.pathname.includes('/pages/') || 
+    window.location.href.includes('/pages/')
+  );
   if (isInPages) {
-    if (url.startsWith('../')) return url;
     if (url.startsWith('assets/')) return '../' + url;
-    return '../' + url;
   } else {
     if (url.startsWith('../assets/')) return url.substring(3);
-    if (url.startsWith('../')) return url.substring(3);
   }
   return url;
 }
@@ -1747,233 +1742,82 @@ const SEARCH_SYNONYMS = {
   'vang': ['vang', '18k', '24k', 'gold', 'thach anh toc']
 };
 
-// Từ vựng quan trọng không bao giờ được phép khớp mờ chéo (vd: "vòng" không được khớp "vàng" hay "bông")
-const PROTECTED_SEARCH_WORDS = new Set([
-  'vong', 'vang', 'vuong', 'bong', 'dong', 'tong', 'song', 'long', 'nhan', 'day', 'co', 'tay', 'tai', 'hoa', 'bac', 'da'
-]);
-
-// Bảng sửa lỗi gõ nhầm / gõ nhanh tiếng Việt phổ biến
-const COMMON_SEARCH_TYPOS = {
-  'vògn': 'vong', 'vongg': 'vong', 'voong': 'vong', 'vòg': 'vong', 'vongf': 'vong',
-  'nhãnn': 'nhan', 'nhaan': 'nhan', 'nhjan': 'nhan', 'nhans': 'nhan', 'nhăn': 'nhan', 'nnhan': 'nhan',
-  'bôgn': 'bong', 'bongg': 'bong', 'boong': 'bong', 'bôngg': 'bong', 'bôg': 'bong',
-  'khuyeen': 'khuyen', 'khyeen': 'khuyen',
-  'dayy': 'day', 'chuyeen': 'chuyen', 'daychuyen': 'day chuyen',
-  'camthach': 'cam thach', 'caamthach': 'cam thach',
-  'phithuy': 'phi thuy', 'phithuyy': 'phi thuy',
-  'bachngoc': 'bach ngoc', 'baachngoc': 'bach ngoc',
-  'kimcuong': 'kim cuong'
-};
-
-// Các thuộc tính ngọc/đá quý đặc thù (nếu người dùng gõ từ khóa có thuộc tính này thì sản phẩm bắt buộc phải có thuộc tính tương ứng)
-const SPECIFIC_SEARCH_ATTRIBUTES = [
-  'bach ngoc', 'bach', 'huyet ngoc', 'huyet', 'lavender', 'tim', 'luc de vuong', 'luc dau', 'luc',
-  'xanh tao', 'xanh reu', 'hoa sen', 'ho lo', 'ty huu', 'di lac', 'bang chung',
-  'phi thuy', 'cam thach', 'nephrite', 'hetian', 'hoa dien', 'moissanite',
-  'kim cuong', 'ruby', 'sapphire', '108 hat', 'nam', 'nu', 'doi', 'khang hy'
-];
-
-/**
- * Nhận diện ý định danh mục trang sức từ truy vấn của khách hàng
- * Đảm bảo: Tìm vòng chỉ ra vòng, tìm nhẫn chỉ ra nhẫn, tìm bông tai chỉ ra bông tai
- */
-function detectCategoryIntent(cleanQuery) {
-  if (!cleanQuery) return null;
-
-  // Dây chuyền / Mặt dây / Vòng cổ (ưu tiên kiểm tra trước để tránh nhầm "vòng cổ" thành "vòng tay")
-  if (
-    cleanQuery.includes('day chuyen') ||
-    cleanQuery.includes('mat day') ||
-    cleanQuery.includes('vong co') ||
-    cleanQuery.includes('day co') ||
-    cleanQuery.includes('necklace') ||
-    cleanQuery.includes('pendant')
-  ) {
-    return 'day-chuyen';
-  }
-
-  // Bông tai / Hoa tai / Khuyên tai
-  if (
-    cleanQuery.includes('bong tai') ||
-    cleanQuery.includes('hoa tai') ||
-    cleanQuery.includes('khuyen tai') ||
-    cleanQuery.includes('khuyen') ||
-    cleanQuery.includes('bong') ||
-    cleanQuery.includes('earring')
-  ) {
-    return 'bong-tai';
-  }
-
-  // Nhẫn ngọc
-  if (
-    cleanQuery.includes('nhan') ||
-    cleanQuery.includes('ring')
-  ) {
-    return 'nhan-ngoc';
-  }
-
-  // Vòng tay / Vòng bản / Vòng hạt / Lắc tay / Chuỗi hạt
-  if (
-    cleanQuery.includes('vong') ||
-    cleanQuery.includes('lac tay') ||
-    cleanQuery.includes('lac') ||
-    cleanQuery.includes('chuoi') ||
-    cleanQuery.includes('bangle') ||
-    cleanQuery.includes('bracelet')
-  ) {
-    return 'vong';
-  }
-
-  return null;
-}
-
-/**
- * Tính điểm khớp sản phẩm với từ khóa tìm kiếm (Smart Categorized & Fuzzy Search)
- */
 function calculateProductMatchScore(product, query) {
   if (!query || !query.trim()) return { score: 100, isExactOrSubMatch: true, hasFuzzy: false };
 
   const rawQ = query.trim().toLowerCase();
-  let cleanQ = removeVietnameseTones(rawQ);
-  if (COMMON_SEARCH_TYPOS[rawQ]) cleanQ = COMMON_SEARCH_TYPOS[rawQ];
-  if (COMMON_SEARCH_TYPOS[cleanQ]) cleanQ = COMMON_SEARCH_TYPOS[cleanQ];
+  const cleanQ = removeVietnameseTones(rawQ);
+  const qWords = cleanQ.split(/[\s,.-]+/).filter(w => w.length > 0);
 
-  const qWords = cleanQ.split(/[\s,.-]+/).filter(w => w.length > 0 && w !== 'ngoc');
-  if (qWords.length === 0 && cleanQ !== 'ngoc') {
-    return { score: 100, isExactOrSubMatch: true, hasFuzzy: false };
-  }
+  if (qWords.length === 0) return { score: 100, isExactOrSubMatch: true, hasFuzzy: false };
 
   const pName = (product.name || '').toLowerCase();
   const pCleanName = removeVietnameseTones(pName);
-  const pCategory = (product.category || '').toLowerCase();
-  const pCategoryName = (product.categoryName || '').toLowerCase();
-  const pCleanCategory = removeVietnameseTones(pCategoryName);
+  const pCategory = (product.categoryName || '').toLowerCase();
+  const pCleanCategory = removeVietnameseTones(pCategory);
+  const pCollection = (product.collectionName || '').toLowerCase();
+  const pCleanCollection = removeVietnameseTones(pCollection);
   const pSku = (product.sku || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const pColor = (product.color || '').toLowerCase();
   const pCleanColor = removeVietnameseTones(pColor);
   const pMaterial = (product.material || '').toLowerCase();
   const pCleanMaterial = removeVietnameseTones(pMaterial);
-  const pCollection = (product.collectionName || '').toLowerCase();
-  const pCleanCollection = removeVietnameseTones(pCollection);
   const pDesc = (product.description || '').toLowerCase();
   const pCleanDesc = removeVietnameseTones(pDesc);
 
-  const fullProductText = `${pCleanName} ${pCleanCategory} ${pCleanColor} ${pCleanMaterial} ${pCleanCollection} ${pCleanDesc}`;
-
-  // 1. Phân loại theo Ý định danh mục (Intent Category Filter)
-  const intent = detectCategoryIntent(cleanQ);
-  if (intent === 'vong') {
-    if (pCategory === 'nhan-ngoc' || pCategory === 'bong-tai' || pCategory === 'day-chuyen') {
-      return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
-    }
-    if (pCategory === 'trang-suc-da-quy' && !pCleanName.includes('vong') && !pCleanName.includes('lac') && !pCleanName.includes('chuoi')) {
-      return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
-    }
-  } else if (intent === 'nhan-ngoc') {
-    if (pCategory !== 'nhan-ngoc' && !pCleanName.includes('nhan')) {
-      return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
-    }
-  } else if (intent === 'bong-tai') {
-    if (pCategory !== 'bong-tai' && !pCleanName.includes('bong') && !pCleanName.includes('hoa tai') && !pCleanName.includes('khuyen')) {
-      return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
-    }
-  } else if (intent === 'day-chuyen') {
-    if (pCategory !== 'day-chuyen' && !pCleanName.includes('day chuyen') && !pCleanName.includes('mat day') && !pCleanName.includes('vong co')) {
-      return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
-    }
-  }
-
-  // 2. Lọc theo thuộc tính đặc thù nếu người dùng tìm kiếm có chỉ định (vd: "bạch ngọc", "cẩm thạch", "phỉ thuý"...)
-  const queryAttributes = SPECIFIC_SEARCH_ATTRIBUTES.filter(attr => cleanQ.includes(attr));
-  if (queryAttributes.length > 0) {
-    const hasAnyAttr = queryAttributes.some(attr => fullProductText.includes(attr));
-    if (!hasAnyAttr) {
-      return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
-    }
-  }
+  const cleanAllText = `${pCleanName} ${pCleanCategory} ${pCleanCollection} ${pCleanColor} ${pCleanMaterial} ${pCleanDesc}`;
+  const targetWords = cleanAllText.split(/[\s,.-]+/).filter(w => w.length > 0);
 
   let score = 0;
   let isExactOrSubMatch = false;
 
-  // 3. Khớp cụm từ trong Tên sản phẩm
-  if (pCleanName.includes(cleanQ)) {
-    score += 260;
+  // 1. Khớp cụm từ
+  if (pName.includes(rawQ) || pCleanName.includes(cleanQ)) {
+    score += 160;
+    isExactOrSubMatch = true;
+  } else if (cleanAllText.includes(cleanQ)) {
+    score += 90;
     isExactOrSubMatch = true;
   }
 
-  // Khớp mã sản phẩm (SKU)
+  // Khớp mã sản phẩm
   const cleanQNoSep = cleanQ.replace(/[^a-z0-9]/g, '');
   if (cleanQNoSep && pSku.includes(cleanQNoSep)) {
-    score += 300;
+    score += 200;
     isExactOrSubMatch = true;
   }
 
-  // Khớp danh mục
-  if (pCleanCategory.includes(cleanQ)) {
-    score += 150;
-    isExactOrSubMatch = true;
-  }
-
-  // Khớp chất liệu & màu sắc
-  if (pCleanMaterial.includes(cleanQ) || pCleanColor.includes(cleanQ)) {
-    score += 100;
-    isExactOrSubMatch = true;
-  }
-
-  // Khớp bộ sưu tập
-  if (pCleanCollection.includes(cleanQ)) {
-    score += 70;
-    isExactOrSubMatch = true;
-  }
-
-  // 4. Phân tích từng từ khóa
-  const pCleanNameWords = pCleanName.split(/[\s,.-]+/).filter(w => w.length > 0);
-  const pCleanCatWords = pCleanCategory.split(/[\s,.-]+/).filter(w => w.length > 0);
-  const pCleanMatWords = pCleanMaterial.split(/[\s,.-]+/).filter(w => w.length > 0);
-
+  // 2. Phân tích từng từ
   let matchedWordCount = 0;
   let fuzzyMatchesFound = 0;
 
-  const searchTargetWords = qWords.length > 0 ? qWords : ['ngoc'];
-  searchTargetWords.forEach(qWord => {
+  qWords.forEach(qWord => {
     let wordMatched = false;
 
-    if (pCleanNameWords.includes(qWord)) {
-      score += 60;
-      wordMatched = true;
-    } else if (pCleanCatWords.includes(qWord)) {
-      score += 45;
-      wordMatched = true;
-    } else if (pCleanMatWords.includes(qWord)) {
+    if (cleanAllText.includes(qWord)) {
       score += 35;
       wordMatched = true;
     } else {
-      // Tra cứu từ đồng nghĩa
-      const syns = SEARCH_SYNONYMS[qWord] || [];
-      for (const syn of syns) {
-        if (pCleanName.includes(syn) || pCleanCategory.includes(syn)) {
-          score += 40;
-          wordMatched = true;
-          break;
-        } else if (pCleanMaterial.includes(syn)) {
+      const synonyms = SEARCH_SYNONYMS[qWord] || [];
+      for (const syn of synonyms) {
+        if (cleanAllText.includes(syn)) {
           score += 25;
           wordMatched = true;
           break;
         }
       }
 
-      // Khớp mờ Levenshtein an toàn (chỉ áp dụng cho từ từ 5 ký tự trở lên và không nằm trong từ cấm)
-      if (!wordMatched && qWord.length >= 5 && !PROTECTED_SEARCH_WORDS.has(qWord)) {
+      if (!wordMatched && qWord.length >= 3) {
         let bestDist = 99;
-        const candidates = pCleanNameWords.concat(pCleanCatWords, pCleanMatWords);
-        for (const cWord of candidates) {
-          if (cWord.length < 4 || PROTECTED_SEARCH_WORDS.has(cWord)) continue;
-          if (Math.abs(cWord.length - qWord.length) > 2) continue;
-          const d = damerauLevenshtein(qWord, cWord);
-          if (d < bestDist) bestDist = d;
+        for (const tWord of targetWords) {
+          if (tWord.length < 3) continue;
+          if (Math.abs(tWord.length - qWord.length) > 2) continue;
+          const dist = damerauLevenshtein(qWord, tWord);
+          if (dist < bestDist) bestDist = dist;
         }
-        const maxAllowed = qWord.length >= 8 ? 2 : 1;
-        if (bestDist <= maxAllowed) {
+
+        const maxAllowedDist = qWord.length <= 4 ? 1 : 2;
+        if (bestDist <= maxAllowedDist) {
           score += Math.max(10, 25 - bestDist * 8);
           wordMatched = true;
           fuzzyMatchesFound++;
@@ -1984,9 +1828,16 @@ function calculateProductMatchScore(product, query) {
     if (wordMatched) matchedWordCount++;
   });
 
-  // Ngưỡng điểm tối thiểu để được coi là sản phẩm liên quan
-  if (score < 30) {
-    return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
+  if (qWords.length > 1) {
+    if (matchedWordCount === qWords.length) {
+      score += 40;
+    } else if (matchedWordCount === 0) {
+      return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
+    }
+  } else {
+    if (matchedWordCount === 0 && score === 0) {
+      return { score: 0, isExactOrSubMatch: false, hasFuzzy: false };
+    }
   }
 
   return {
@@ -2000,10 +1851,6 @@ if (typeof window !== 'undefined') {
   window.removeVietnameseTones = removeVietnameseTones;
   window.damerauLevenshtein = damerauLevenshtein;
   window.SEARCH_SYNONYMS = SEARCH_SYNONYMS;
-  window.PROTECTED_SEARCH_WORDS = PROTECTED_SEARCH_WORDS;
-  window.COMMON_SEARCH_TYPOS = COMMON_SEARCH_TYPOS;
-  window.SPECIFIC_SEARCH_ATTRIBUTES = SPECIFIC_SEARCH_ATTRIBUTES;
-  window.detectCategoryIntent = detectCategoryIntent;
   window.calculateProductMatchScore = calculateProductMatchScore;
 }
 

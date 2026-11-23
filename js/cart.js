@@ -1,6 +1,4 @@
-/* ==========================================================================
-   JADE - SHOPPING CART CONTROLLER
-   ========================================================================== */
+/*cart*/
 
 let appliedDiscountPercent = 0;
 let appliedDiscountAmount = 0;
@@ -64,7 +62,7 @@ function renderCartPage() {
               <tr class="cart-row" data-id="${item.id}" data-size="${item.size}">
                 <td>
                   <div class="cart-product-cell">
-                    <img src="${typeof resolveProductImg === 'function' ? resolveProductImg(item.image) : (item.image && item.image.startsWith('assets/') ? '../' + item.image : item.image)}" alt="${item.name}" class="cart-item-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1611591475871-331e8b2bf376?q=80&w=800&auto=format&fit=crop';" />
+                    <img src="${typeof resolveProductImg === 'function' ? resolveProductImg(item.image) : item.image}" alt="${item.name}" class="cart-item-img" />
                     <div class="cart-item-info">
                       <h4><a href="product-detail.html?id=${item.id}">${item.name}</a></h4>
                       <div class="cart-item-variant">Mã SP: ${item.sku} &bull; Ni/Size: <strong>${item.size}</strong></div>

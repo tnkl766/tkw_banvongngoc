@@ -349,12 +349,6 @@ function applyFiltersAndRender() {
     if (heroDescEl) heroDescEl.textContent = "Những tuyệt tác ngọc Jadeite vừa được các nghệ nhân hoàn thiện trong tuần này.";
     if (breadcrumbActive) breadcrumbActive.textContent = "Sản Phẩm Mới";
     document.title = `Sản Phẩm Mới | JADE – Trang Sức Ngọc Thiên Nhiên`;
-  } else if (currentFilters.tag === 'bestseller') {
-    if (heroTitleEl) heroTitleEl.textContent = "SẢN PHẨM BÁN CHẠY NHẤT";
-    if (heroSubtitleEl) heroSubtitleEl.textContent = "ĐƯỢC YÊU THÍCH NHẤT TẠI JADE";
-    if (heroDescEl) heroDescEl.textContent = "Tuyển tập những mẫu ngọc quý tự nhiên được khách hàng tin chọn và đánh giá cao nhất.";
-    if (breadcrumbActive) breadcrumbActive.textContent = "Bán Chạy Nhất";
-    document.title = `Sản Phẩm Bán Chạy Nhất | JADE – Trang Sức Ngọc Thiên Nhiên`;
   } else {
     if (heroTitleEl) heroTitleEl.textContent = selectedCat.name.toUpperCase();
     if (heroSubtitleEl) heroSubtitleEl.textContent = selectedCat.subtitle || 'BỘ SƯU TẬP TOÀN DIỆN';
@@ -449,9 +443,9 @@ function applyFiltersAndRender() {
   } else if (currentFilters.sortBy === 'price-desc') {
     list.sort((a, b) => b.price - a.price);
   } else if (currentFilters.sortBy === 'bestseller') {
-    list.sort((a, b) => (b.isBestSeller ? 1 : 0) - (a.isBestSeller ? 1 : 0) || ((b.reviewCount || 0) - (a.reviewCount || 0)) || (b.rating - a.rating));
+    list.sort((a, b) => (b.isBestSeller ? 1 : 0) - (a.isBestSeller ? 1 : 0) || (b.rating - a.rating));
   } else if (currentFilters.sortBy === 'new') {
-    list.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0) || (b.id - a.id));
+    list.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
   }
 
   // Phân trang: 21 sản phẩm / trang
@@ -510,13 +504,9 @@ function applyFiltersAndRender() {
   } else {
     container.innerHTML = pagedList.map(p => {
       let badge = '';
-      if (p.isBestSeller) {
-        badge = 'BÁN CHẠY';
-      } else if (p.isNew) {
-        badge = 'MỚI';
-      } else if (p.discountPercent && p.discountPercent > 0) {
-        badge = `-${p.discountPercent}%`;
-      }
+      if (p.discountPercent) badge = `-${p.discountPercent}%`;
+      else if (p.isNew) badge = 'MỚI';
+      else if (p.isBestSeller) badge = 'BÁN CHẠY';
 
       return createProductCardHtml(p, { badge, relativePath: '' });
     }).join('');

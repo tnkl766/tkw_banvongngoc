@@ -1,0 +1,12 @@
+[20972:16220:1108/225821.737:WARNING:chrome\browser\extensions\external_registry_loader_win.cc:283] Error observing HKLM: 5
+[20972:16220:1108/225822.375:INFO:CONSOLE:1] "Uncaught SyntaxError: Identifier 'SEARCH_SYNONYMS' has already been declared", source: file:///F:/TKW_JADE/js/search.js (1)
+[20972:16220:1108/225822.575:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+[20972:16220:1108/225822.676:WARNING:components\signin\internal\identity_manager\account_fetcher_service.cc:268] Edge does not support fetching account capabilities
+[20972:16220:1108/225822.676:WARNING:components\signin\internal\identity_manager\account_fetcher_service.cc:230] Should not execute: Tests depending on this function may fail
+[20972:16220:1108/225822.723:ERROR:components\edge_auth\edge_auth_errors.cc:561] EDGE_IDENTITY: Image Fetch FAILED: Error: Primary Error: kAccountImageFetchFailure, Secondary Error: kUnspecified, Platform error: 0, Error string: [empty]
+
+[20972:16220:1108/225822.761:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+[20972:16220:1108/225822.909:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+[20972:16220:1108/225822.910:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+[20972:16220:1108/225822.965:INFO:CONSOLE:6359] "[ProtocolLaunch] handler constructed; wiring port events.", source: chrome-extension://ndcpkimcihhghdcddljkfmmjccdmcmof/background.rollup.js (6359)
+[20972:16220:1108/225827.456:ERROR:chrome\browser\edge_pinned_sites\pinned_sites_cache.cc:284] Failed to retrieve pinned sites
